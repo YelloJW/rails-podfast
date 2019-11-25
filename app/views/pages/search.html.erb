@@ -1,28 +1,33 @@
 
-
 <div class="container">
   <div class="form-group">
-    <label class="control-label check_boxes optional">Tags</label>
+    <label class="control-label check_boxes optional"><h2>Categories</h2></label>
     <input type="hidden" name="post[tag_ids][]" value="">
     <div class="tag-choices">
       <% @default_tags.each do |tag| %>
-        <input type="checkbox" class="hidden" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
-        <label for="post_tag_ids_<%= tag.id %>">
+        <input type="checkbox" style="display:none" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
+        <label class="tag-choice" for="post_tag_ids_<%= tag.id %>">
           <%= tag.tag %>
-          <i class="fa fa-check"></i>
         </label>
       <% end %>
-     </div>
-
-    <label class="control-label check_boxes optional">other tags</label>
+    </div>
+    <label class="control-label check_boxes optional"><h2>Tags</h2></label>
      <div class="tag-choices">
       <% @other_tags.each do |tag| %>
-        <input type="checkbox" class="hidden" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
-        <label for="post_tag_ids_<%= tag.id %>">
+        <input type="checkbox" style="display:none" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
+        <label class="tag-choice" for="post_tag_ids_<%= tag.id %>">
           <%= tag.tag %>
-          <i class="fa fa-check"></i>
         </label>
       <% end %>
      </div>
-   </div>
+  </div>
+  <label for="customRange1"><h2>Duration</h2></label>
+  <input type="range" class="custom-range" id="customRange1">
+  <!-- add min and max labels and label to current position -->
+  <!-- make slider icon the padfast logo -->
 </div>
+
+
+
+
+
