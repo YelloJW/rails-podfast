@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show]
 
   def index
-    @episodes = Episode.all
+    search
   end
 
   def show
@@ -13,5 +13,14 @@ class EpisodesController < ApplicationController
 
   def set_episode
     @episode = Episode.find(params[:id])
+  end
+
+  def search
+    if params[:search][:query].present?
+      search_params = params[:search][:query]
+      @episodes = Episode.search_by_title_and_summary(search_params)
+    else
+      @episodes = Episode.all
+    end
   end
 end
