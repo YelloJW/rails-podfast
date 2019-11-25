@@ -7,7 +7,7 @@ class Episode < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_title_and_summary,
-    against: [ :title, :summary ],
+    against: [:title, :summary],
     using: {
       tsearch: { prefix: true }
     }
