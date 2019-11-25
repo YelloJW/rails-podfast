@@ -1,7 +1,9 @@
 
 
-
 <%= simple_form_for :search, method: :get, url: episodes_path do |f| %>
   <%= f.input :query %>
   <%= f.button :submit %>
 <% end %>
+
+
+<%= render 'carousel' %>
