@@ -1,5 +1,5 @@
 class Episode < ApplicationRecord
-  has_many :episode_tags
+  has_many :episode_tags, dependent: :destroy
   has_many :tags, through: :episode_tags
   validates :title, presence: true, uniqueness: true
   validates :summary, presence: true
