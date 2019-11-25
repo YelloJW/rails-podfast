@@ -1,0 +1,28 @@
+
+
+<div class="container">
+  <div class="form-group">
+    <label class="control-label check_boxes optional">Tags</label>
+    <input type="hidden" name="post[tag_ids][]" value="">
+    <div class="tag-choices">
+      <% @default_tags.each do |tag| %>
+        <input type="checkbox" class="hidden" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
+        <label for="post_tag_ids_<%= tag.id %>">
+          <%= tag.tag %>
+          <i class="fa fa-check"></i>
+        </label>
+      <% end %>
+     </div>
+
+    <label class="control-label check_boxes optional">other tags</label>
+     <div class="tag-choices">
+      <% @other_tags.each do |tag| %>
+        <input type="checkbox" class="hidden" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
+        <label for="post_tag_ids_<%= tag.id %>">
+          <%= tag.tag %>
+          <i class="fa fa-check"></i>
+        </label>
+      <% end %>
+     </div>
+   </div>
+</div>
