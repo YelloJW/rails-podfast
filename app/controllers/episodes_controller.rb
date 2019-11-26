@@ -4,10 +4,8 @@ class EpisodesController < ApplicationController
 
   def index
     @episodes = keyword_search
-    @default_tags = params[:default_tags][:tag_ids]
-    @general_tags = params[:general_tags][:tag_ids]
-    @episodes = tag_search(@episodes, @default_tags)
-    @episodes = tag_search(@episodes, @general_tags)
+    episode_default_tags
+    episode_general_tags
   end
 
   def show
@@ -35,5 +33,19 @@ class EpisodesController < ApplicationController
       end
     end
     matching_episodes.uniq!
+  end
+
+  def episode_default_tags
+    if params.key? :default_tags
+      @default_tags = params[:default_tags][:tag_ids]
+      @episodes = tag_search(@episodes, @default_tags)
+    end
+  end
+
+  def episode_general_tags
+    if params.key? :general_tags
+      @general_tags = params[:general_tags][:tag_ids]
+      @episodes = tag_search(@episodes, @general_tags)
+    end
   end
 end
