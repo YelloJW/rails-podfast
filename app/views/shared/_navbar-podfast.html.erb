@@ -27,7 +27,7 @@
     </a>
   </div>
 </div> -->
-
+<!--
 <div class="navbar-podfast">
   <div class="col-xs-4 w-100 nav-home">
     <a href="#root" class="active">
@@ -43,6 +43,24 @@
     <a href="#contact">
       <i class="fas fa-list"></i>
     </a>
+  </div>
+</div> -->
+
+<div class="navbar-podfast">
+  <div class="col-xs-4 w-100 nav-home active">
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+  </div>
+  <div class="col-xs-4 w-100 nav-search">
+    <%= link_to search_path do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+  </div>
+  <div class="col-xs-4 w-100 nav-list">
+    <%= link_to root_path do %>
+      <i class="fas fa-list"></i>
+    <% end %>
   </div>
 </div>
 
