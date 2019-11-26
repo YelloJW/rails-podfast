@@ -3,7 +3,12 @@ class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show]
 
   def index
-    search
+    @episodes = keyword_search
+    raise
+    @default_tags = params[:default_tags][:tag_ids]
+    @general_tags = params[:general_tags][:tag_ids]
+    @episodes = default_tag_search(@episodes, @default_tags)
+    raise
   end
 
   def show
@@ -15,12 +20,24 @@ class EpisodesController < ApplicationController
     @episode = Episode.find(params[:id])
   end
 
-  def search
-    if params[:search][:query].present?
-      search_params = params[:search][:query]
-      @episodes = Episode.search_by_title_and_summary(search_params)
+  def keyword_search
+    if params[:keyword]
+      Episode.search_by_title_and_summary(params[:keyword])
     else
-      @episodes = Episode.all
+      Episode.all
     end
+  end
+
+  def default_tag_search(episodes, default_tags)
+    raise
+    matching_episodes = []
+    episodes.each do |episode|
+      episode.tags.each do |episode_tag|
+        matching_episodes << episode if default_tags.include? episode_tag.id
+      end
+    end
+  end
+
+  def general_tag_search
   end
 end
