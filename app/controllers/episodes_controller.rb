@@ -4,11 +4,9 @@ class EpisodesController < ApplicationController
 
   def index
     @episodes = keyword_search
-    raise
     @default_tags = params[:default_tags][:tag_ids]
     @general_tags = params[:general_tags][:tag_ids]
     @episodes = default_tag_search(@episodes, @default_tags)
-    raise
   end
 
   def show
@@ -29,13 +27,13 @@ class EpisodesController < ApplicationController
   end
 
   def default_tag_search(episodes, default_tags)
-    raise
     matching_episodes = []
     episodes.each do |episode|
       episode.tags.each do |episode_tag|
         matching_episodes << episode if default_tags.include? episode_tag.id
       end
     end
+    raise
   end
 
   def general_tag_search
