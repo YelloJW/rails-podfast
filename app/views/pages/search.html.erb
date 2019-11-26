@@ -1,31 +1,37 @@
 
 <div class="container">
-  <div class="form-group">
-    <label class="control-label check_boxes optional"><h2>Categories</h2></label>
-    <input type="hidden" name="post[tag_ids][]" value="">
-    <div class="tag-choices">
-      <% @default_tags.each do |tag| %>
-        <input type="checkbox" style="display:none" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
-        <label class="tag-choice" for="post_tag_ids_<%= tag.id %>">
-          <%= tag.tag %>
-        </label>
-      <% end %>
+  <form action="/episodes", method="get">
+    <div class="form-group">
+      <label><h2>Keyword</h2></label>
+      <div class="active-pink-3 active-pink-4 mb-4">
+        <input class="form-control" name="keyword" type="text" placeholder="Keyword">
+      </div>
+      <label class="control-label check_boxes optional"><h2>Categories</h2></label>
+      <div class="tag-choices">
+        <% @default_tags.each do |tag| %>
+          <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
+          <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
+            <%= tag.tag %>
+          </label>
+        <% end %>
+      </div>
+      <label class="control-label check_boxes optional"><h2>Tags</h2></label>
+       <div class="tag-choices">
+        <% @other_tags.each do |tag| %>
+          <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
+          <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
+            <%= tag.tag %>
+          </label>
+        <% end %>
+       </div>
     </div>
-    <label class="control-label check_boxes optional"><h2>Tags</h2></label>
-     <div class="tag-choices">
-      <% @other_tags.each do |tag| %>
-        <input type="checkbox" style="display:none" value="<%= tag.id %>" name="post[tag_ids][]" id="post_tag_ids_<%= tag.id %>">
-        <label class="tag-choice" for="post_tag_ids_<%= tag.id %>">
-          <%= tag.tag %>
-        </label>
-      <% end %>
-     </div>
+    <label for="customRange1"><h2>Duration</h2></label>
+    <input type="range" class="custom-range" id="customRange1">
+    <!-- add min and max labels and label to current position -->
+    <!-- make slider icon the padfast logo -->
+    <input type="submit" name="submit">
   </div>
-  <label for="customRange1"><h2>Duration</h2></label>
-  <input type="range" class="custom-range" id="customRange1">
-  <!-- add min and max labels and label to current position -->
-  <!-- make slider icon the padfast logo -->
-</div>
+</form>
 
 
 
