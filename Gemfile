@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search', '~> 2.3.0'
 gem 'faker'
+gem 'active_link_to'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

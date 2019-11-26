@@ -1,0 +1,35 @@
+.episode-card {
+  margin: 10px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: white;
+  img {
+    height: 150px;
+    width: 150px;
+  }
+  .card-details {
+    color: #4B4B4B;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    flex-direction: column;
+    letter-spacing: 1.25px;
+  }
+  .card-tags {
+    display: inline;
+    display: flex;
+    padding-top: 20px;
+    font-size: 0.75em;
+    letter-spacing: 1.25px;
+  }
+  &:hover a {
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-decoration: none;
+  }
+
+}
+
+
+
+
