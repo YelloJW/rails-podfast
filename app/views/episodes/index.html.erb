@@ -8,12 +8,15 @@
           <p><%= episode[:episode].summary.first(35) %>...</p>
           <div class="card-tags">
             <% episode[:episode].tags.each do |tag| %>
-              <% if tag.default == true %>
+            <!-- This if statement should not make the default tags bold if none were selected -->
+            <!-- If the tag is a default and if it was selected then... -->
+              <% if tag.default %>
                 <p><strong>#<%= tag.tag %></strong></p>
               <% else %>
                 <p>#<%= tag.tag %></p>
               <% end %>
             <% end %>
+
           </div>
         </div>
       </div>
