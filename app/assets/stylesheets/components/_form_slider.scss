@@ -6,7 +6,6 @@
 .multi-range {
    position: relative;
    height: 50px;
-
    input[type=range] {
       position: absolute;
 
@@ -29,7 +28,7 @@
 input[type=range] {
    box-sizing: border-box;
    appearance: none;
-   width: 400px;
+   width: 100%;
    margin: 0;
    padding: 0 2px;
    /* Add some L/R padding to ensure box shadow of handle is shown */

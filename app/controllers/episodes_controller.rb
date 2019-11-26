@@ -6,7 +6,6 @@ class EpisodesController < ApplicationController
     @episodes = keyword_search
     @episodes_ranked = @episodes.map {|episode| { episode: episode, default_tags: 0, general_tags: 0 } }
     rank_by_default_tags(@episodes_ranked)
-    @episodes_ranked = @episodes_ranked.select { |episode_hash| episode_hash[:default_tags].positive? }
     rank_by_general_tags(@episodes_ranked)
     @episodes_ranked.sort_by! do |episode_hash|
       [-episode_hash[:default_tags], -episode_hash[:general_tags]]
@@ -37,6 +36,7 @@ class EpisodesController < ApplicationController
       end
     end
     episodes_ranked
+    @episodes_ranked = @episodes_ranked.select { |episode_hash| episode_hash[:default_tags].positive? }
   end
 
   def set_general_tag_rank(episodes_ranked, tags)
@@ -46,6 +46,7 @@ class EpisodesController < ApplicationController
       end
     end
     episodes_ranked
+    @episodes_ranked = @episodes_ranked.select { |episode_hash| episode_hash[:default_tags].positive? }
   end
 
   def rank_by_default_tags(episodes_ranked)
