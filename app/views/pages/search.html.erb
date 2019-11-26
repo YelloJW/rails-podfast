@@ -25,15 +25,33 @@
         <% end %>
        </div>
     </div>
-    <label for="customRange1"><h2>Duration</h2></label>
-    <input type="range" class="custom-range" id="customRange1">
-    <!-- add min and max labels and label to current position -->
+    <label for="customRange1"><h2>Duration (<span id="lower-duration"></span>-<span id="upper-duration"></span>)</h2></label>
+    <div class="slidecontainer multi-range">
+    <input type="range" name="lower-duration" min="1" max="300" value="50" class="slider" id="lower-duration-slider">
+    <input type="range" name="upper-duration" min="1" max="300" value="100" class="slider" id="upper-duration-slider">
+    </div>
     <!-- make slider icon the padfast logo -->
     <input type="submit" name="submit">
   </div>
 </form>
 
 
+<script type="text/javascript">
+  var lowerSlider = document.getElementById("lower-duration-slider");
+  var upperSlider = document.getElementById("upper-duration-slider");
+  var lowerOutput = document.getElementById("lower-duration");
+  var upperOutput = document.getElementById("upper-duration");
+  lowerOutput.innerHTML = lowerSlider.value; // Display the default slider value
+  upperOutput.innerHTML = upperSlider.value; // Display the default slider value
 
+// Update the current slider value (each time you drag the slider handle)
+  lowerSlider.oninput = function() {
+  lowerOutput.innerHTML = this.value;
+}
+
+  upperSlider.oninput = function() {
+  upperOutput.innerHTML = this.value;
+}
+</script>
 
 
