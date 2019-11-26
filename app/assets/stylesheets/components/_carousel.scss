@@ -7,10 +7,13 @@ html, body, main {
 
 #carousel {
   position: relative;
-  height: 400px;
-  top: 50%;
+  height: 250px;
+  top: 18%;
   transform: translateY(-50%);
   overflow: hidden;
+  margin-bottom: 35px;
+
+
 }
 #carousel div {
   position: absolute;
@@ -18,7 +21,7 @@ html, body, main {
   opacity: 1;
 }
 #carousel div img {
-  width: 400px;
+  width: 250px;
   transition: width 1s;
 }
 #carousel div.hideLeft {
@@ -27,7 +30,7 @@ html, body, main {
   transform: translateY(50%) translateX(-50%);
 }
 #carousel div.hideLeft img {
-  width: 200px;
+  width: 125px;
 }
 #carousel div.hideRight {
   left: 100%;
@@ -35,7 +38,7 @@ html, body, main {
   transform: translateY(50%) translateX(-50%);
 }
 #carousel div.hideRight img {
-  width: 200px;
+  width: 125px;
 }
 #carousel div.prev {
   z-index: 5;
@@ -43,7 +46,7 @@ html, body, main {
   transform: translateY(50px) translateX(-50%);
 }
 #carousel div.prev img {
-  width: 300px;
+  width: 150px;
 }
 #carousel div.prevLeftSecond {
   z-index: 4;
@@ -52,7 +55,7 @@ html, body, main {
   opacity: 0.7;
 }
 #carousel div.prevLeftSecond img {
-  width: 200px;
+  width: 125px;
 }
 #carousel div.selected {
   z-index: 10;
@@ -65,7 +68,7 @@ html, body, main {
   transform: translateY(50px) translateX(-50%);
 }
 #carousel div.next img {
-  width: 300px;
+  width: 150px;
 }
 #carousel div.nextRightSecond {
   z-index: 4;
@@ -74,7 +77,7 @@ html, body, main {
   opacity: 0.7;
 }
 #carousel div.nextRightSecond img {
-  width: 200px;
+  width: 125px;
 }
 
 .buttons {

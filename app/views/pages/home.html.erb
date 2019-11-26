@@ -1,9 +1,15 @@
+  <div class="container mt-4">
+  <%= simple_form_for :search, method: :get, url: episodes_path do |f| %>
+    <%= f.input :query, label: false, placeholder: "Search"%>
+  <% end %>
+  </div>
+  <div class="text-center">
+    <h2>Most Popular</h2>
+  </div>
+  <%= render 'carousel' %>
 
+  <div class="text-center">
+    <h2>New Releases</h2>
+  </div>
+  <%= render 'carousel' %>
 
-<%= simple_form_for :search, method: :get, url: episodes_path do |f| %>
-  <%= f.input :query %>
-  <%= f.button :submit %>
-<% end %>
-
-
-<%= render 'carousel' %>
