@@ -1,7 +1,7 @@
+<ol>
 <% @episodes.each do |episode| %>
-  <%= link_to episode.title, episode_path(episode) %>
+  <li>
+    <%= link_to episode.title, episode_path(episode) %>
+  </li>
 <% end %>
-
-
-
-
+</ol>
