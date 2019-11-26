@@ -47,18 +47,18 @@
 </div> -->
 
 <div class="navbar-podfast">
-  <div class="col-xs-4 w-100 nav-home active">
-    <%= link_to root_path do %>
+  <div class="col-xs-4 w-100 nav-home">
+    <%= active_link_to root_path, active: :exact do %>
       <i class="fas fa-home"></i>
     <% end %>
   </div>
   <div class="col-xs-4 w-100 nav-search">
-    <%= link_to search_path do %>
+    <%= active_link_to search_path, active: :exact do %>
       <i class="fas fa-search"></i>
     <% end %>
   </div>
   <div class="col-xs-4 w-100 nav-list">
-    <%= link_to root_path do %>
+    <%= active_link_to "", active: :exact do %>
       <i class="fas fa-list"></i>
     <% end %>
   </div>
