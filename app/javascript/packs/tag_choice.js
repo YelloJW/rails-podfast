@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".category-choice").click(function(){
+  $(".tag-choice").click(function(){
     $(this).toggleClass("active");
   });
 });

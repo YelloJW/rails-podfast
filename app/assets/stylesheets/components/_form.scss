@@ -27,7 +27,7 @@
 }
 
 .tag-choice {
-  background: #b7b7b7;
+  background: #F49D37;
   padding: 20px;
   border-radius: 5px;
   opacity: .4;
@@ -35,10 +35,11 @@
   text-align: center;
   &:hover {
     opacity: 1;
+    color:white;
     cursor: pointer;
   }
   &.active {
-  background: red;
+  background: #F49D37;
   color: white;
   opacity: 1;
   }
