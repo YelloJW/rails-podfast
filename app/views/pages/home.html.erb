@@ -1,10 +1,17 @@
+  <div class="container mt-4">
+  <%= simple_form_for :search, method: :get, url: episodes_path do |f| %>
+    <%= f.input :query, label: false, placeholder: "Search"%>
+  <% end %>
+  </div>
+  <div class="text-center">
+    <h2>Most Popular</h2>
+  </div>
+  <%= render 'carousel' %>
+
+  <div class="text-center">
+    <h2>New Releases</h2>
+  </div>
+  <%= render 'carousel' %>
+
 <!-- Commented out until we work out how to implement Spotify / Podcasts API -->
 <!-- <h1><%= @artists %></h1> -->
-
-<%= simple_form_for :search, method: :get, url: episodes_path do |f| %>
-  <%= f.input :query %>
-  <%= f.button :submit %>
-<% end %>
-
-
-<%= render 'carousel' %>
