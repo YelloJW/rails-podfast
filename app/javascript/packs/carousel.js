@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 function moveToSelected(element) {
   if (element == "next") {
     var selected = $(".selected").next();
@@ -69,3 +71,4 @@ $("#next").click(function() {
   moveToSelected("next");
 });
 
+export default moveToSelected
