@@ -1,0 +1,42 @@
+.sort-options-container {
+  margin:10px;
+  padding: 5px;
+  display: flex;
+  border-radius: 5px;
+  background: white;
+  justify-content: space-between;
+  i {
+    padding: 0 5px;
+    color: orange;
+    margin: auto 0 ;
+}
+}
+
+.sort-options-container a:hover {
+  text-decoration:none;
+  color:white;
+}
+
+.sort-options {
+  text-align: center;
+  margin: 4px;
+  flex-grow: 1;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background: orange;
+  color: white;
+  opacity: 0.4;
+  padding: 5px;
+  text-decoration:none;
+  &:hover {
+    text-decoration:none;
+  }
+  &:active {
+    text-decoration:none;
+  }
+}
+
+.sort-active {
+  opacity: 1;
+}
+
