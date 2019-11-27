@@ -5,6 +5,8 @@ class EpisodesController < ApplicationController
   def index
     @episodes = keyword_search
     @episodes_ranked = @episodes.map {|episode| { episode: episode, default_tags: 0, general_tags: 0 } }
+    @default_tags = params.dig(:default_tags, :tag_ids)
+    @general_tags = params.dig(:general_tags, :tag_ids)
     rank_by_default_tags(@episodes_ranked)
     rank_by_general_tags(@episodes_ranked)
     @episodes_ranked.sort_by! do |episode_hash|
