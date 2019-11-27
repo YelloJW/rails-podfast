@@ -72,9 +72,9 @@ Episode.create(img_url: sport_img_url_array[9],title: "MNC: Should Wilder replac
 
 
 comedy_url_array = ["https://open.spotify.com/episode/6fiqYiBY0gs2VmhKoPbeiX",
-                    "https://open.spotify.com/episode/55V89fFqQJzhNvSvvIXcbe",
                     "https://open.spotify.com/episode/4BZV4jezGMsDkjlb94VAeX",
                     "https://open.spotify.com/episode/62UKlDDP2TlaievUl6PExq",
+                    "https://open.spotify.com/episode/55V89fFqQJzhNvSvvIXcbe",
                     "https://open.spotify.com/episode/6E9dSUqQ13coO346bRyzBF",
                     "https://open.spotify.com/episode/5VocP9MqePiTbOQSSbVD8g",
                     "https://open.spotify.com/episode/34tXl36dAWu129sOHeiT7V",
@@ -84,20 +84,20 @@ comedy_url_array = ["https://open.spotify.com/episode/6fiqYiBY0gs2VmhKoPbeiX",
                   ]
 
 comedy_img_url_array = ["https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fjoshuadudley%2Ffiles%2F2019%2F02%2FRonBurgundyLogo-FINAL-B-3000x3000-1200x1200.jpg",
-                        "https://upload.wikimedia.org/wikipedia/en/f/f8/My_Dad_Wrote_a_Porno_logo.jpg",
                         "https://cdn1.player.fm/images/746416/series/n8vkziT8DKVYLRe3/512.jpg",
                         "https://thumborcdn.acast.com/7kTakLlg7W4qF4AO3CpgLVjr7UA=/3000x3000/https://mediacdn.acast.com/assets/64d76190-b009-4f76-93df-9d980cbe281d/cover-image-k1rqhp83-off-menu-podcast-final-web.jpg",
+                        "https://upload.wikimedia.org/wikipedia/en/f/f8/My_Dad_Wrote_a_Porno_logo.jpg",
                         "https://i1.sndcdn.com/avatars-000578286531-oewsyb-t500x500.jpg",
                         "http://assets1.livebrum.com/images/glee-club/ewox/home/3-shots-of-tequila-podcast-1557771534.jpg",
                         "http://db.radioline.fr/pictures/podcast_9e23341b9a3cb5ffca548f25121228f3/logo200.jpg",
                         "https://i.scdn.co/image/500b3e4d1a692561c3ff240345bf18eef1763a56",
-                        "https://i.scdn.co/image/500b3e4d1a692561c3ff240345bf",
+                        "https://bloximages.newyork1.vip.townnews.com/insideradio.com/content/tncms/assets/v3/editorial/e/f1/ef1fe13c-57c2-11e9-b340-93aa9556a74c/5ca78768bae0d.image.jpg",
                         "https://allthingscomedy.com/images/_larger/DOLLOP_cover2.jpg",
                         ]
 Episode.create(img_url: comedy_img_url_array[0], title: "Poetry with Peter Dinklage", summary: "Ron and Carolina talk with Game of Thrones’ Peter Dinklage about his favorite poems.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[0])
 Episode.create(img_url: comedy_img_url_array[1], title: "EP.111 - NICKY WIRE", summary: "Adam talks with Nicky Wire, lyricist and bass player of The Manic Street Preachers.WARNING: This podcast contains brief references to and a description of self harm.Thanks to Séamus Murphy-Mitchell for production support and to Anneka Myson for additional editing.RELATED LINKSNICKY WIRE’S MOST MEMORABLE QUIPS (NME)MANIC STREET PREACHERS - MOTORCYCLE EMPTINESS (1992)MANIC STREET PREACHERS - THE MASSES AGAINST THE CLASSES (2000)MANIC STREET PREACHERS - TOP TRACKS ON SPOTIFYPOB SPITTING ON THE SCREENNEIL KINNOCK 1985 SPEECH (EDIT)'EVERYBODY IN THE PLACE' JEREMY DELLER RAVE DOCUMENTARY (2018)AN HOUR OR SO WITH SUE PERKINS PODCASTMAX AND IVAN - FUGITIVES", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[1])
 Episode.create(img_url: comedy_img_url_array[2], title: "Ep 39: Mike Skinner", summary: "There's a table booked for The Streets frontman Mike Skinner this week. Will he pick plenty of scrambled eggs and plenty of fried tomato? Let's ask Carl Jung…Recorded by Ben Williams and edited by Naomi Parnell for Plosive Productions.Artwork by Paul Gilbey (photography and design) and Amy Browne (illustrations).Mike Skinner has new music coming soon. Follow Mike on Twitter: @MikeSkinnerLtd.Follow Off Menu on Twitter and Instagram: @offmenuofficial.And go to our website www.offmenupodcast.co.uk for a list of restaurants recommended on the show.Ed Gamble is on tour, including a date at the Shepherd's Bush Empire. See his website for full details.James Acaster is on tour. See his website for full details.Watch Ed and James's YouTube series 'Just Puddings'. Watch here.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[2])
-Episode.create(img_url: comedy_img_url_array[3], title: "Ep 41. Batman lives next door", summary: "On the podcast this week Rosie introduces a new feature as well as still delivering on the weekly beefs! There are some wonderful stories about going commando and getting caught out, sending risque pics and there's a follow up explanation of the word 'bucking'. All of this and a celeb question from Professional Dancer Neil Jones.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[3])
+Episode.create(img_url: comedy_img_url_array[3], title: "S2E2 - 'Amsterdammmm'", summary: "Belinda makes her first trip to Europe to secure a lucrative deal with Peter Rouse. Before she meets him, she encounters some new, interesting characters with their own sexual agendas...", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[3])
 Episode.create(img_url: comedy_img_url_array[4], title: "Ep 40. Cheese table", summary: "It's episode 40 and Chris is off to Blackpool! As well as talking all things Strictly, Rosie and Chris discuss Sandra's latest stash and Rosie's recent trip to London. There are some brilliant stories and questions from the public, topics range from an unfortunate cheese incident to a trip to A&E on a third date. And of course there is a celeb question - this week it's from Strictly alumni Mike Bushell.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[4])
 Episode.create(img_url: comedy_img_url_array[5], title: "No Art Just Artists, Fake Quotes, Motivational Speakers, Everybody Flirts, VR - 171", summary: "The 3ShotsOfTequila Podcast - Episode 171 - Topics: No Art Just Artists, Fake Quotes, Motivational Speakers, Everybody Flirts, VR + MoreFOLLOW US ON INSTAGRAM TO KEEP UP-TO-DATE WITH ALL THINGS 3HOTS...Instagram: @3ShotsOfTequila_HOSTS:Marvin AbbeyTwitter: @MarvAbbey Instagram: @MarvinAbbeyEmail: MarvinAbbey@icloud.comKeith DubeTwitter: @MrExposedInstagram: @MrExpsdEmail: hello@keithdube.coTazer BlackTwitter: @TazerBlackInstagram: @TazerBlackEmail: TazerX@mail.comSPECIAL GUEST:Gracious KayWant us to read out your dilemma?Have a question for the team?Wanna get in touch with us?Email: 3ShotsOfTequila@mail.com", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[5])
 Episode.create(img_url: comedy_img_url_array[6], title: "The Now Show - Series 55 Episode 5", summary: "Download the best satirical comedy from Radio 4, every Friday.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[6])
