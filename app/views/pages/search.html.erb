@@ -23,10 +23,9 @@
   var upperSlider = document.getElementById("upper-duration-slider");
   var lowerOutput = document.getElementById("lower-duration");
   var upperOutput = document.getElementById("upper-duration");
-  lowerOutput.innerHTML = lowerSlider.value; // Display the default slider value
-  upperOutput.innerHTML = upperSlider.value; // Display the default slider value
+  lowerOutput.innerHTML = lowerSlider.value;
+  upperOutput.innerHTML = upperSlider.value;
 
-// Update the current slider value (each time you drag the slider handle)
   lowerSlider.oninput = function() {
   lowerOutput.innerHTML = this.value;
 }

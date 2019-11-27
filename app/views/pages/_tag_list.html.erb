@@ -1,5 +1,5 @@
 
-<label class="control-label check_boxes optional"><h4 class="tag-title">Categories</h4></label>
+<label class="control-label check_boxes optional"><h4 class="tag-title">Pick your categories...</h4></label>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
     <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Technology', 'Business'].include? tag.tag %>
@@ -11,7 +11,7 @@
   <% end %>
 </div>
 
-<label class="control-label check_boxes optional"><h4 class="tag-title">Tags</h4></label>
+<label class="control-label check_boxes optional"><h4 class="tag-title">Pick your tags...</h4></label>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
     <% if ['Funny', 'Inspiring', 'Clever', 'Scary', 'Motivating', 'Quirky'].include? tag.tag %>

@@ -19,7 +19,7 @@
          background: none;
 
          &::-webkit-slider-thumb::before {
-             background-color: grey;
+             background-color: white;
          }
       }
    }
@@ -33,10 +33,10 @@ input[type=range] {
    padding: 0 2px;
    /* Add some L/R padding to ensure box shadow of handle is shown */
    overflow: hidden;
-   border: 0;
+   border: 5px;
    border-radius: 1px;
    outline: none;
-   background: linear-gradient(orange, orange) no-repeat center;
+   background: linear-gradient(#F79B58, #F79B58) no-repeat center;
    /* Use a linear gradient to generate only the 2px height background */
    background-size: 100% 2px;
    pointer-events: none;
@@ -50,14 +50,14 @@ input[type=range] {
       height: 28px;
       width: 28px;
       border-radius: 28px;
-      background: url(headphones.png) grey;
+      background: url(headphones.png) white;
       position: relative;
       margin: 5px 0;
       /* Add some margin to ensure box shadow is shown */
       cursor: pointer;
       appearance: none;
       pointer-events: all;
-      box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 4px 0.5px orange;
       &::before {
             content: ' ';
             display: block;
@@ -67,5 +67,10 @@ input[type=range] {
             width: 2000px;
             height: 2px;
       }
+      &:active,
+      &:focus {
+      background:orange;
+      opacity: 0.7;
+   }
    }
 }
