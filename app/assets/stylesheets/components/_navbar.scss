@@ -1,16 +1,21 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
+  align-content: center;
   background: white;
-  position: fixed;
   width: 100%;
+  height: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon a {
+  color:  #F49D37;
+  text-decoration: none ;
+  border-radius: 3px;
+  line-height: none;
 }
 
 .navbar-podfast {
