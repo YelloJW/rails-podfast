@@ -72,9 +72,9 @@ Episode.create(listens: rand(1..2000), img_url: sport_img_url_array[9],title: "M
 
 
 comedy_url_array = ["https://open.spotify.com/episode/6fiqYiBY0gs2VmhKoPbeiX",
-                    "https://open.spotify.com/episode/55V89fFqQJzhNvSvvIXcbe",
                     "https://open.spotify.com/episode/4BZV4jezGMsDkjlb94VAeX",
                     "https://open.spotify.com/episode/62UKlDDP2TlaievUl6PExq",
+                    "https://open.spotify.com/episode/55V89fFqQJzhNvSvvIXcbe",
                     "https://open.spotify.com/episode/6E9dSUqQ13coO346bRyzBF",
                     "https://open.spotify.com/episode/5VocP9MqePiTbOQSSbVD8g",
                     "https://open.spotify.com/episode/34tXl36dAWu129sOHeiT7V",
@@ -84,16 +84,17 @@ comedy_url_array = ["https://open.spotify.com/episode/6fiqYiBY0gs2VmhKoPbeiX",
                   ]
 
 comedy_img_url_array = ["https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fjoshuadudley%2Ffiles%2F2019%2F02%2FRonBurgundyLogo-FINAL-B-3000x3000-1200x1200.jpg",
-                        "https://upload.wikimedia.org/wikipedia/en/f/f8/My_Dad_Wrote_a_Porno_logo.jpg",
                         "https://cdn1.player.fm/images/746416/series/n8vkziT8DKVYLRe3/512.jpg",
                         "https://thumborcdn.acast.com/7kTakLlg7W4qF4AO3CpgLVjr7UA=/3000x3000/https://mediacdn.acast.com/assets/64d76190-b009-4f76-93df-9d980cbe281d/cover-image-k1rqhp83-off-menu-podcast-final-web.jpg",
+                        "https://upload.wikimedia.org/wikipedia/en/f/f8/My_Dad_Wrote_a_Porno_logo.jpg",
                         "https://i1.sndcdn.com/avatars-000578286531-oewsyb-t500x500.jpg",
                         "http://assets1.livebrum.com/images/glee-club/ewox/home/3-shots-of-tequila-podcast-1557771534.jpg",
                         "http://db.radioline.fr/pictures/podcast_9e23341b9a3cb5ffca548f25121228f3/logo200.jpg",
                         "https://i.scdn.co/image/500b3e4d1a692561c3ff240345bf18eef1763a56",
-                        "https://i.scdn.co/image/500b3e4d1a692561c3ff240345bf",
+                        "https://bloximages.newyork1.vip.townnews.com/insideradio.com/content/tncms/assets/v3/editorial/e/f1/ef1fe13c-57c2-11e9-b340-93aa9556a74c/5ca78768bae0d.image.jpg",
                         "https://allthingscomedy.com/images/_larger/DOLLOP_cover2.jpg",
                         ]
+
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[0], title: "Poetry with Peter Dinklage", summary: "Ron and Carolina talk with Game of Thrones’ Peter Dinklage about his favorite poems.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[0])
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[1], title: "EP.111 - NICKY WIRE", summary: "Adam talks with Nicky Wire, lyricist and bass player of The Manic Street Preachers.WARNING: This podcast contains brief references to and a description of self harm.Thanks to Séamus Murphy-Mitchell for production support and to Anneka Myson for additional editing.RELATED LINKSNICKY WIRE’S MOST MEMORABLE QUIPS (NME)MANIC STREET PREACHERS - MOTORCYCLE EMPTINESS (1992)MANIC STREET PREACHERS - THE MASSES AGAINST THE CLASSES (2000)MANIC STREET PREACHERS - TOP TRACKS ON SPOTIFYPOB SPITTING ON THE SCREENNEIL KINNOCK 1985 SPEECH (EDIT)'EVERYBODY IN THE PLACE' JEREMY DELLER RAVE DOCUMENTARY (2018)AN HOUR OR SO WITH SUE PERKINS PODCASTMAX AND IVAN - FUGITIVES", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[1])
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[2], title: "Ep 39: Mike Skinner", summary: "There's a table booked for The Streets frontman Mike Skinner this week. Will he pick plenty of scrambled eggs and plenty of fried tomato? Let's ask Carl Jung…Recorded by Ben Williams and edited by Naomi Parnell for Plosive Productions.Artwork by Paul Gilbey (photography and design) and Amy Browne (illustrations).Mike Skinner has new music coming soon. Follow Mike on Twitter: @MikeSkinnerLtd.Follow Off Menu on Twitter and Instagram: @offmenuofficial.And go to our website www.offmenupodcast.co.uk for a list of restaurants recommended on the show.Ed Gamble is on tour, including a date at the Shepherd's Bush Empire. See his website for full details.James Acaster is on tour. See his website for full details.Watch Ed and James's YouTube series 'Just Puddings'. Watch here.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[2])
