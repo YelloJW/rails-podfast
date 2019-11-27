@@ -31,10 +31,14 @@
           <% end %>
         </div>
         <div class="icons-info">
-          <i class="far fa-thumbs-up"></i>
-          <p>101</p>
-          <i class="fas fa-headphones"></i>
-          <p>30</p>
+          <div class="icons-stats-info">
+            <i class="far fa-thumbs-up"></i>
+            <p><%= episode[:episode].upvotes %></p>
+          </div>
+          <div class="icons-stats-info">
+            <i class="fas fa-headphones"></i>
+            <p><%= episode[:episode].listens %></p>
+          </div>
         </div>
       </div>
     </div>
