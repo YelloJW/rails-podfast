@@ -1,7 +1,11 @@
-<%= @episode.title %>
-<%= render "shared/spotifywidget", episode: @episode %>
-<%= link_to @episode.url, target: "_blank" do %>
-  <p>Listen to me!</p>
-<% end %>
+<div container>
 
+  <%= render "shared/spotifywidget", episode: @episode %>
+<br>
+<br>
+  <div class="description-card">
+    <h2><b><%= @episode.title %></b></h2>
+    <p><%= @episode.summary %></p>
+  </div>
 
+</div>
