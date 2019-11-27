@@ -1,42 +1,45 @@
-.form-post {
-  background: white;
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 5px;
-  h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    color: #666666;
-    margin-bottom: 50px;
-    margin-top: 0px;
-  }
-  .btn {
-    width: 100%;
-    padding: 10px;
-    font-weight: bold;
-  }
-}
+// .form-post {
+//   background: white;
+//   margin-top: 50px;
+//   padding: 20px;
+//   border-radius: 5px;
+//   h1 {
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: 25px;
+//     color: #666666;
+//     margin-bottom: 50px;
+//     margin-top: 0px;
+//   }
+//   .btn {
+//     width: 100%;
+//     padding: 10px;
+//     font-weight: bold;
+//   }
+// }
 
 // Checkboxes design
 .tag-choices {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
+  text-align: center;
 }
 
 .tag-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: white;
-  padding: 20px;
-  letter-spacing: 1.5px;
+  height: 10vh;
+  letter-spacing: 1.2px;
   border-radius: 5px;
   opacity: 1;
-  flex: 0 0 30%;
-  text-align: center;
+  flex: 0 0 48%;
+  box-shadow: 0 0 1px rgba(0,0,0,0.1);
   &:hover {
     opacity: 1;
-    color:white;
+    color: $dark-gray;
     cursor: pointer;
   }
   &.active {
@@ -45,3 +48,16 @@
   opacity: 1;
   }
 }
+
+.remove-padding {
+  padding: 0px !important;
+}
+
+.tag-title {
+  font-weight: lighter;
+  font-size: 1em;
+  margin-left: 6px;
+  margin-top: 15px;
+  letter-spacing: 1.2px;
+}
+

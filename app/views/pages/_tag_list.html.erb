@@ -1,0 +1,25 @@
+
+<label class="control-label check_boxes optional"><h4 class="tag-title">Categories</h4></label>
+<div class="tag-choices">
+  <% @default_tags.each do |tag| %>
+    <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Technology', 'Business'].include? tag.tag %>
+      <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
+      <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
+        <%= tag.tag %>
+      </label>
+    <% end %>
+  <% end %>
+</div>
+
+<label class="control-label check_boxes optional"><h4 class="tag-title">Tags</h4></label>
+ <div class="tag-choices">
+  <% @other_tags.each do |tag| %>
+    <% if ['Funny', 'Inspiring', 'Clever', 'Scary', 'Motivating', 'Quirky'].include? tag.tag %>
+      <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
+      <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
+        <%= tag.tag %>
+      </label>
+    <% end %>
+  <% end %>
+ </div>
+

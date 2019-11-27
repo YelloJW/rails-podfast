@@ -1,59 +1,23 @@
 <div class="container">
   <form action="/episodes", method="get">
     <div class="form-group">
-
-      <div class="search_bar">
-        <i class="icon fa fa-search fa-2x search-icon"></i>
-        <input class="search-bar-bar" name="keyword" type="text" placeholder="Keyword">
+      <div class="row">
+        <div class="col-12">
+          <%= render 'shared/search_bar' %>
+          <%= render 'tag_list' %>
+          <%= render 'duration_slider' %>
+          <!-- make slider icon the padfast logo -->
+          <input type="submit" name="submit" class="btn-submit-form">
+        </div>
       </div>
-
-      <label class="control-label check_boxes optional"><h4>Categories</h4></label>
-      <div class="tag-choices">
-        <% @default_tags.each do |tag| %>
-          <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
-          <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
-            <%= tag.tag %>
-          </label>
-        <% end %>
-      </div>
-      <label class="control-label check_boxes optional"><h4>Tags</h4></label>
-       <div class="tag-choices">
-        <% @other_tags.each do |tag| %>
-          <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
-          <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
-            <%= tag.tag %>
-          </label>
-        <% end %>
-       </div>
-    </div>
-    <label for="customRange1"><h2>Duration (<span id="lower-duration"></span>-<span id="upper-duration"></span>)</h2></label>
-    <div class="slidecontainer multi-range">
-    <input type="range" name="lower-duration" min="1" max="300" value="50" class="slider" id="lower-duration-slider">
-    <input type="range" name="upper-duration" min="1" max="300" value="100" class="slider" id="upper-duration-slider">
-    </div>
-    <!-- make slider icon the padfast logo -->
-    <input type="submit" name="submit">
-  </form>
+    </form>
+  </div>
 </div>
 
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
-
-<br>
-
 <script type="text/javascript">
   var lowerSlider = document.getElementById("lower-duration-slider");
   var upperSlider = document.getElementById("upper-duration-slider");
