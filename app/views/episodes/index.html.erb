@@ -1,11 +1,11 @@
 <div class="container">
+  
   <!-- links to re-order search results -->
-  <div class="sort-options" >
-    <ul>
-      <li><a href="<%= request.fullpath + '&sort=relevant' %>">relevant</a></li>
-      <li><a href="<%= request.fullpath + '&sort=listens' %>">listens</a></li>
-      <li><a href="<%= request.fullpath + '&sort=upvotes' %>">upvotes</a></li>
-    </ul>
+  <div class="sort-options-container">
+     <i class="fas fa-sort-amount-up"></i>
+     <a class="sort-options <%= "sort-active" if !params[:sort] or params[:sort] == "relevant" %>" href="<%= request.fullpath + '&sort=relevant' %>">relevant</a>
+     <a class="sort-options <%= "sort-active" if params.dig(:sort) == "listens" %>" href="<%= request.fullpath + '&sort=listens' %>">listens</a>
+     <a class="sort-options <%= "sort-active" if params.dig(:sort) == "upvotes" %>" href="<%= request.fullpath + '&sort=upvotes' %>">upvotes</a>
   </div>
 
   <!-- logic for reordering search based on user selection -->
@@ -21,29 +21,7 @@
   <% end %>
 
   <!-- episodes list -->
-  <% @episodes_ranked.each do |episode| %>
-    <%= link_to episode_path(episode[:episode]) do %>
-      <div class="row episode-card">
-        <img src="<%= episode[:episode].img_url%>" style="object-fit: cover;">
-        <div class="card-details">
-          <h5><%= episode[:episode].title %></h5>
-          <p><%= episode[:episode].summary.first(35) %>...</p>
-          <div class="card-tags">
-            <% episode[:episode].tags.each do |tag| %>
-            <!-- This if statement should not make the default tags bold if none were selected -->
-            <!-- If the tag is a default and if it was selected then... -->
-              <% if tag.default %>
-                <p><strong>#<%= tag.tag %></strong></p>
-              <% else %>
-                <p>#<%= tag.tag %></p>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render 'episode_card' %>
+  
 </div>
-
-
 <%= render 'shared/navbar-podfast' %>

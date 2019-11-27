@@ -1,35 +1,100 @@
 .episode-card {
-  margin: 10px;
-  height: 150px;
+  height: 85px;
+  margin-top: 10px;
   border-radius: 10px;
+  display: flex;
+  box-shadow: 0 0 1px rgba(0,0,0,0.1);
   background-color: white;
   img {
-    height: 150px;
-    width: 150px;
+    height: 85px;
+    width: 85px;
+    padding: 0px;
   }
   .card-details {
-    color: #4B4B4B;
+    color: $dark-gray;
     display: flex;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 10px 10px 0px 10px;
     flex-direction: column;
-    letter-spacing: 1.25px;
+    letter-spacing: 1.15px;
+    text-align: justify;
   }
   .card-tags {
-    display: inline;
     display: flex;
-    padding-top: 20px;
     font-size: 0.75em;
     letter-spacing: 1.25px;
+    padding-left: 10px;
+    color: $dark-gray;
   }
-  &:hover a {
+  &:hover {
     transition: box-shadow 0.5s;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     text-decoration: none;
   }
+  h5 {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 0.5em;
+    padding-right: 2px;
+    margin-bottom: 0px;
+    letter-spacing: 0.5px;
+  }
 
 }
 
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:100%;
+}
 
+.card-tags {
+  margin-bottom: 5px;
+}
+
+.default_tags {
+  background-color: #F49D37;
+  color: white;
+  padding: 2px 4px 2px 4px;
+  border-radius: 2px;
+  opacity: 0.5;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.selected_tag {
+  opacity: 0.8;
+}
+
+.general_tags {
+  color: $dark-gray;
+  padding: 2px 2px 2px 0px;
+  margin-left: 3px;
+}
+
+.card-info-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons-info {
+  display: flex;
+  color: $dark-gray;
+  opacity: 0.3;
+  margin-right: 10px;
+  padding-bottom: 2px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  p {
+    font-size: 0.9em;
+    margin-top: 0px;
+  }
+  i {
+    margin-top: 2px;
+  }
+}
 
 
