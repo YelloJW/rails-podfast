@@ -5,3 +5,12 @@
 <% end %>
 
 
+<div class="vote_button">
+  <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
+    <button type="button" class="btn btn-primary" aria-label="left-align">
+      <span badge="" class="">Vote</span>
+    </button>
+  <% end %>
+</div>
+
+<%= @episode.votes_for.size %>
