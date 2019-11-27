@@ -36,7 +36,7 @@
     margin-bottom: 5px;
   }
   p {
-    font-size: 0.5em;
+    font-size: 0.7em;
     padding-right: 2px;
     margin-bottom: 0px;
     letter-spacing: 0.5px;
@@ -65,7 +65,7 @@
 }
 
 .selected_tag {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .general_tags {
@@ -78,12 +78,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2px;
 }
 
 .icons-info {
   display: flex;
   color: $dark-gray;
-  opacity: 0.3;
+  opacity: 0.4;
   margin-right: 10px;
   padding-bottom: 2px;
   font-size: 0.8em;
@@ -97,4 +98,7 @@
   }
 }
 
-
+.icons-stats-info {
+  margin: 5px;
+  display: flex;
+}
