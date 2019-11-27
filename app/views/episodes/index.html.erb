@@ -1,6 +1,27 @@
 <div class="container">
+  
+  <!-- links to re-order search results -->
+  <div class="sort-options-container">
+     <i class="fas fa-sort-amount-up"></i>
+     <a class="sort-options <%= "sort-active" if !params[:sort] or params[:sort] == "relevant" %>" href="<%= request.fullpath + '&sort=relevant' %>">relevant</a>
+     <a class="sort-options <%= "sort-active" if params.dig(:sort) == "listens" %>" href="<%= request.fullpath + '&sort=listens' %>">listens</a>
+     <a class="sort-options <%= "sort-active" if params.dig(:sort) == "upvotes" %>" href="<%= request.fullpath + '&sort=upvotes' %>">upotes</a>
+  </div>
+
+  <!-- logic for reordering search based on user selection -->
+  <% if params[:sort] %>
+  <% parameter = params[:sort] %>
+    <% @episodes_ranked.sort_by! do |episode_hash| %>
+      <% if parameter == "relevant" %>
+        <% [-episode_hash[:default_tags], -episode_hash[:general_tags]] %>
+      <% else %>
+        <% -episode_hash[:episode][parameter.to_sym] %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <!-- episodes list -->
   <%= render 'episode_card' %>
+  
 </div>
-
-
 <%= render 'shared/navbar-podfast' %>

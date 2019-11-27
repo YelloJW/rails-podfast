@@ -17,6 +17,18 @@ class EpisodesController < ApplicationController
   def show
   end
 
+  def upvote
+    @episode = Episode.find(params[:id])
+    @episode.upvote_from current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @episode = Episode.find(params[:id])
+    @episode.upvote_from current_user
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def set_episode
@@ -64,4 +76,5 @@ class EpisodesController < ApplicationController
       @episodes_ranked = set_general_tag_rank(episodes_ranked, @general_tags)
     end
   end
+
 end

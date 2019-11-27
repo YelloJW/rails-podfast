@@ -1,0 +1,27 @@
+.description-card {
+  overflow: hidden;
+  padding: 16px;
+  height: 193px;
+  background: white;
+  color: #F49D37;
+  border-radius: 9px;
+  align-items: center;
+  overflow: scroll;
+}
+
+
+.description-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding-right: 50px;
+}
+
+.description-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: #6A6A6A;
+}

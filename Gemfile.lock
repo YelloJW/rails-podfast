@@ -45,6 +45,7 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.12.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
@@ -203,6 +204,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  acts_as_votable
   autoprefixer-rails
   bootsnap
   devise
