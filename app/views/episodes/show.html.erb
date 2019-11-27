@@ -1,4 +1,5 @@
 <%= @episode.title %>
+<%= render "shared/spotifywidget", episode: @episode %>
 <%= link_to @episode.url, target: "_blank" do %>
   <p>Listen to me!</p>
 <% end %>

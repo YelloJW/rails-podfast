@@ -35,7 +35,7 @@ general_tags.length.times do
 end
 
 # Create episodes
-sport_url_array = ["https://open.spotify.com/episode/1fOkpcq4Nt6CRjPgZEne4A",
+sport_url_array = ["https://open.spotify.com/Nt6CRjPgZEne4Aepisode/1fOkpcq4",
                    "https://open.spotify.com/episode/79g7Vn8Gi9MABPTH1txISF",
                    "https://open.spotify.com/episode/2w2hEVEfIfqOJW40HnHDft",
                    "https://open.spotify.com/episode/2WJEDoMEdWUYnQGQcFwRAX",
