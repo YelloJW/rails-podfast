@@ -1,4 +1,26 @@
 <div class="container">
+  <!-- links to re-order search results -->
+  <div class="sort-options" >
+    <ul>
+      <li><a href="<%= request.fullpath + '&sort=relevant' %>">relevant</a></li>
+      <li><a href="<%= request.fullpath + '&sort=listens' %>">listens</a></li>
+      <li><a href="<%= request.fullpath + '&sort=upvotes' %>">upotes</a></li>
+    </ul>
+  </div>
+
+  <!-- logic for reordering search based on user selection -->
+  <% if params[:sort] %>
+  <% parameter = params[:sort] %>
+    <% @episodes_ranked.sort_by! do |episode_hash| %>
+      <% if parameter == "relevant" %>
+        <% [-episode_hash[:default_tags], -episode_hash[:general_tags]] %>
+      <% else %>
+        <% -episode_hash[:episode][parameter.to_sym] %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <!-- episodes list -->
   <% @episodes_ranked.each do |episode| %>
     <%= link_to episode_path(episode[:episode]) do %>
       <div class="row episode-card">
@@ -16,7 +38,6 @@
                 <p>#<%= tag.tag %></p>
               <% end %>
             <% end %>
-
           </div>
         </div>
       </div>
