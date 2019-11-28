@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_145513) do
+ActiveRecord::Schema.define(version: 2019_11_28_171040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "episode_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["episode_id"], name: "index_comments_on_episode_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "episode_tags", force: :cascade do |t|
     t.bigint "episode_id"
@@ -87,6 +98,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_145513) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "comments", "episodes"
   add_foreign_key "episode_tags", "episodes"
   add_foreign_key "episode_tags", "tags"
   add_foreign_key "playlist_episodes", "episodes"
