@@ -26,6 +26,19 @@
   text-align: center;
 }
 
+.primary-color {
+  color: #F49D37;
+  padding: 0 !important;
+  border: none !important;
+  &:hover {
+    color: #F49D37;
+  }
+}
+
+.like-form {
+  display: inline-block;
+}
+
 .tag-choice {
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 import "bootstrap";
 import moveToSelected from "./carousel";
+import 'sweetalert2/src/sweetalert2.scss';
 
 moveToSelected()
 
