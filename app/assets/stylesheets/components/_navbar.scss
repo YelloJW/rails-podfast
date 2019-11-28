@@ -11,6 +11,11 @@
   flex-grow: 0;
 }
 
+.submit-search-page {
+  position: fixed;
+  bottom: 0px;
+}
+
 .navbar-lewagon a {
   color:  #F49D37;
   text-decoration: none ;
@@ -93,4 +98,11 @@
   i {
     color: white;
   }
+}
+
+.nav-search-searpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

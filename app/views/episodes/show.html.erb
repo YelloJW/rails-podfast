@@ -1,29 +1,28 @@
 <div class="container">
 
   <%= render "shared/spotifywidget", episode: @episode %>
-<br>
-<br>
-  <div class="description-card">
 
-      <div class="d-flex justify-content-between">
-        <h2><b><%= @episode.title %></b></h2>
-
-        <% if user_signed_in? %>
-          <div class="show-button">
-            <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
-              <i class="far fa-thumbs-up"></i>
-              <%= @episode.votes_for.size %>
-            <% end %>
-            <i class="fas fa-headphones"></i>
-          </div>
-        <% else %>
+  <div class="icons_card">
+    <% if user_signed_in? %>
+        <div class="show-button">
+          <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
+            <i class="far fa-thumbs-up"><%= @episode.votes_for.size + @episode.upvotes %></i>
+          <% end %>
+            <i class="fas fa-headphones"><%= @episode.listens %></i>
+        </div>
+    <% else %>
         <div class="show-button">
           <i class="far fa-thumbs-up like"></i>
-          <%= @episode.votes_for.size %>
+            <%= @episode.votes_for.size + @episode.upvotes %>
           <i class="fas fa-headphones"></i>
+            <%= @episode.listens %>
         </div>
-        <% end %>
-      </div>
+    <% end %>
+  </div>
+
+  <div class="description-card">
+    <h2><b><%= @episode.title %></b></h2>
     <p><%= @episode.summary %></p>
   </div>
+
 </div>
