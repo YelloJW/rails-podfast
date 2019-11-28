@@ -2,6 +2,8 @@ class Episode < ApplicationRecord
   acts_as_votable
   has_many :episode_tags, dependent: :destroy
   has_many :tags, through: :episode_tags
+  has_many :playlist_episodes, dependent: :destroy
+  has_many :playlists, through: :playlist_episodes
   validates :title, presence: true, uniqueness: true
   validates :summary, presence: true
   validates :length, presence: true
