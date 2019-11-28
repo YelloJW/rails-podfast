@@ -10,11 +10,11 @@
         <% else %>
           <h5><%= episode[:episode].title.first(23) %>...</h5>
         <% end %>
-        <p><%= episode[:episode].summary.first(100) %>...</p>
+        <p><%= episode[:episode].summary.first(90) %>...</p>
       </div>
       <div class="card-info-bottom">
         <div class="card-tags">
-          <% episode[:episode].tags.uniq.each do |tag| %>
+          <% episode[:episode].tags.uniq.take(3).each do |tag| %>
         <!-- If the tag is default and it was selected -->
             <% if ( tag.default && ( @default_tags&.include? tag.id.to_s ) ) %>
               <p class="default_tags tags selected_tag"><strong><%= tag.tag %></strong></p>
