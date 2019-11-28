@@ -6,16 +6,16 @@
     <% if user_signed_in? %>
         <div class="show-button">
           <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
-            <i class="far fa-thumbs-up"><%= @episode.votes_for.size + @episode.upvotes %></i>
+            <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
           <% end %>
-            <i class="fas fa-headphones"><%= @episode.listens %></i>
+            <i class="fas fa-headphones"></i><%= @episode.listens %>
         </div>
     <% else %>
         <div class="show-button">
           <i class="far fa-thumbs-up like"></i>
-            <%= @episode.votes_for.size + @episode.upvotes %>
+          <%= @episode.votes_for.size + @episode.upvotes %>
           <i class="fas fa-headphones"></i>
-            <%= @episode.listens %>
+          <%= @episode.listens %>
         </div>
     <% end %>
   </div>
