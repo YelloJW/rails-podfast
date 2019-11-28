@@ -1,10 +1,16 @@
 
 <label class="control-label check_boxes optional"><h4 class="tag-title">Pick your categories...</h4></label>
+<div id="show-more-default-tags" class="float-right">...</div>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
-    <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Technology', 'Business'].include? tag.tag %>
+    <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle & Health', 'History'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
       <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
+        <%= tag.tag %>
+      </label>
+    <% else %>
+      <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
+      <label id="hideable-default" class="hidden tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
         <%= tag.tag %>
       </label>
     <% end %>
@@ -12,6 +18,7 @@
 </div>
 
 <label class="control-label check_boxes optional"><h4 class="tag-title">Pick your tags...</h4></label>
+ <div id="show-more-general-tags" class="float-right">...</div>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
     <% if ['Funny', 'Inspiring', 'Clever', 'Scary', 'Motivating', 'Quirky'].include? tag.tag %>
@@ -19,7 +26,31 @@
       <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
         <%= tag.tag %>
       </label>
+    <% else %>
+      <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
+      <label id="hideable-general" class="hidden tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
+        <%= tag.tag %>
+      </label>
     <% end %>
   <% end %>
  </div>
 
+<script>
+  const showMoreDefault = document.querySelector("#show-more-default-tags")
+  const hiddenDefaultBoxes = document.querySelectorAll("#hideable-default")
+  showMoreDefault.addEventListener("click", () => {
+    hiddenDefaultBoxes.forEach((e) => {
+      e.classList.toggle("hidden")
+    });
+  });
+</script>
+
+<script>
+   const showMoreGeneral = document.querySelector("#show-more-general-tags")
+  const hiddenGeneralBoxes = document.querySelectorAll("#hideable-general")
+   showMoreGeneral.addEventListener("click", () => {
+      hiddenGeneralBoxes.forEach((e) => {
+        e.classList.toggle("hidden")
+      });
+    });
+</script>

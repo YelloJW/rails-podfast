@@ -14,11 +14,26 @@ EpisodeTag.destroy_all
 # create default tags for non sport and comedy seeds
 puts 'creating array of default tags'
 default_tags = ['Sport', 'Comedy','Science', 'Politics', 'Lifestyle & Health', 'History', 'Business', 'Technology', 'Society & Culture', 'News', 'Education', 'True Crime', 'Arts & Entertainment', 'Music', 'Kids' ]
-
+default_tag_img = ["https://png.pngtree.com/element_pic/00/16/08/2057b74ff0ceec8.jpg",
+                   "https://cdn2.vectorstock.com/i/1000x1000/48/81/comedy-concept-word-art-vector-21504881.jpg",
+                   "https://cdn4.vectorstock.com/i/1000x1000/99/83/word-design-for-science-vector-19019983.jpg",
+                   "https://insidewestminster.co.uk/wp-content/uploads/2017/11/f87de1210cfa5bd7ca3b1fd2648f6e73.png",
+                   "https://static.vecteezy.com/system/resources/previews/000/288/471/non_2x/healthy-lifestyle-vector-illustration.jpg",
+                   "https://logos.flamingtext.com/Word-Logos/history-design-sketch-name.png",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                   "",
+                  ]
 puts 'creating default tags'
 index = 0
 default_tags.length.times do
-  Tag.create(tag: default_tags[index], default: true)
+  Tag.create(tag_img: default_tag_img[index], tag: default_tags[index], default: true)
   index += 1
 end
 
