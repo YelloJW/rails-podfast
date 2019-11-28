@@ -22,7 +22,7 @@
             <% elsif (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
               <p class="general_tags tags ">#<strong><%= tag.tag %></strong></p>
         <!-- If the tag is a default and not selected -->
-            <% elsif @default_tags.nil? || tag.default %>
+            <% elsif tag.default %>
               <p class="default_tags tags"><%= tag.tag %></p>
         <!-- If the tag is general and not selected -->
             <% else %>
