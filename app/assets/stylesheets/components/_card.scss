@@ -13,7 +13,9 @@
   .card-details {
     color: $dark-gray;
     display: flex;
-    padding: 10px 10px 0px 10px;
+    max-height: 61px;
+    max-width: 296px;
+    padding: 7px 10px 0px 10px;
     flex-direction: column;
     letter-spacing: 1.15px;
     text-align: justify;
@@ -40,6 +42,7 @@
     padding-right: 2px;
     margin-bottom: 0px;
     letter-spacing: 0.5px;
+    overflow: hidden;
   }
 
 }
@@ -58,6 +61,7 @@
 .default_tags {
   background-color: #F49D37;
   color: white;
+  margin-right: 4px;
   padding: 2px 4px 2px 4px;
   border-radius: 2px;
   opacity: 0.5;
@@ -72,6 +76,7 @@
   color: $dark-gray;
   padding: 2px 2px 2px 0px;
   margin-left: 3px;
+  font-size: 0.7em;
 }
 
 .card-info-bottom {
