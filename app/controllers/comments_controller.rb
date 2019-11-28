@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to episode_path(@episode)
     else
-      flash.now[:notice] = "Invalid comment... Please try again."
+      flash[:notice]="Invalid comment... Please try again."
       redirect_to episode_path(@episode)
     end
   end
@@ -26,7 +26,12 @@ class CommentsController < ApplicationController
   end
 
   def update
-    raise
+    @episode = @comment.episode_id
+    if @comment.update(comment_params)
+      redirect_to episode_path(@episode)
+    else
+      render :edit
+    end
   end
 
   def destroy

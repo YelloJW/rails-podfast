@@ -30,21 +30,29 @@
   </div>
 
   <div class="description-card mt-1">
-    <h2><b>Comments</b></h2>
-    <p id="show-comment-form" class="">Add comment</p>
+    <div class="comment-title-and-icons">
+      <h2><b>Comments</b></h2>
+      <small><i id="show-comment-form" class="new-comment comment-icons fas fa-plus"></i></small>
+    </div>
     <div id="comment-form" class="hidden">
       <%= render 'new_comment', {episode:@episode, comment: Comment.new()} %>
     </div>
     <% @episode.comments.each do |comment| %>
       <hr>
-      <div>
-        <% if comment.user == current_user  %>
-        <p><%= link_to 'delete', comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} %><p>
-        <p><%= link_to 'edit', edit_comment_path(comment) %></p>
-        <% end %>
+      <div class="comment-title-and-icons">
         <p><strong><%= comment.title.capitalize %></strong></p>
-        <p><%= comment.content.capitalize %></p>
+        <div>
+          <% if comment.user == current_user  %>
+            <%= link_to comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} do %>
+              <small><i class="comment-icons far fa-trash-alt"></i></small>
+            <% end %>
+            <%= link_to edit_comment_path(comment) do %>
+              <small><i class="comment-icons fas fa-edit"></i></small>
+            <% end %>
+          <% end %>
+        </div>
       </div>
+      <p><%= comment.content.capitalize %></p>
     <% end %>
   </div>
 </div>
