@@ -10,7 +10,7 @@
         <% else %>
           <h5><%= episode[:episode].title.first(23) %>...</h5>
         <% end %>
-        <p><%= episode[:episode].summary.first(70) %>...</p>
+        <p><%= episode[:episode].summary.first(100) %>...</p>
       </div>
       <div class="card-info-bottom">
         <div class="card-tags">
@@ -22,7 +22,7 @@
             <% elsif (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
               <p class="general_tags tags ">#<strong><%= tag.tag %></strong></p>
         <!-- If the tag is a default and not selected -->
-            <% elsif @default_tags.nil? && tag.default %>
+            <% elsif @default_tags.nil? || tag.default %>
               <p class="default_tags tags"><%= tag.tag %></p>
         <!-- If the tag is general and not selected -->
             <% else %>
