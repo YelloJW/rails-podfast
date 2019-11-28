@@ -1,18 +1,23 @@
-  <div class="container mt-4">
+<div class="container">
   <div class="search_bar">
     <i class="icon fa fa-search fa-2x search-icon"></i>
     <input class="search-bar-bar" name="keyword" type="text" placeholder="Keyword">
   </div>
-  </div>
-  <div class="text-center">
-    <h2>Most Popular</h2>
-  </div>
-  <%= render 'carousel' %>
 
-  <div class="text-center">
-    <h2>New Releases</h2>
-  </div>
-  <%= render 'new_releases_carousel' %>
+  <div class="carousel-container">
 
+    <div class="top-carousel">
+      <h3 class="home-page-title">Recently played</h3>
+      <%= render 'carousel' %>
+    </div>
+
+    <div class="bottom-carousel">
+      <h3 class="home-page-title">New Releases</h3>
+      <%= render 'new_releases_carousel' %>
+    </div>
+
+  </div>
+
+</div>
 <!-- Commented out until we work out how to implement Spotify / Podcasts API -->
 <!-- <h1><%= @artists %></h1> -->
