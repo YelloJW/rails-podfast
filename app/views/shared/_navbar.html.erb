@@ -11,11 +11,12 @@
         <i class="fas fa-stream" style="color: #F49D37;"id="navbarDropdown" data-toggle="dropdown" ></i>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
-            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Playlists</a>
+            <a class="dropdown-item" href="#">Settings</a>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% else %>
             <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Settings</a>
           <% end %>
         </div>
 
