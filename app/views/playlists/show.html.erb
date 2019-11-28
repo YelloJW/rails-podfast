@@ -1,2 +1,7 @@
-<h1>Playlists#show</h1>
-<p>Find me in app/views/playlists/show.html.erb</p>
+<div class="container pt-5">
+  <% @playlist.episodes.each do |episode|  %>
+    <%= link_to episode_path(episode), class: "playlist-episode-card" do   %>
+      <%= episode.title  %>
+    <% end %>
+  <% end %>
+</div>

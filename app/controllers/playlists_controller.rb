@@ -1,8 +1,9 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlast, only: [:show]
+  before_action :set_playlist, only: [:show]
 
   def index
     @playlists = Playlist.all
+    @playlist = Playlist.new
   end
 
   def show
@@ -12,6 +13,10 @@ class PlaylistsController < ApplicationController
   end
 
   def create
+    @playlist = Playlist.new(playlist_params)
+    @playlist.user = current_user
+    @playlist.save
+    redirect_to playlists_path
   end
 
   def edit
@@ -30,6 +35,6 @@ class PlaylistsController < ApplicationController
   end
 
   def playlist_params
-    params.require(:playlist).permit(:name)
+    params.require(:playlist).permit(:name, :user_id)
   end
 end
