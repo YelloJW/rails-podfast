@@ -1,6 +1,6 @@
 
 <label class="control-label check_boxes optional"><h4 class="tag-title">Pick your categories...</h4></label>
-<div id="show-more-default-tags" class="float-right">...</div>
+<i id="show-more-default-tags" class="float-right fas fa-ellipsis-h"></i>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
     <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle & Health', 'History'].include? tag.tag %>
@@ -18,7 +18,7 @@
 </div>
 
 <label class="control-label check_boxes optional"><h4 class="tag-title">Pick your tags...</h4></label>
- <div id="show-more-general-tags" class="float-right">...</div>
+ <i id="show-more-general-tags" class="float-right fas fa-ellipsis-h"></i>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
     <% if ['Funny', 'Inspiring', 'Clever', 'Scary', 'Motivating', 'Quirky'].include? tag.tag %>
