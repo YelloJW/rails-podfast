@@ -27,4 +27,30 @@
     <p><%= @episode.summary %></p>
   </div>
 
+  <div class="description-card mt-1">
+    <h2><b>Comments</b></h2>
+    <p id="show-comment-form" class="">Add comment</p>
+    <div id="comment-form" class="hidden">
+      <%= render 'new_comment', {episode:@episode, comment: Comment.new()} %>
+    </div>
+    <% @episode.comments.each do |comment| %>
+      <hr>
+      <div>
+        <% if comment.user == current_user  %>
+        <p><%= link_to 'delete', comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} %><p>
+        <p><%= link_to 'edit', edit_comment_path(comment) %></p>
+        <% end %>
+        <p><strong><%= comment.title.capitalize %></strong></p>
+        <p><%= comment.content.capitalize %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<script>
+  const showCommentForm = document.querySelector("#show-comment-form")
+  const commentForm = document.querySelector("#comment-form")
+  showCommentForm.addEventListener("click", () => {
+      commentForm.classList.toggle("hidden")
+    });
+</script>
