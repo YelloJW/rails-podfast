@@ -3,7 +3,7 @@
 <i id="show-more-default-tags" class="float-right fas fa-ellipsis-h"></i>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
-    <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle & Health', 'History'].include? tag.tag %>
+    <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle', 'History'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
       <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
         <%= tag.tag %>
