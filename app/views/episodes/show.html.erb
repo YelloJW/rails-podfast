@@ -4,6 +4,7 @@
 
   <div class="icons_card">
     <% if user_signed_in? %>
+        <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
         <div class="show-button">
           <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
             <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
@@ -11,6 +12,7 @@
             <i class="fas fa-headphones"></i><%= @episode.listens %>
         </div>
     <% else %>
+        <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
         <div class="show-button">
           <i class="far fa-thumbs-up like"></i>
           <%= @episode.votes_for.size + @episode.upvotes %>
