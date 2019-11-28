@@ -10,6 +10,8 @@ require 'faker'
 Episode.destroy_all
 Tag.destroy_all
 EpisodeTag.destroy_all
+Playlist.destroy_all
+PlaylistEpisode.destroy_all
 
 # create default tags for non sport and comedy seeds
 puts 'creating array of default tags'
@@ -173,7 +175,26 @@ Episode.last(10).each do |episode|
   end
 end
 
+
+puts 'creating playlist seeds'
+
+Playlist.create(name: "bathtime fun", user_id: 1)
+Playlist.create(name: "commute", user_id: 1)
+Playlist.create(name: "current affairs", user_id: 1)
+Playlist.create(name: "funnies", user_id: 1)
+Playlist.create(name: "insomnia", user_id: 1)
+
+
+puts 'create playlist episodes'
+
+Playlist.first(5).each do |playlist|
+  Episode.all.sample(rand(10..20)).each do |episode|
+    PlaylistEpisode.create!(playlist: playlist, episode: episode)
+  end
+end
+
 puts 'finished'
+
 
 # Commented out until we work out how to implement Spotify / Podcasts API
 # require 'rspotify'

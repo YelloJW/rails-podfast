@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_115544) do
+ActiveRecord::Schema.define(version: 2019_11_28_145513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2019_11_28_115544) do
     t.string "url"
     t.string "img_url"
     t.integer "listens"
+  end
+
+  create_table "playlist_episodes", force: :cascade do |t|
+    t.bigint "episode_id"
+    t.bigint "playlist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["episode_id"], name: "index_playlist_episodes_on_episode_id"
+    t.index ["playlist_id"], name: "index_playlist_episodes_on_playlist_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -72,4 +89,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_115544) do
 
   add_foreign_key "episode_tags", "episodes"
   add_foreign_key "episode_tags", "tags"
+  add_foreign_key "playlist_episodes", "episodes"
+  add_foreign_key "playlist_episodes", "playlists"
+  add_foreign_key "playlists", "users"
 end
