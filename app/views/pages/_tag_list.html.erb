@@ -1,5 +1,5 @@
 
-<label class="control-label check_boxes optional"><h4 class="tag-title">Pick your categories...</h4></label>
+<label class="control-label check_boxes optional"><h4 id="categories-title" class="tag-title">Top categories</h4></label>
 <i id="show-more-default-tags" class="float-right fas fa-ellipsis-h"></i>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
@@ -17,7 +17,7 @@
   <% end %>
 </div>
 
-<label class="control-label check_boxes optional"><h4 class="tag-title">Pick your tags...</h4></label>
+<label class="control-label check_boxes optional"><h4 id="mood-title" class="tag-title">Popular moods</h4></label>
  <i id="show-more-general-tags" class="float-right fas fa-ellipsis-h"></i>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
@@ -36,9 +36,15 @@
  </div>
 
 <script>
+  const categoriesTitle = document.querySelector("#categories-title")
   const showMoreDefault = document.querySelector("#show-more-default-tags")
   const hiddenDefaultBoxes = document.querySelectorAll("#hideable-default")
   showMoreDefault.addEventListener("click", () => {
+     if (categoriesTitle.innerText === "Top categories") {
+      categoriesTitle.innerText = 'All categories'
+     } else {
+      categoriesTitle.innerText = 'Top categories'
+     }
     hiddenDefaultBoxes.forEach((e) => {
       e.classList.toggle("hidden")
     });
@@ -46,9 +52,15 @@
 </script>
 
 <script>
-   const showMoreGeneral = document.querySelector("#show-more-general-tags")
+  const moodTitle = document.querySelector("#mood-title")
+  const showMoreGeneral = document.querySelector("#show-more-general-tags")
   const hiddenGeneralBoxes = document.querySelectorAll("#hideable-general")
    showMoreGeneral.addEventListener("click", () => {
+      if (moodTitle.innerText === "Popular moods") {
+      moodTitle.innerText = 'All moods'
+     } else {
+      moodTitle.innerText = 'Popular moods'
+     }
       hiddenGeneralBoxes.forEach((e) => {
         e.classList.toggle("hidden")
       });
