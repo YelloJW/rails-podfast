@@ -3,8 +3,8 @@
     <div class="modal-content">
       <div class="container">
         <%= simple_form_for @playlist, url: user_playlists_path(current_user), method: :post do |f| %>
-          <%= f.text_field :name %>
-          <%= f.submit %>
+          <%= f.text_field :name, class: "create-new-playlist-form" %>
+          <%= f.button :submit, "Add", class: "button-podfast-custom" %>
         <% end %>
       </div>
     </div>
