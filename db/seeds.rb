@@ -3,6 +3,7 @@
 # #
 require 'faker'
 # Destroy all seeds
+User.destroy_all
 Episode.destroy_all
 Tag.destroy_all
 EpisodeTag.destroy_all
@@ -187,6 +188,32 @@ Playlist.first(5).each do |playlist|
   Episode.all.sample(rand(10..20)).each do |episode|
     PlaylistEpisode.create!(playlist: playlist, episode: episode)
   end
+end
+
+puts 'create user seeds'
+
+
+user = User.create!(username:"Podfast", email:"podfast@podfast.com", password:'123456', password_confirmation:'123456')
+
+usernames = ["The Law Maker",
+             "Kelly Not Clarkson",
+             "The Only Way is Freddie",
+             "The Muscle",
+             "Pokemaster",
+             "Master Backend-er",
+            ]
+
+profile_img_url = ["https://avatars2.githubusercontent.com/u/55364154?v=4",
+             "https://avatars1.githubusercontent.com/u/49228294?v=4",
+             "https://avatars3.githubusercontent.com/u/37777543?v=4",
+             "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/fmtocdvrjoo78fd97oia.jpg",
+             "https://avatars1.githubusercontent.com/u/54071094?v=4",
+             "https://avatars1.githubusercontent.com/u/36269225?v=4",
+            ]
+index=0
+6.times do
+user = User.create!(profile_img: profile_img_url[index], username:"#{usernames[index]} - 319", email:"test#{index}@gmail.com", password:'123456', password_confirmation:'123456')
+index += 1
 end
 
 puts 'finished'

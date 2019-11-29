@@ -1,0 +1,55 @@
+<div class="container">
+  <h4 class="tag-title">Following</h4>
+  <% current_user.follows_by_type('User').each do |follow| %>
+    <% user = User.find(follow.followable_id)  %>
+    <div class="user-list">
+      <div class="user-card d-flex">
+        <div class="user-profile">
+          <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
+        </div>
+        <p><%= user.username %></p>
+      </div>
+      <%= link_to "/follows/#{user.id}", method: :delete do  %>
+        <small><i id="<%= user.id %>" class="un-follow follow-icon fas fa-minus"></i></small>
+      <% end %>
+    </div>
+  <% end %>
+
+  <br>
+
+  <h4 class="tag-title">Search for a user...</h4>
+  <div>
+    <form action="<% users_path %>" method="get">
+    <input class="user-search search-bar-bar" name="username" type="text" placeholder="Username">
+    <input type="submit" style="display:none" name="submit" class="button-podfast">
+    </form>
+  </div>
+
+  <% if @users %>
+    <ul class="unordered-user-list">
+      <% @users.each do |user| %>
+        <% if user != current_user && !current_user.following?(user) %>
+          <li>
+            <div class="user-list">
+              <div class="user-card d-flex">
+                <div class="user-profile">
+                  <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
+                </div>
+                <%= user.username  %>
+              </div>
+              <%= link_to "/follows/#{user.id}" do  %>
+                <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+
+
+
+
+
