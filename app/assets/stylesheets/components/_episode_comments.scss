@@ -1,0 +1,17 @@
+.comment-title-and-icons {
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.comment-icons {
+  color: #C2C2C0;
+  &:hover {
+    color: $dark-gray;
+  }
+}
+
+

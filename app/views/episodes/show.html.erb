@@ -3,19 +3,21 @@
   <%= render "shared/spotifywidget", episode: @episode %>
 
   <div class="icons_card">
+    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
     <% if user_signed_in? %>
-        <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
-        <div class="show-button">
-          <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
+        <div class="show-button d-flex align-items-center justify-content-between">
+          <%= link_to like_episode_path(@episode), class: "like mr-2", method: :put do %>
             <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
           <% end %>
-            <i class="fas fa-headphones"></i><%= @episode.listens %>
+          <i class="fas fa-headphones"></i><%= @episode.listens %>
         </div>
     <% else %>
-        <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
-        <div class="show-button">
-          <i class="far fa-thumbs-up like"></i>
-          <%= @episode.votes_for.size + @episode.upvotes %>
+        <div class="show-button d-flex align-items-center justify-content-between">
+          <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'like-form' } do |f| %>
+            <%= f.button :button, type: :submit, class:'primary-color' do %>
+              <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
+            <% end %>
+          <% end %>
           <i class="fas fa-headphones"></i>
           <%= @episode.listens %>
         </div>
@@ -27,4 +29,44 @@
     <p><%= @episode.summary %></p>
   </div>
 
+  <div class="description-card mt-1">
+    <div class="comment-title-and-icons">
+      <h2><b>Comments</b></h2>
+      <small><i id="show-comment-form" class="new-comment comment-icons fas fa-plus"></i></small>
+    </div>
+    <div id="comment-form" class="hidden">
+      <%= render 'new_comment', {episode:@episode, comment: Comment.new()} %>
+    </div>
+    <% @episode.comments.each do |comment| %>
+      <hr>
+      <div class="comment-title-and-icons">
+        <p><strong><%= comment.title.capitalize %></strong></p>
+        <div>
+          <% if comment.user == current_user  %>
+            <%= link_to comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} do %>
+              <small><i class="comment-icons far fa-trash-alt"></i></small>
+            <% end %>
+            <%= link_to edit_comment_path(comment) do %>
+              <small><i class="comment-icons fas fa-edit"></i></small>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <p><%= comment.content.capitalize %></p>
+    <% end %>
+  </div>
 </div>
+
+
+<script>
+  const showCommentForm = document.querySelector("#show-comment-form")
+  const commentForm = document.querySelector("#comment-form")
+  showCommentForm.addEventListener("click", () => {
+      commentForm.classList.toggle("hidden")
+    });
+</script>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'sweetalert2' %>
+<% end %>
+
