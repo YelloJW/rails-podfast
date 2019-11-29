@@ -17,3 +17,21 @@ if (form) {
     })
   });
 }
+
+const button = document.getElementById('playlist-form');
+if (button) {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: '',
+      text: 'Please login to continue',
+      icon: 'warning',
+      confirmButtonText: 'Login',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        event.target.closest('form').submit();
+      }
+    })
+  });
+}
