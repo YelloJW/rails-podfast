@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :playlists, except: [:new, :create]
+
   resources :users do
-    resources :playlists
+    resources :playlists, only: [:new, :create]
   end
 
   resources :episodes, only: [:index, :show] do

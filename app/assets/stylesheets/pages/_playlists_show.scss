@@ -1,0 +1,17 @@
+.playlist-episode-card {
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  margin: 3px;
+  color: $dark-gray;
+  &:hover {
+    text-decoration: none;
+    color: $dark-gray;
+  }
+}
+
+.playlist-title {
+  display: flex;
+  margin-right: 4px;
+  justify-content: space-between;
+}
