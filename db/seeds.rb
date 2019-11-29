@@ -1,12 +1,9 @@
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 # #
-# # Examples:
-# #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 # Destroy all seeds
+User.destroy_all
 Episode.destroy_all
 Tag.destroy_all
 EpisodeTag.destroy_all
@@ -130,21 +127,21 @@ Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[9], title: 
 
 # creating other seeds
 
-comedy_sports_url = "https://open.spotify.com/show/6fWJz3skcLnWCjYJlY3e7G?si=uLiccScZQVqdZOuxQRGUiw"
+comedy_sports_url = "https://open.spotify.com/episode/0yC2A4U5VQy2GuGDiQi1UV"
 comedy_sports_img_url = "data:image/jpeg;base64,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"
-comedy_sport_episode = Episode.new(listens: rand(1..2000), img_url: comedy_sports_img_url, title: "Fantasy Football Hangover", summary:  "A check in on our bands & celebs FPL league, regular special guests from the world of music, toddlers choosing captains, beer of the week, classic football tales unravelled, FPL tips from the experts, quizzes, nonsense and more", url: comedy_sports_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_sport_episode = Episode.new(listens: rand(1..2000), img_url: comedy_sports_img_url, title: "13: Quickly Kevin; will Glenn Murray Score? featuring Chris Scull", summary:  "A check in on our bands & celebs FPL league, regular special guests from the world of music, toddlers choosing captains, beer of the week, classic football tales unravelled, FPL tips from the experts, quizzes, nonsense and more", url: comedy_sports_url, length: rand(1..180), upvotes: rand(1..1000))
 comedy_sport_episode.tags << Tag.where(tag: "Sport") << Tag.where(tag: "Comedy")
 comedy_sport_episode.save
 
-comedy_lifestyle_url = "https://open.spotify.com/show/3GMZiZnqL4Hib6DD5PGhdj"
+comedy_lifestyle_url = "https://open.spotify.com/episode/4Wvfck8x5WiOOKrlKixzAa"
 comedy_lifestyle_img_url = "https://i1.sndcdn.com/avatars-000524590953-vcvore-t500x500.jpg"
-comedy_sport_episode = Episode.new(listens: rand(1..2000), img_url: comedy_lifestyle_img_url, title: "The Receipts Podcast", summary:  "The Receipts Podcast is a fun, honest podcast fronted by three girls who are willing to talk about anything and everything. From relationships to situationships to everyday life experiences, you can expect unadulterated girl talk with no filter.", url: comedy_lifestyle_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_sport_episode = Episode.new(listens: rand(1..2000), img_url: comedy_lifestyle_img_url, title: "Your Receipts: I'm married, but I'm fantasising about another man", summary:  "The Receipts Podcast is a fun, honest podcast fronted by three girls who are willing to talk about anything and everything. From relationships to situationships to everyday life experiences, you can expect unadulterated girl talk with no filter.", url: comedy_lifestyle_url, length: rand(1..180), upvotes: rand(1..1000))
 comedy_sport_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Lifestyle")
 comedy_sport_episode.save
 
-comedy_news_url = "https://open.spotify.com/show/3qZCpCCmbKs7wutKAWJRMv"
+comedy_news_url = "https://open.spotify.com/episode/06dIg8hQ1xNLpr7v6jmGl9"
 comedy_news_img_url = "https://i1.sndcdn.com/avatars-000222604011-mdg3ab-t500x500.jpg"
-comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "3 Shots of Tequilla", summary: "The 3 Shots Of Tequila Podcast is a fun and light heartedpodcast about any and everything, underneath the sun. From sex and relationships to religion and current affairs.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "NYC Stories, New Tesla, Tazer Does It Again, 20 Mill Cheek Challenge - 172", summary: "The 3 Shots Of Tequila Podcast is a fun and light heartedpodcast about any and everything, underneath the sun. From sex and relationships to religion and current affairs.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
 comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
 comedy_news_episode.save
 
@@ -191,6 +188,32 @@ Playlist.first(5).each do |playlist|
   Episode.all.sample(rand(10..20)).each do |episode|
     PlaylistEpisode.create!(playlist: playlist, episode: episode)
   end
+end
+
+puts 'create user seeds'
+
+
+user = User.create!(username:"Podfast", email:"podfast@podfast.com", password:'123456', password_confirmation:'123456')
+
+usernames = ["The Law Maker",
+             "Kelly Not Clarkson",
+             "The Only Way is Freddie",
+             "The Muscle",
+             "Pokemaster",
+             "Master Backend-er",
+            ]
+
+profile_img_url = ["https://avatars2.githubusercontent.com/u/55364154?v=4",
+             "https://avatars1.githubusercontent.com/u/49228294?v=4",
+             "https://avatars3.githubusercontent.com/u/37777543?v=4",
+             "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/fmtocdvrjoo78fd97oia.jpg",
+             "https://avatars1.githubusercontent.com/u/54071094?v=4",
+             "https://avatars1.githubusercontent.com/u/36269225?v=4",
+            ]
+index=0
+6.times do
+user = User.create!(profile_img: profile_img_url[index], username:"#{usernames[index]} - 319", email:"test#{index}@gmail.com", password:'123456', password_confirmation:'123456')
+index += 1
 end
 
 puts 'finished'

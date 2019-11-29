@@ -1,0 +1,31 @@
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  p {
+    margin-left: 12px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+    font-weight: bolder;
+  }
+}
+
+.create-new-playlist-form {
+  padding-left: 12px;
+  border: 1px solid $dark-gray;
+  margin-left: 12px;
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+
+.button-podfast-custom {
+  border-radius: 3px;
+  color: white;
+  background-color: orange;
+  margin-left: 12px;
+  margin-top: 1px;
+}
+
+.create-new-playlist {
+  margin-top: 5px;
+}

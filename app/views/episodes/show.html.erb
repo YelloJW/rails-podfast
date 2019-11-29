@@ -4,8 +4,17 @@
 
   <div class="icons_card">
     <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
-    <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
-    <%= render 'playlists/add_to_playlist' %>
+
+    <% if user_signed_in? %>
+      <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
+      <%= render 'playlists/add_to_playlist' %>
+    <% else %>
+      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form mr-2 d-flex' } do |f| %>
+        <%= f.button :button, type: :submit, class:'primary-color' do %>
+          <button type="button" class="create-new-playlist" id="playlist-form">+</button>
+        <% end %>
+      <% end %>
+    <% end %>
 
     <% if user_signed_in? %>
         <div class="show-button d-flex align-items-center justify-content-between">

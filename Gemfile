@@ -22,6 +22,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'faker'
 gem 'active_link_to'
 gem 'social-share-button'
+gem "acts_as_follower", github: 'tcocca/acts_as_follower', branch: 'master'
 
 
 group :development do

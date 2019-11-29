@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlist, only: [:show, :edit]
+  skip_before_action :authenticate_user!
+  before_action :set_playlist, only: [:show]
 
   def index
     @playlists = Playlist.all
@@ -25,9 +26,21 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
+    @playlists = Playlist.all
   end
 
   def update
+    @episode = Episode.find(params[:playlist][:episode].to_i)
+    @playlist_episode = PlaylistEpisode.new(playlist_id: Playlist.where(name: params[:playlist][:name]).first.id, episode: @episode)
+    @playlist = @playlist_episode.playlist
+    @episode = @playlist_episode.episode
+    if !@playlist.episodes.include? @episode
+      @playlist_episode.save
+      flash[:notice] = "Episode added to your #{@playlist.name} bookmarks"
+    else
+      flash[:notice] = 'Already bookmarked!'
+    end
+    redirect_to episode_path(@episode)
   end
 
   def destroy
