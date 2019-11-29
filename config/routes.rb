@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   end
 
   resources :comments, except: [:create,:new, :show]
+  get "/search", to: 'pages#search'
+
+  get "/follows/:id", to: 'follows#create'
+  delete "/follows/:id", to: 'follows#destroy'
 
   get "/search", to: 'pages#search'
   root to: 'pages#home'
