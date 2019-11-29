@@ -16,6 +16,7 @@ class EpisodesController < ApplicationController
 
   def show
     @playlist = Playlist.new(params[:user_id])
+    @playlists = Playlist.all
   end
 
   def upvote
