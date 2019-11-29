@@ -11,18 +11,20 @@
   </head>
   <body>
 
-    <% if current_page?(search_path) %>
-      <%= render 'shared/navbar-podfast-searchpage' %>
-    <% else %>
-      <%= render 'shared/navbar-podfast' %>
-    <% end %>
+    <div class="top-and-bottom-margin">
+      <% if current_page?(search_path) %>
+        <%= render 'shared/navbar-podfast-searchpage' %>
+      <% else %>
+        <%= render 'shared/navbar-podfast' %>
+      <% end %>
 
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'tag_choice' %>
-    <%= yield(:after_js) %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <%= javascript_pack_tag 'tag_choice' %>
+      <%= yield(:after_js) %>
+    </div>
   </body>
 </html>
