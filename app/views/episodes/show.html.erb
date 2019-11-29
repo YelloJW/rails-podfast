@@ -2,38 +2,44 @@
 
   <%= render "shared/spotifywidget", episode: @episode %>
 
-  <div class="icons_card">
-    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
+  <div class="d-flex justify-content-between mb-1" style="background-color:white;">
+    <div class="icons_card d-flex">
+      <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
 
-    <% if user_signed_in? %>
-      <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
-      <%= render 'playlists/add_to_playlist' %>
-    <% else %>
-      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form mr-2 d-flex' } do |f| %>
-        <%= f.button :button, type: :submit, class:'primary-color' do %>
-          <button type="button" class="create-new-playlist" id="playlist-form">+</button>
-        <% end %>
-      <% end %>
-    <% end %>
 
-    <% if user_signed_in? %>
-        <div class="show-button d-flex align-items-center justify-content-between">
-          <%= link_to like_episode_path(@episode), class: "like mr-2", method: :put do %>
-            <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
-          <% end %>
-          <i class="fas fa-headphones"></i><%= @episode.listens %>
-        </div>
-    <% else %>
-        <div class="show-button d-flex align-items-center justify-content-between">
-          <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'like-form' } do |f| %>
-            <%= f.button :button, type: :submit, class:'primary-color' do %>
+    </div>
+
+    <div class="d-flex">
+      <% if user_signed_in? %>
+          <div class="show-button d-flex align-items-center justify-content-between">
+            <%= link_to like_episode_path(@episode), class: "like mr-2", method: :put do %>
               <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
             <% end %>
+            <i class="fas fa-headphones"></i><%= @episode.listens %>
+          </div>
+      <% else %>
+          <div class="show-button d-flex align-items-center justify-content-between">
+            <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'like-form' } do |f| %>
+              <%= f.button :button, type: :submit, class:'primary-color' do %>
+                <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
+              <% end %>
+            <% end %>
+            <i class="fas fa-headphones"></i>
+            <%= @episode.listens %>
+          </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <button type="button" class="create-new-playlist ml-3" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
+        <%= render 'playlists/add_to_playlist' %>
+      <% else %>
+        <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form mr-2 d-flex' } do |f| %>
+          <%= f.button :button, type: :submit, class:'primary-color' do %>
+            <button type="button" class="create-new-playlist" id="playlist-form">+</button>
           <% end %>
-          <i class="fas fa-headphones"></i>
-          <%= @episode.listens %>
-        </div>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 
   <div class="description-card">
