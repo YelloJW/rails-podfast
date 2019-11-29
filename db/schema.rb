@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_171040) do
   end
 
   add_foreign_key "comments", "episodes"
+  add_foreign_key "comments", "users"
   add_foreign_key "episode_tags", "episodes"
   add_foreign_key "episode_tags", "tags"
   add_foreign_key "playlist_episodes", "episodes"
