@@ -1,9 +1,19 @@
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <h1>Add to playlist or</h1>
-      <h1>Add to new playlist</h1>
-      <%= render 'playlists/new' %>
+
+    <div class="modal-info">
+      <p>Add to existing bookmark</p>
+      <% @playlists.each do |playlist| %>
+        <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
+          <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
+          <%= f.input :name, :as => :hidden, :input_html => { :value => playlist.name } %>
+          <%= f.button :submit, "#{playlist.name}", class: "button-podfast-custom" %>
+        <% end %>
+      <% end %>
+      <%= render 'playlists/new', class: "create-new-playlist" %>
+    </div>
+
     </div>
   </div>
 </div>
