@@ -173,22 +173,6 @@ Episode.last(10).each do |episode|
 end
 
 
-puts 'creating playlist seeds'
-
-Playlist.create(name: "bathtime fun", user_id: 1)
-Playlist.create(name: "commute", user_id: 1)
-Playlist.create(name: "current affairs", user_id: 1)
-Playlist.create(name: "funnies", user_id: 1)
-Playlist.create(name: "insomnia", user_id: 1)
-
-
-puts 'create playlist episodes'
-
-Playlist.first(5).each do |playlist|
-  Episode.all.sample(rand(10..20)).each do |episode|
-    PlaylistEpisode.create!(playlist: playlist, episode: episode)
-  end
-end
 
 puts 'create user seeds'
 
@@ -214,6 +198,23 @@ index=0
 6.times do
 user = User.create!(profile_img: profile_img_url[index], username:"#{usernames[index]} - 319", email:"test#{index}@gmail.com", password:'123456', password_confirmation:'123456')
 index += 1
+end
+
+puts 'creating playlist seeds'
+
+Playlist.create(name: "bathtime fun", user_id: User.all.first)
+Playlist.create(name: "commute", User.all.first)
+Playlist.create(name: "current affairs", User.all.first)
+Playlist.create(name: "funnies", User.all.first)
+Playlist.create(name: "insomnia", User.all.first)
+
+
+puts 'create playlist episodes'
+
+Playlist.first(5).each do |playlist|
+  Episode.all.sample(rand(10..20)).each do |episode|
+    PlaylistEpisode.create!(playlist: playlist, episode: episode)
+  end
 end
 
 puts 'finished'
