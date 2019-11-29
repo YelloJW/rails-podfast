@@ -2,7 +2,7 @@
 <div class="container">
 
   <div class="playlist-title">
-    <h4>Saved pods</h4>
+    <i class="highlighted highlighted-orange">Saved pods</i>
     <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
   </div>
 
@@ -11,7 +11,7 @@
   <% @playlists.each do |playlist|%>
     <%= link_to playlist_path(playlist), class: "playlist-list-card" do  %>
       <div class="playlist-title">
-        <h4><%= playlist.name %></h4>
+        <h4><%= playlist.name.capitalize %></h4>
       </div>
       <div class="playlist-info">
         <p><%= playlist.episodes.count %> episodes</p>

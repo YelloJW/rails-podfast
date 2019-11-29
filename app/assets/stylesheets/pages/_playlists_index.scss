@@ -3,12 +3,13 @@
   background-color: white;
   text-decoration: none;
   padding: 10px;
-  margin: 5px;
+  margin: 15px;
   justify-content: space-between;
   color: $dark-gray;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
   border-radius: 5px;
   align-items: center;
+  height: 75px;
 
   &:hover {
     transition: box-shadow 0.5s;
@@ -20,15 +21,18 @@
 
 .playlist-title {
   font-size: 0.5em;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 
-.playlist-info {
+.playlist-info p{
   font-size: 0.8em;
   display: flex;
   flex-direction: column;
+  margin: 0 !important;
+  justify-content: space-between;
 }
+
 
 // Saving old card design here in case we want to revert
 

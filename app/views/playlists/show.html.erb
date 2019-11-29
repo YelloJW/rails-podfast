@@ -1,7 +1,13 @@
-<div class="container pt-5">
-  <% @playlist.episodes.each do |episode|  %>
+<div class="container">
+  <div class="hightlighted-div">
+    <i class="highlighted highlighted-orange">Episodes</i>
+  </div>
+
+  <% @playlist.episodes.each_with_index do |episode, i|  %>
     <%= link_to episode_path(episode), class: "playlist-episode-card" do   %>
-      <%= episode.title  %>
+          <p class="p-margin"><%= i + 1 %>.</p>
+          <p><%= episode.title  %></p>
+
     <% end %>
   <% end %>
 </div>

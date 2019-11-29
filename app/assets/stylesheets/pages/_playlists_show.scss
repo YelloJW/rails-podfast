@@ -1,13 +1,13 @@
 .playlist-episode-card {
   display: flex;
   background-color: white;
-  padding: 5px;
-  margin: 3px;
+  padding: 10px 5px;
+  margin: 15px;
   color: $dark-gray;
-  &:hover {
-    text-decoration: none;
-    color: $dark-gray;
-  }
+    ol {
+      margin-bottom: 0;
+      padding-left: 30px;
+    }
 }
 
 .playlist-title {
@@ -15,3 +15,11 @@
   margin-right: 4px;
   justify-content: space-between;
 }
+
+.hightlighted-div {
+  margin-left: 15px;
+}
+ .p-margin {
+  margin-right: 5px;
+  padding-left: 10px;
+ }
