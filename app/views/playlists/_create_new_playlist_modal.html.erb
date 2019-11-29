@@ -1,7 +1,12 @@
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <%= render 'new' %>
+      <div class="container">
+        <%= simple_form_for @playlist, url: user_playlists_path(current_user), method: :post do |f| %>
+          <%= f.text_field :name %>
+          <%= f.submit %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

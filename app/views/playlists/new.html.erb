@@ -1,7 +1,6 @@
 <div class="container">
 
   <%= simple_form_for @playlist, url: user_playlists_path(current_user), method: :post do |f| %>
-    <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
     <%= f.text_field :name %>
     <%= f.submit %>
   <% end %>

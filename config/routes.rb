@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     resources :playlists, only: [:new, :create]
   end
 
+
   resources :episodes, only: [:index, :show] do
+    # resources :playlists, only: [:new, :create]
+    resources :playlist_episodes, only: [:new, :create]
     resources :comments, only: [:create]
     member do
       put "like" => "episodes#upvote"
