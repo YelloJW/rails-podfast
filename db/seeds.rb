@@ -202,11 +202,11 @@ end
 
 puts 'creating playlist seeds'
 
-Playlist.create(name: "bathtime fun", user_id: User.all.first)
-Playlist.create(name: "commute", User.all.first)
-Playlist.create(name: "current affairs", User.all.first)
-Playlist.create(name: "funnies", User.all.first)
-Playlist.create(name: "insomnia", User.all.first)
+Playlist.create(name: "bathtime fun", user_id: User.all.first.id)
+Playlist.create(name: "commute", user_id: User.all.first.id)
+Playlist.create(name: "current affairs", user_id: User.all.first.id)
+Playlist.create(name: "funnies", user_id: User.all.first.id)
+Playlist.create(name: "insomnia", user_id: User.all.first.id)
 
 
 puts 'create playlist episodes'
