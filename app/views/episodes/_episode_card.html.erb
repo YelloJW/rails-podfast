@@ -40,7 +40,9 @@
             <p><%= episode[:episode].listens %></p>
           </div>
           <div class="icons-stats-info">
-            <%= render 'followable_likes', {episode: episode[:episode]} %>
+            <% if user_signed_in? %>
+              <%= render 'followable_likes', {episode: episode[:episode]} %>
+            <% end %>
           </div>
         </div>
       </div>
