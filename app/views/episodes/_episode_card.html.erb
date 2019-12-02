@@ -8,7 +8,7 @@
     <div class="card-info">
       <div class="card-info-bottom">
         <div class="card-tags">
-          <% episode[:episode].tags.uniq.take(3).each do |tag| %>
+          <% episode[:episode].tags.uniq.take(2).each do |tag| %>
         <!-- If the tag is default and it was selected -->
             <% if ( tag.default && ( @default_tags&.include? tag.id.to_s ) ) %>
               <p class="default_tags tags selected_tag"><strong><%= tag.tag %></strong></p>
@@ -34,19 +34,20 @@
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 23 %>
+        <% if episode[:episode].title.length <= 55 %>
           <h5><%= episode[:episode].title %></h5>
         <% else %>
-          <h5><%= episode[:episode].title.first(23) %>...</h5>
+          <h5><%= episode[:episode].title.first(55) %>...</h5>
         <% end %>
         <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
       </div>
       <div class="general-tags-info">
-        <% episode[:episode].tags.uniq.take(3).each do |tag| %>
+        <% episode[:episode].tags.uniq.take(4).each do |tag| %>
         <!-- If the tag is general and selected -->
           <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
-            <p class="general_tags tags ">#<strong><%= tag.tag %></strong></p>
-          <% else %>
+            <p class="general_tags tags ">#<u><%= tag.tag %></u></p>
+          <% end %>
+          <% if !tag.default && ( !@general_tags&.include? tag.id.to_s )  %>
             <p class="general_tags tags">#<%= tag.tag %></p>
           <% end %>
         <% end %>
@@ -54,5 +55,7 @@
     </div>
   <% end %>
 <% end %>
+
+
 
 
