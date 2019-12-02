@@ -10,7 +10,7 @@
         <% else %>
           <h5><%= episode[:episode].title.first(23) %>...</h5>
         <% end %>
-        <p><%= episode[:episode].summary.first(90) %>...</p>
+        <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
       </div>
       <div class="card-info-bottom">
         <div class="card-tags">
@@ -38,6 +38,11 @@
           <div class="icons-stats-info">
             <i class="fas fa-headphones"></i>
             <p><%= episode[:episode].listens %></p>
+          </div>
+          <div class="icons-stats-info">
+            <% if user_signed_in? %>
+              <%= render 'followable_likes', {episode: episode[:episode]} %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -1,18 +1,18 @@
 <div class="navbar-podfast">
-  <div class="col-xs-4 w-100 nav-home">
+  <div class="col-xs-3 w-100 nav-home">
     <%= active_link_to root_path, active: :exact do %>
       <i class="fas fa-home"></i>
     <% end %>
   </div>
-  <div class="col-xs-4 w-100 nav-search-searpage">
+  <div class="col-xs-3 w-100 nav-search-searpage">
     <!-- This is the way to do it with java scrip as well as whats in the application.js file -->
     <!-- <input type="submit" name="submit" class="btn-submit-form" id="submit-form-button"> -->
       <button class="button lorange" type="submit" form="search-form">Search</button>
   </div>
-  <div class="col-xs-4 w-100 nav-list">
+  <div class="col-xs-3 w-100 nav-list">
     <% if user_signed_in? %>
       <%= active_link_to playlists_path, active: :exact do %>
-        <i class="far fa-bookmark"></i>
+        <i class="far fa-list-altk"></i>
       <% end %>
     <% else %>
       <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-search-form' } do |f| %>
@@ -20,6 +20,9 @@
           <i class="far fa-bookmark orange"></i>
         <% end %>
       <% end %>
+  <div class="col-xs-3 w-100 nav-friends">
+    <%= active_link_to users_path, active: :exact do %>
+      <i class="fas fa-users"></i>
     <% end %>
   </div>
 </div>

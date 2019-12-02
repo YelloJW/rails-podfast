@@ -21,7 +21,7 @@
  <i id="show-more-general-tags" class="float-right fas fa-ellipsis-h"></i>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
-    <% if ['Funny', 'Inspiring', 'Clever', 'Scary', 'Motivating', 'Quirky'].include? tag.tag %>
+    <% if ['Entertaining', 'Factual', 'Lighthearted', 'Quirky', 'Heartwarming', 'Inspiring'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
       <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
         <%= tag.tag %>

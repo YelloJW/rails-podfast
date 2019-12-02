@@ -94,6 +94,19 @@
   }
 }
 
+.nav-friends {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 26px;
+  text-decoration: none;
+  a {
+    text-align: center;
+    color: #F49D37;
+  }
+}
+
 .active {
   width: 90%;
   border-radius: 5px;
