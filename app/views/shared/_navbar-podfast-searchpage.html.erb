@@ -4,10 +4,10 @@
       <i class="fas fa-home"></i>
     <% end %>
   </div>
-  <div class="col-xs-3 w-100 nav-search-searpage">
+  <div class="col-xs-3 w-100 nav-search-searchpage">
     <!-- This is the way to do it with java scrip as well as whats in the application.js file -->
     <!-- <input type="submit" name="submit" class="btn-submit-form" id="submit-form-button"> -->
-    <button class="button lorange" type="submit" form="search-form">Search</button>
+    <button class="button" type="submit" form="search-form">Search</button>
   </div>
   <div class="col-xs-3 w-100 nav-list">
     <% if user_signed_in? %>
@@ -17,7 +17,7 @@
     <% else %>
       <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-search-form' } do |f| %>
         <%= f.button :button, type: :submit do %>
-          <i class="far fa-bookmark orange"></i>
+          <i class="far fa-list-alt green"></i>
         <% end %>
       <% end %>
     <% end %>
@@ -25,12 +25,12 @@
     <div class="col-xs-3 w-100 nav-friends">
     <% if user_signed_in? %>
       <%= active_link_to users_path, active: :exact do %>
-        <i class="fas fa-users orange"></i>
+        <i class="fas fa-users"></i>
       <% end %>
     <% else %>
      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'follows-icon' } do |f| %>
         <%= f.button :button, type: :submit, class: "my-bookmark" do %>
-          <i class="fas fa-users orange"></i>
+          <i class="fas fa-users green"></i>
         <% end %>
       <% end %>
     <% end %>
