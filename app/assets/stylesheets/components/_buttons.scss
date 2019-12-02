@@ -11,7 +11,7 @@ font-weight: lighter;
     width: 90%;
     height: 80%;
     cursor: pointer;
-    background-color: #F49D37;
+    background-color: #288278;
     transition: .5s;
     font-size: 18px;
     border-radius: 3px;
@@ -21,14 +21,14 @@ font-weight: lighter;
 }
 
 .button-podfast {
-  background-color: #F49D37;
+  background-color: #288278;
   border-radius: 10px;
   color: white;
 }
 
 
 .create-new-playlist {
-  background-color: #F49D37;
+  background-color: #288278;
   border: none;
   border-radius: 3px;
   color: white;
@@ -46,5 +46,15 @@ font-weight: lighter;
 // This is the button for the sweet alert notification prompting login
 // Please do not edit!!
 button.swal2-confirm.swal2-styled{
-  background: #F49D37 !important;
+  background: #288278 !important;
 }
+
+.swal2-icon-content {
+  color: #288278;
+}
+
+.swal2-warning {
+  border-color: #288278 !important;
+}
+
+
