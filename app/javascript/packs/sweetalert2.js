@@ -71,3 +71,21 @@ if (bookmark2) {
     })
   });
 }
+
+const follows = document.getElementById('follows-icon');
+if (follows) {
+  follows.addEventListener('click', (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: '',
+      text: 'Please login to use this feature',
+      icon: 'warning',
+      confirmButtonText: 'Login',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        event.target.closest('form').submit();
+      }
+    })
+  });
+}

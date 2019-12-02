@@ -22,9 +22,17 @@
       <% end %>
     <% end %>
   </div>
-  <div class="col-xs-3 w-100 nav-friends">
-    <%= active_link_to users_path, active: :exact do %>
-      <i class="fas fa-users"></i>
+    <div class="col-xs-3 w-100 nav-friends">
+    <% if user_signed_in? %>
+      <%= active_link_to users_path, active: :exact do %>
+        <i class="fas fa-users orange"></i>
+      <% end %>
+    <% else %>
+     <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'follows-icon' } do |f| %>
+        <%= f.button :button, type: :submit, class: "my-bookmark" do %>
+          <i class="fas fa-users orange"></i>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
