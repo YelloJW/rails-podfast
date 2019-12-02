@@ -1,16 +1,11 @@
-html, body, main {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 #carousel {
-  position: relative;
-  height: 250px;
-  top: 18%;
-  transform: translateY(-50%);
+  // position: relative;
+  height: 175px;
+  // top: 18%;
+  transform: translateY(0%);
   overflow: hidden;
+  margin-bottom: 25px;
+  margin-top: 25px;
 
 
 }
@@ -20,41 +15,47 @@ html, body, main {
   opacity: 1;
 }
 #carousel div img {
-  width: 250px;
+  width: 175px;
   transition: width 1s;
+  border-radius: 10px;
 }
 #carousel div.hideLeft {
   left: 0%;
   opacity: 0;
-  transform: translateY(50%) translateX(-50%);
+  transform: translateY(0%) translateX(-0%);
 }
 #carousel div.hideLeft img {
-  width: 125px;
+  width: 100px;
+  border-radius: 10px;
 }
 #carousel div.hideRight {
   left: 100%;
   opacity: 0;
-  transform: translateY(50%) translateX(-50%);
+  transform: translateY(0%) translateX(-0%);
 }
 #carousel div.hideRight img {
-  width: 125px;
+  width: 100px;
+  border-radius: 10px;
 }
 #carousel div.prev {
   z-index: 5;
-  left: 30%;
-  transform: translateY(50px) translateX(-50%);
+  left: 36%;
+  transform: translateY(20px) translateX(-50%);
 }
 #carousel div.prev img {
-  width: 150px;
+  width: 140px;
+  border-radius: 10px;
 }
 #carousel div.prevLeftSecond {
   z-index: 4;
-  left: 15%;
-  transform: translateY(50%) translateX(-50%);
+  left: 25%;
+  margin: 0 0;
+  transform: translateY(28%) translateX(-50%);
   opacity: 0.7;
 }
 #carousel div.prevLeftSecond img {
-  width: 125px;
+  width: 120px;
+  border-radius: 10px;
 }
 #carousel div.selected {
   z-index: 10;
@@ -63,25 +64,28 @@ html, body, main {
 }
 #carousel div.next {
   z-index: 5;
-  left: 70%;
-  transform: translateY(50px) translateX(-50%);
+  left: 64%;
+  transform: translateY(20px) translateX(-50%);
 }
 #carousel div.next img {
-  width: 150px;
+  width: 140px;
+  border-radius: 10px;
 }
 #carousel div.nextRightSecond {
   z-index: 4;
-  left: 85%;
-  transform: translateY(50%) translateX(-50%);
+  left: 75%;
+  margin: 0 0;
+  transform: translateY(28%) translateX(-50%);
   opacity: 0.7;
 }
 #carousel div.nextRightSecond img {
-  width: 125px;
+  width: 120px;
+  border-radius: 10px;
 }
 
-.buttons {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-}
+// .buttons {
+//   position: fixed;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   bottom: 10px;
+// }
