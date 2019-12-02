@@ -63,9 +63,10 @@
         <i class="far fa-list-alt"></i>
       <% end %>
     <% else %>
-    <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-homepage-form' } do |f| %>
-      <%= f.button :button, type: :submit, class: "my-bookmark" do %>
-        <i class="far fa-bookmark orange"></i>
+      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-homepage-form' } do |f| %>
+        <%= f.button :button, type: :submit, class: "my-bookmark" do %>
+          <i class="far fa-bookmark orange"></i>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -73,7 +74,6 @@
     <%= active_link_to users_path, active: :exact do %>
          <i class="fas fa-users"></i>
       <% end %>
-    <% end %>
   </div>
 </div>
 
