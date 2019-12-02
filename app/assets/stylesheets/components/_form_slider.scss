@@ -36,7 +36,7 @@ input[type=range] {
    border: 5px;
    border-radius: 1px;
    outline: none;
-   background: linear-gradient(#F79B58, #F79B58) no-repeat center;
+   background: linear-gradient($light-gray, $light-gray) no-repeat center;
    /* Use a linear gradient to generate only the 2px height background */
    background-size: 100% 2px;
    pointer-events: none;
@@ -47,17 +47,19 @@ input[type=range] {
    }
 
    &::-webkit-slider-thumb {
-      height: 28px;
-      width: 28px;
-      border-radius: 28px;
+      height: 25px;
+      width: 25px;
+      border-radius: 13px;
       background: url(headphones.png) white;
+      box-shadow: 0px 0px 5px $light-gray;
+      border: 0.5px solid $light-gray;
       position: relative;
       margin: 5px 0;
       /* Add some margin to ensure box shadow is shown */
       cursor: pointer;
       appearance: none;
       pointer-events: all;
-      box-shadow: 0 1px 4px 0.5px orange;
+      // box-shadow: 0 1px 4px 0.5px orange;
       &::before {
             content: ' ';
             display: block;
@@ -69,7 +71,6 @@ input[type=range] {
       }
       &:active,
       &:focus {
-      background:orange;
       opacity: 0.7;
    }
    }
