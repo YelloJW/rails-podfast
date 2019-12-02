@@ -7,7 +7,7 @@
   <div class="col-xs-3 w-100 nav-search-searpage">
     <!-- This is the way to do it with java scrip as well as whats in the application.js file -->
     <!-- <input type="submit" name="submit" class="btn-submit-form" id="submit-form-button"> -->
-      <button class="button lorange" type="submit" form="search-form">Search</button>
+    <button class="button lorange" type="submit" form="search-form">Search</button>
   </div>
   <div class="col-xs-3 w-100 nav-list">
     <% if user_signed_in? %>
@@ -20,6 +20,7 @@
           <i class="far fa-bookmark orange"></i>
         <% end %>
       <% end %>
+    <% end %>
   </div>
   <div class="col-xs-3 w-100 nav-friends">
     <%= active_link_to users_path, active: :exact do %>
@@ -31,5 +32,3 @@
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'sweetalert2' %>
 <% end %>
-
-
