@@ -1,0 +1,35 @@
+<i id="share-icon" class="fas fa-share-alt-square"></i>
+<div id="share-modal" class="modal-share">
+  <div class="modal-content">
+    <span class="close"></span>
+    <p>Share with...</p>
+    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("share-modal");
+
+// Get the button that opens the modal
+  const shareIcon = document.getElementById("share-icon");
+
+// Get the <span> element that closes the modal
+  const span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+  shareIcon.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+// When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>

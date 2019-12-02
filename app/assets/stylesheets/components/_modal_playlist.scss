@@ -1,3 +1,15 @@
+.add-to-playlist-modal {
+  position: fixed;
+  top: 60%;
+  right: 3%;
+  left: 3%;
+  width: auto;
+  margin: 0;
+}
+
+
+
+
 .modal-info {
   display: flex;
   flex-direction: column;
@@ -29,5 +41,6 @@
 }
 
 .create-new-playlist {
-  margin-top: 5px;
+  margin-left: 2px;
+  padding: 0px;
 }

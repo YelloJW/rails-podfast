@@ -6,7 +6,7 @@ if (form) {
     event.preventDefault();
     Swal.fire({
       title: '',
-      text: 'Please login to continue',
+      text: 'Please login to use this feature',
       icon: 'warning',
       confirmButtonText: 'Login',
       showCancelButton: true
@@ -24,7 +24,43 @@ if (button) {
     event.preventDefault();
     Swal.fire({
       title: '',
-      text: 'Please login to continue',
+      text: 'Please login to use this feature',
+      icon: 'warning',
+      confirmButtonText: 'Login',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        event.target.closest('form').submit();
+      }
+    })
+  });
+}
+
+const bookmark = document.getElementById('playlist-homepage-form');
+if (bookmark) {
+  bookmark.addEventListener('click', (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: '',
+      text: 'Please login to use this feature',
+      icon: 'warning',
+      confirmButtonText: 'Login',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        event.target.closest('form').submit();
+      }
+    })
+  });
+}
+
+const bookmark2 = document.getElementById('playlist-search-form');
+if (bookmark2) {
+  bookmark2.addEventListener('click', (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: '',
+      text: 'Please login to use this feature',
       icon: 'warning',
       confirmButtonText: 'Login',
       showCancelButton: true
