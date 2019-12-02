@@ -1,15 +1,15 @@
 .episode-card {
-  height: 85px;
+  height: 22vh;
   margin-top: 10px;
   border-radius: 10px;
   display: flex;
-  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(205,205,205,.5);
   background-color: white;
   img {
-    height: 85px;
-    width: 85px;
+    height: 60px;
+    width: 60px;
     padding: 0px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 50%;
   }
   .card-details {
     color: $dark-gray;
@@ -20,6 +20,8 @@
     padding: 7px 10px 0px 10px;
     flex-direction: column;
     letter-spacing: 1.15px;
+    position: absolute;
+    top: 45px;
     // text-align: justify;
   }
   .card-tags {
@@ -56,8 +58,8 @@
 .card-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: calc(100% - 85px);
+  position: relative;
 }
 
 .card-tags {
@@ -87,29 +89,59 @@
 
 .card-info-bottom {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2px;
+  position: absolute;
+  top: 15px;
 }
 
 .icons-info {
   display: flex;
   color: $dark-gray;
   opacity: 0.6;
-  margin-right: 10px;
   padding-bottom: 2px;
   font-size: 0.8em;
-  letter-spacing: 1px;
+  margin-right: 9px;
   p {
     font-size: 0.9em;
     margin-top: 0px;
   }
-  i {
-    margin-top: 2px;
-  }
 }
 
 .icons-stats-info {
-  margin: 5px;
   display: flex;
+  align-items: center;
+    i {
+      background-color: #e8e8e8 ;
+      padding: 3px;
+      border-radius: 50%;
+      margin: 0;
+    }
+    p {
+
+    }
+}
+
+.general-tags-info {
+  display: flex;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 15px;
+  margin-left: 10px
+}
+
+.image-card {
+  width: 70px;
+
+}
+
+.image-absolute {
+  position: relative;
+    img {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+    }
 }

@@ -1,43 +1,30 @@
 <% @episodes_ranked.each do |episode| %>
   <%= link_to episode_path(episode[:episode]), class: "episode-card" do %>
     <div class="image-card">
-      <img src="<%= episode[:episode].img_url%>" style="object-fit: cover;">
+      <div class="image-absolute">
+        <img src="<%= episode[:episode].img_url%>" style="object-fit: cover;">
+      </div>
     </div>
     <div class="card-info">
-      <div class="card-details">
-        <% if episode[:episode].title.length <= 23 %>
-          <h5><%= episode[:episode].title %></h5>
-        <% else %>
-          <h5><%= episode[:episode].title.first(23) %>...</h5>
-        <% end %>
-        <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
-      </div>
       <div class="card-info-bottom">
         <div class="card-tags">
           <% episode[:episode].tags.uniq.take(3).each do |tag| %>
         <!-- If the tag is default and it was selected -->
             <% if ( tag.default && ( @default_tags&.include? tag.id.to_s ) ) %>
               <p class="default_tags tags selected_tag"><strong><%= tag.tag %></strong></p>
-        <!-- If the tag is general and selected -->
-            <% elsif (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
-              <p class="general_tags tags ">#<strong><%= tag.tag %></strong></p>
-        <!-- If the tag is a default and not selected -->
-            <% elsif tag.default %>
-              <p class="default_tags tags"><%= tag.tag %></p>
-        <!-- If the tag is general and not selected -->
             <% else %>
-              <p class="general_tags tags">#<%= tag.tag %></p>
+              <p class="default_tags tags"><%= tag.tag %></p>
             <% end %>
           <% end %>
         </div>
         <div class="icons-info">
           <div class="icons-stats-info">
             <i class="far fa-thumbs-up"></i>
-            <p><%= episode[:episode].upvotes %></p>
+            <p>&nbsp<%= episode[:episode].upvotes %></p>
           </div>
           <div class="icons-stats-info">
             <i class="fas fa-headphones"></i>
-            <p><%= episode[:episode].listens %></p>
+            <p>&nbsp<%= episode[:episode].listens %></p>
           </div>
           <div class="icons-stats-info">
             <% if user_signed_in? %>
@@ -46,6 +33,26 @@
           </div>
         </div>
       </div>
+      <div class="card-details">
+        <% if episode[:episode].title.length <= 23 %>
+          <h5><%= episode[:episode].title %></h5>
+        <% else %>
+          <h5><%= episode[:episode].title.first(23) %>...</h5>
+        <% end %>
+        <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
+      </div>
+      <div class="general-tags-info">
+        <% episode[:episode].tags.uniq.take(3).each do |tag| %>
+        <!-- If the tag is general and selected -->
+          <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
+            <p class="general_tags tags ">#<strong><%= tag.tag %></strong></p>
+          <% else %>
+            <p class="general_tags tags">#<%= tag.tag %></p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
+
+
