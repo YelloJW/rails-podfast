@@ -37,3 +37,13 @@
   list-style: none;
   padding:0;
 }
+
+.user-likes {
+  // padding: 4px;
+  border-radius:50%;
+  // background: $light-gray;
+  margin-left: 5px;
+  margin-right: 2px;
+  color:$medium-gray;
+  font-size: 14px;
+}

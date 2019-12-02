@@ -1,0 +1,8 @@
+<div>
+  <% current_user.all_follows.each do |follow_relation| %>
+  <% followable = User.find(follow_relation[:followable_id]) %>
+  <% if followable.voted_up_on? episode %>
+    <img class="user-profile" src="<%= followable.profile_img %>" alt="">
+  <% end %>
+  <% end %>
+</div>
