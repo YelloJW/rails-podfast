@@ -10,13 +10,25 @@
       <button class="button lorange" type="submit" form="search-form">Search</button>
   </div>
   <div class="col-xs-3 w-100 nav-list">
-    <%= active_link_to playlists_path, active: :exact do %>
-      <i class="far fa-list-alt"></i>
-    <% end %>
-  </div>
+    <% if user_signed_in? %>
+      <%= active_link_to playlists_path, active: :exact do %>
+        <i class="far fa-list-altk"></i>
+      <% end %>
+    <% else %>
+      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-search-form' } do |f| %>
+        <%= f.button :button, type: :submit do %>
+          <i class="far fa-bookmark orange"></i>
+        <% end %>
+      <% end %>
   <div class="col-xs-3 w-100 nav-friends">
     <%= active_link_to users_path, active: :exact do %>
       <i class="fas fa-users"></i>
     <% end %>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'sweetalert2' %>
+<% end %>
+
+
