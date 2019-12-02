@@ -12,7 +12,7 @@ PlaylistEpisode.destroy_all
 
 # create default tags for non sport and comedy seeds
 puts 'creating array of default tags'
-default_tags = ['Sport', 'Comedy','Science', 'Politics', 'Lifestyle & Health', 'History', 'Business', 'Technology', 'Society & Culture', 'News', 'Education', 'True Crime', 'Arts & Entertainment', 'Music', 'Kids' ]
+default_tags = ['Comedy', 'Sport', 'Lifestyle', 'Technology', 'Science', 'Politics', 'History', 'Business', 'Culture', 'News', 'Education', 'Crime', 'Arts', 'Music' ]
 default_tag_img = ["https://png.pngtree.com/element_pic/00/16/08/2057b74ff0ceec8.jpg",
                    "https://cdn2.vectorstock.com/i/1000x1000/48/81/comedy-concept-word-art-vector-21504881.jpg",
                    "https://cdn4.vectorstock.com/i/1000x1000/99/83/word-design-for-science-vector-19019983.jpg",
@@ -30,8 +30,6 @@ default_tag_img = ["https://png.pngtree.com/element_pic/00/16/08/2057b74ff0ceec8
                    "",
                   ]
 
-default_tags = ['Sport', 'Crime', 'Comedy','Science', 'Politics', 'Lifestyle', 'History', 'Business', 'Technology', 'Culture', 'News', 'Education', 'Arts', 'Music', 'Kids' ]
-
 puts 'creating default tags'
 index = 0
 default_tags.length.times do
@@ -41,8 +39,8 @@ end
 
 # create general tags
 puts 'creating array of general tags'
-general_tags = ['Funny', 'Inspiring', 'Motivating', 'Quirky', 'Clever', 'Scary', 'Heart warming', 'Mind bending', 'Relatable', 'Interesting', 'Factual' ]
-general_tags_for_demo = ['Funny', 'Interesting', 'Relatable', 'Factual', 'Quirky']
+general_tags = ['Lighthearted', 'Inspiring', 'Entertaining', 'Factual', 'Motivating', 'Quirky', 'Clever', 'Heartwarming', 'Scary', 'Mind bending', 'Relatable', 'Interesting', 'Factual' ]
+general_tags_for_demo = ['Entertaining', 'Factual', 'Lighthearted', 'Quirky', 'Heartwarming', 'Inspiring']
 
 puts 'creating general tags'
 index = 0
@@ -212,7 +210,7 @@ Playlist.create(name: "insomnia", user_id: User.all.first.id)
 puts 'create playlist episodes'
 
 Playlist.first(5).each do |playlist|
-  Episode.all.sample(rand(10..20)).each do |episode|
+  Episode.all.sample(rand(4..8)).each do |episode|
     PlaylistEpisode.create!(playlist: playlist, episode: episode)
   end
 end
