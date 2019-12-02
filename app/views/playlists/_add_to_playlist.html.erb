@@ -1,9 +1,10 @@
-<div class="modal fade bd-example-modal-sm add-to-playlist-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-
-    <div class="modal-info">
+<i id="add-to-playlist-icon" class="far fa-plus-square"></i>
+<div id="playlist-modal" class="modal-playlist modal-close">
+  <div class="modal-content playlist-modal">
+    <div class="close-div">
       <p>Add to existing bookmark</p>
+      <i class="fas fa-times close"></i>
+    </div>
       <% @playlists.each do |playlist| %>
         <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
           <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
@@ -12,8 +13,33 @@
         <% end %>
       <% end %>
       <%= render 'playlists/new', class: "create-new-playlist" %>
-    </div>
-
-    </div>
   </div>
 </div>
+
+<script>
+  const modalPlaylist = document.getElementById("playlist-modal");
+
+// Get the button that opens the modal
+  const playlistAddIcon = document.getElementById("add-to-playlist-icon");
+
+// Get the <span> element that closes the modal
+  const span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+  playlistAddIcon.onclick = function() {
+    modalPlaylist.style.display = "block";
+  }
+
+// When the user clicks on <span> (x), close the modalPlaylist
+  span.onclick = function() {
+    modalPlaylist.style.display = "none";
+  }
+
+// When the user clicks anywhere outside of the modalPlaylist, close it
+  // window.onclick = function(event) {
+  //   if (event.target == modalPlaylist) {
+  //     modalPlaylist.style.display = "none";
+  //   }
+  // }
+</script>
+

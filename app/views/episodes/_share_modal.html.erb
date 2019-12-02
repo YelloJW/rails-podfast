@@ -1,12 +1,13 @@
 <i id="share-icon" class="fas fa-share-alt-square"></i>
 <div id="share-modal" class="modal-share">
   <div class="modal-content">
-    <span class="close"></span>
-    <p>Share with...</p>
+    <!-- <span class="close">X</span> -->
+    <p>Share</p>
     <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
   </div>
 </div>
 
+<%= content_for(:after_js) do %>
 <script>
   const modal = document.getElementById("share-modal");
 
@@ -14,7 +15,7 @@
   const shareIcon = document.getElementById("share-icon");
 
 // Get the <span> element that closes the modal
-  const span = document.getElementsByClassName("close")[0];
+  // const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
   shareIcon.onclick = function() {
@@ -22,9 +23,9 @@
   }
 
 // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
 
 // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
@@ -33,3 +34,4 @@
     }
   }
 </script>
+<% end %>
