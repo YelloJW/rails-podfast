@@ -4,7 +4,7 @@
 
   <div class="episode-info">
     <div class="episode-info-card">
-      <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
+      <%= render 'share_modal' %>
       <% if user_signed_in? %>
         <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
         <%= render 'playlists/add_to_playlist' %>
