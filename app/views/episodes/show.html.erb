@@ -5,10 +5,7 @@
   <div class="d-flex justify-content-between mb-1" style="background-color:white;">
     <div class="icons_card d-flex">
       <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
-
-
     </div>
-
     <div class="d-flex">
       <% if user_signed_in? %>
           <div class="show-button d-flex align-items-center justify-content-between">
@@ -16,6 +13,7 @@
               <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
             <% end %>
             <i class="fas fa-headphones"></i><%= @episode.listens %>
+            <%= render 'followable_likes', {episode: @episode} %>
           </div>
       <% else %>
           <div class="show-button d-flex align-items-center justify-content-between">
@@ -24,8 +22,7 @@
                 <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
               <% end %>
             <% end %>
-            <i class="fas fa-headphones"></i>
-            <%= @episode.listens %>
+            <i class="fas fa-headphones"></i><%= @episode.listens %>
           </div>
       <% end %>
       <% if user_signed_in? %>

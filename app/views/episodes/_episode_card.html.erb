@@ -39,6 +39,9 @@
             <i class="fas fa-headphones"></i>
             <p><%= episode[:episode].listens %></p>
           </div>
+          <div class="icons-stats-info">
+            <%= render 'followable_likes', {episode: episode[:episode]} %>
+          </div>
         </div>
       </div>
     </div>

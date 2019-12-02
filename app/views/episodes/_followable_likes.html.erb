@@ -1,0 +1,8 @@
+<% likes_by_followable = 0 %>
+<% current_user.all_follows.each do |follow_relation| %>
+  <% followable = User.find(follow_relation[:followable_id]) %>
+  <% if followable.voted_up_on? episode %>
+    <% likes_by_followable += 1 %>
+  <% end %>
+<% end %>
+<i class="fas fa-user-alt"></i><%= likes_by_followable %>
