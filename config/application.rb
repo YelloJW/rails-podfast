@@ -18,6 +18,7 @@ module RailsPodfast
 
     # Commented out until we work out how to implement Spotify / Podcasts API
     # RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
+    config.action_view.embed_authenticity_token_in_remote_forms = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

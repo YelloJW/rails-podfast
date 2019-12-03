@@ -1,0 +1,8 @@
+console.log("HELLO")
+console.log("<%= @user.id %>")
+
+const tapPane = document.querySelector(".tab-pane")
+const card = document.querySelector("[data-id='<%= @user.id %>']")
+
+tapPane.insertAdjacentHTML("beforeend", card.innerHTML)
+card.remove();

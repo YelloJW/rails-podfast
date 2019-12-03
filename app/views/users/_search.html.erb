@@ -10,7 +10,7 @@
     <ul class="unordered-user-list">
       <% @users.each do |user| %>
         <% if user != current_user && !current_user.following?(user) %>
-          <li>
+          <li data-id="<%= user.id %>">
             <div class="user-list">
               <div class="user-card d-flex">
                 <div class="user-profile">
@@ -18,7 +18,7 @@
                 </div>
                 <%= user.username  %>
               </div>
-              <%= link_to "/follows/#{user.id}" do  %>
+              <%= link_to "/follows/#{user.id}", remote: true do  %>
                 <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
               <% end %>
             </div>
