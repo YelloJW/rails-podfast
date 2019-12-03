@@ -33,7 +33,9 @@
   justify-content: space-between;
   font-size: 1em;
   p {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    color: $dark-gray;
+    font-weight: bold;
   }
 }
 
@@ -55,23 +57,55 @@
 //   }
 // }
 
-.create-new-playlist-form {
-  padding-left: 12px;
-  border: 1px solid $dark-gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  opacity: 0.4;
-}
 
 .button-podfast-custom {
   border-radius: 3px;
-  color: white;
-  background-color: orange;
-  margin-top: 1px;
+  padding: 0px;
+  color: $dark-gray;
+  font-weight: bold;
+  // background-color: $coral;
 }
 
-#create-new-playlist {
-  margin-left: 2px;
-  padding: 0px;
+.modal-create-playlist-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 20px;
+}
+
+.create-new-playlist-form {
+  flex-grow: 1;
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+}
+
+.btn-create-playlist {
+  border: 1px solid $coral;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 0px 20px;
+}
+
+.modal-playlist-name {
+  display: flex;
+}
+
+.playlist-episode-count {
+  margin-top: 2px;
+  opacity: 0.5;
+  margin-left: 5px;
+}
+
+.div-create-new-playlist {
+  border-bottom: 1px solid $light-gray;
+  margin-bottom: 20px;
+  p {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+}
+
+.green-header {
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 
