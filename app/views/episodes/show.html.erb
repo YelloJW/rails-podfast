@@ -11,38 +11,34 @@
       <% else %>
         <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form' } do |f| %>
           <%= f.button :button, type: :submit, class:'primary-color' do %>
-            <button type="button" class="create-new-playlist" id="playlist-form">+</button>
+            <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>
           <% end %>
         <% end %>
       <% end %>
     </div>
     <% if user_signed_in? %>
         <div class="episode-info-card">
-          <div class="show-button">
-            <%= link_to like_episode_path(@episode), class: "like", method: :put do %>
+          <div class="show-avatars">
+            <%= link_to like_episode_path(@episode), class: "like stat-icons", method: :put do %>
               <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
             <% end %>
-            <i class="fas fa-headphones"></i><%= @episode.listens %>
-          </div>
-          <div class="show-avatars">
+            <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
             <%= render 'followable_likes', {episode: @episode} %>
           </div>
         </div>
     <% else %>
       <div class="episode-info-card">
         <div class="show-button">
-          <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form', id:'like-form' } do |f| %>
+          <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form stat-icons', id:'like-form' } do |f| %>
             <%= f.button :button, type: :submit, class:'primary-color' do %>
               <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
             <% end %>
           <% end %>
-          <i class="fas fa-headphones"></i><%= @episode.listens %>
+          <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
         </div>
       </div>
     <% end %>
   </div>
-<!--   <%= render 'followable_avatars', {episode: @episode} %> -->
-
 
   <div class="description-card">
     <h2><b><%= @episode.title %></b></h2>

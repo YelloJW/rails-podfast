@@ -1,3 +1,4 @@
+// This is a div class in episodes/show containing upvotes and headphones for when a user isn't logged in
 .show-button a {
   text-decoration: none;
   color: #6A6A6A;
@@ -5,6 +6,26 @@
 
 .show-button {
   color: #6A6A6A;
+  display: flex;
+  align-items: center;
+}
+
+// This is a div class in episodes/show containing upvotes, headphones and followers when a user is signed in
+.show-avatars a {
+  text-decoration: none;
+  color: #6A6A6A;
+}
+
+.show-avatars {
+  color: #6A6A6A;
+}
+
+// This is the padding between the the upvotes, listens and followers as well as the padding between the icons and the numbers
+.stat-icons {
+  padding-right: 5px;
+  i {
+    padding-right: 2.5px;
+  }
 }
 
 // .far {
