@@ -39,6 +39,7 @@
   color: white;
   box-shadow: 0px 0px 1px gray;
   z-index: 2;
+  border-radius: 5px 5px 0 0;
 }
 
 .navbar-podfast a {
@@ -55,17 +56,24 @@
 //   border-radius: 2px;
 //   color: white ;
 // }
+@keyframes grow {
+  to {
+    transform: scale(1.2) translate(0, 0);
+  }
+}
 
 .nav-home {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 26px;
+  font-size: 18px;
   color: #288278;
   text-decoration: none;
   a {
     color: #288278;
+     &.active{
+      animation: grow 350ms forwards;
+    }
   }
 }
 
@@ -73,11 +81,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 26px;
+  font-size: 18px;
   text-decoration: none;
   a {
     color: #288278;
+    &.active{
+      animation: grow 350ms forwards;
+    }
   }
 }
 
@@ -85,12 +95,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 26px;
+  font-size: 18px;
   text-decoration: none;
   a {
     text-align: center;
     color: #288278;
+    &.active{
+      animation: grow 350ms forwards;
+    }
   }
 }
 
@@ -98,28 +110,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 26px;
+  font-size: 18px;
   text-decoration: none;
+
   a {
     text-align: center;
     color: #288278;
+    &.active{
+      animation: grow 350ms forwards;
+    }
   }
 }
 
-a .active {
-  color: white;
-}
+// a .active {
+//   color: white;
+// }
 
-.active {
-  width: 90%;
-  border-radius: 5px;
-  height: 40px;
-  background-color: #288278;
-  i {
-    color: white;
-  }
-}
 
 .nav-search-searchpage {
   display: flex;

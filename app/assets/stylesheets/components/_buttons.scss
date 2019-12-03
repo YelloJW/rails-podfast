@@ -57,4 +57,23 @@ button.swal2-confirm.swal2-styled{
   border-color: #288278 !important;
 }
 
+.submit-button-fixed {
+  width: 95%;
+  background-color: #288278;
+  transition: .5s;
+  border-radius: 5px;
+  border: none;
+  height: 70%;
+  color: white;
+}
 
+.submit-button-div {
+  width: 100%;
+  position: fixed;
+  bottom: 50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: black  !important;
+}
