@@ -2,8 +2,8 @@
 <div id="share-modal" class="modal-share">
   <div class="modal-content">
     <!-- <span class="close">X</span> -->
-    <p>Share</p>
-    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
+    <p>Share with....</p>
+    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook email), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
   </div>
 </div>
 
