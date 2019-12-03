@@ -1,18 +1,24 @@
 <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>
 <div id="playlist-modal" class="modal-playlist modal-close">
   <div class="modal-content playlist-modal">
-    <div class="close-div">
-      <p>Add to existing bookmark</p>
-      <i class="fas fa-times close"></i>
+    <div class="div-create-new-playlist">
+      <div class="close-div">
+        <p class="green-header">Create new podlist</p>
+        <i class="fas fa-times close"></i>
+      </div>
+      <%= render 'playlists/new', class: "create-new-playlist" %>
     </div>
+      <p class="green-header">Add to existing podlist</p>
       <% @playlists.each do |playlist| %>
+      <div class="modal-playlist-name">
         <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
           <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
           <%= f.input :name, :as => :hidden, :input_html => { :value => playlist.name } %>
           <%= f.button :submit, "#{playlist.name}", class: "button-podfast-custom" %>
         <% end %>
+        <p class="playlist-episode-count"> <%= playlist.episodes.count %> episodes</p>
+      </div>
       <% end %>
-      <%= render 'playlists/new', class: "create-new-playlist" %>
   </div>
 </div>
 
