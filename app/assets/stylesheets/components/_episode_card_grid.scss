@@ -5,6 +5,7 @@
 }
 
 .episode-card-in-grid {
+  position: relative;
   border-radius: 8px;
   margin: 5px;
   box-shadow: 0px 0px 4px #c4c4c4;
@@ -15,4 +16,5 @@
     height: 100%;
     opacity: 0.9;
   }
+
 }
