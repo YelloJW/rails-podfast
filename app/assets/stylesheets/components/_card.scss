@@ -41,6 +41,7 @@
     font-weight: bold;
     font-size: 0.8em;
     margin-bottom: 5px;
+    font-family: $body-font;
   }
   p {
     // font-size: 0.8em;
@@ -112,7 +113,7 @@
   opacity: 0.8;
   padding-bottom: 2px;
   margin-right: 9px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .icons-stats-info {
@@ -152,3 +153,9 @@
 .first-stat {
   margin-right: 3px;
 }
+
+.last-stat {
+  margin-left: 3px;
+}
+
+
