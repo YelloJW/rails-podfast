@@ -34,14 +34,14 @@
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 55 %>
+        <% if episode[:episode].title.length <= 60 %>
           <p><%= episode[:episode].title %></p>
         <% else %>
-          <p><%= episode[:episode].title.first(55) %>...</p>
+          <p><%= episode[:episode].title.first(60) %>...</p>
         <% end %>
         <p class="p-summary"><%= episode[:episode].summary.first(65) %>...</p>
       </div>
-      <div class="general-tags-info">
+      <div class="small general-tags-info">
         <% episode[:episode].tags.uniq.take(3).each do |tag| %>
         <!-- If the tag is general and selected -->
           <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
