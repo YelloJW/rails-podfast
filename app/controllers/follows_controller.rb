@@ -1,7 +1,11 @@
 class FollowsController < ApplicationController
   def create
-    current_user.follow(User.find(params[:id]))
-    redirect_to '/users'
+    @user = User.find(params[:id])
+    current_user.follow(@user)
+    respond_to do |format|
+      format.html { redirect_to '/users' }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   def show
