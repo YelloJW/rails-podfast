@@ -28,6 +28,13 @@
   width: 100%; /* Could be more or less, depending on screen size */
 }
 
+/* Share icon underneath episode */
+#share-icon {
+  font-size: 24px;
+  color: $medium-gray;
+  padding-right: 10px; /* Creating space between share button and playlist button */
+}
+
 /* The Close Button */
 // .close {
 //   color: #aaa;
@@ -43,7 +50,3 @@
 //   cursor: pointer;
 // }
 
-#share-icon {
-  font-size: 24px;
-  color: $medium-gray;
-}
