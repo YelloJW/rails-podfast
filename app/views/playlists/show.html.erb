@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="pl-1 my-3">Podcasts</h1>
+  <h1 class="pl-1 my-3">Podcasts (<%= @playlist.episodes.count %>)</h1>
 
   <% @playlist.episodes.each_with_index do |episode, i|  %>
     <%= link_to episode_path(episode), class: "playlist-episode-card" do   %>
