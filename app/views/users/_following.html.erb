@@ -1,0 +1,14 @@
+<% current_user.follows_by_type('User').each do |follow| %>
+  <% user = User.find(follow.followable_id)  %>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p><%= user.username %></p>
+    </div>
+    <%= link_to "/follows/#{user.id}", method: :delete do  %>
+      <small><i id="<%= user.id %>" class="un-follow follow-icon fas fa-minus"></i></small>
+    <% end %>
+  </div>
+<% end %>

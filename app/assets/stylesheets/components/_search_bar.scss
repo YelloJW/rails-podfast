@@ -14,10 +14,10 @@ input[type=text]:focus{
 }
 
 .search-bar-bar {
-  border-radius: 5px;
+  border-radius: 20px !important;
   border: none;
   width: 100%;
-  margin: 0 5px;
+  // margin: 0 5px;
   padding: 20px;
   height: 50px;
   box-shadow: 0px 0px 5px $light-gray;
