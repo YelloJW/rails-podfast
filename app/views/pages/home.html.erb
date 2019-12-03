@@ -9,22 +9,8 @@
 
   <div class="carousel-container">
     <h1 class="flanked-title"><span>Most popular</span></h1>
-    </div>
-
-    <div>
-      <%= render 'carousel' %>
-    </div>
-    <h1 class="flanked-title"><span>New Releases</span></h1>
-    <div>
-      <%= render 'new_releases_carousel' %>
-    </div>
-    <h1 class="flanked-title"><span>Friends picks</span></h1>
-    <div>
-      <%= render 'new_releases_carousel' %>
-    </div>
-
-  </div>
-
+    <%= render 'carousel' %>
+    <%= render 'episode_card_grid' %>
 </div>
 <!-- Commented out until we work out how to implement Spotify / Podcasts API -->
 <!-- <h1><%= @artists %></h1> -->

@@ -1,0 +1,18 @@
+.episode-card-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.episode-card-in-grid {
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: 0px 0px 4px #c4c4c4;
+  width: 100px;
+  height: 100px;
+  img {
+    border-radius:5px;
+    height: 100%;
+    opacity: 0.9;
+  }
+}

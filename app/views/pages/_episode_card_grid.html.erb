@@ -1,0 +1,25 @@
+<h1 class="flanked-title"><span>New Releases</span></h1>
+<div class="episode-card-grid">
+  <% Episode.all.sample(9).each do |episode| %>
+    <div class="episode-card-in-grid">
+      <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+    </div>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+<h1 class="flanked-title"><span>Friends picks</span></h1>
+<div class="episode-card-grid">
+  <% Episode.all.each do |episode| %>
+    <% current_user.all_follows.each do |follow_relation| %>
+      <% followable = User.find(follow_relation[:followable_id]) %>
+      <% if followable.voted_up_on? episode %>
+        <div class="episode-card-in-grid">
+          <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+        </div>
+        <% break %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
