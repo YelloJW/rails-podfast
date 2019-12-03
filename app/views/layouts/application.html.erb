@@ -12,7 +12,11 @@
   <body>
 
     <div class="top-and-bottom-margin">
+      <% if current_page?(search_path) %>
+        <%= render 'shared/navbar-submit-button' %>
+      <% else %>
         <%= render 'shared/navbar-podfast' %>
+      <% end %>
 
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>

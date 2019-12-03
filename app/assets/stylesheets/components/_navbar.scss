@@ -35,11 +35,24 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  height: 50px;
+  height: 40px;
   color: white;
   box-shadow: 0px 0px 1px gray;
   z-index: 2;
   border-radius: 5px 5px 0 0;
+}
+
+.navbar-podfast-searchpage {
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 40px;
+  color: white;
+  z-index: 2;
 }
 
 .navbar-podfast a {
@@ -149,5 +162,5 @@
 
 .green {
   color: #288278 !important;
-  font-size: 26px;
+  font-size: 18px;
 }
