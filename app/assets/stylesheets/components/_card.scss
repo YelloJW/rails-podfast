@@ -1,20 +1,21 @@
 .episode-card {
   height: 22vh;
+  padding: 3px;
   margin-top: 10px;
   border-radius: 10px;
   display: flex;
   box-shadow: 0 0 10px rgba(205,205,205,.5);
   background-color: white;
   img {
-    height: 68px;
-    width: 68px;
-    padding: 0px;
+    height: 80px;
+    width: 80px;
+
     border-radius: 5px;
   }
   .card-details {
     color: $dark-gray;
     display: flex;
-    max-height: 100px;
+    max-height: 120px;
     max-width: 270px;
     text-overflow: ellipsis;
     padding: 0px 10px;
@@ -22,14 +23,14 @@
     letter-spacing: 1.15px;
     position: absolute;
     top: 40px;
-    margin-left: 7px;
+    margin-left: 22px;
     // text-align: justify;
   }
   .card-tags {
     display: flex;
     font-size: 0.75em;
     letter-spacing: 1.25px;
-    padding-left: 10px;
+    padding-left: 24px;
     color: $dark-gray;
   }
   &:hover {
@@ -39,7 +40,7 @@
   }
   p {
     // font-size: 0.8em;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     letter-spacing: 0.1px;
     overflow: hidden;
     font-size: 0.9em;
@@ -58,7 +59,7 @@
 .card-info {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 75px);
+  width: calc(100% - 70px);
   position: relative;
 }
 
@@ -70,7 +71,7 @@
   background-color: $dark-gray;
   color: white;
   border: 1px solid white;
-  padding: 0px 4px;
+  padding: 1px 3px;
   border-radius: 5px;
   opacity: 0.9;
   p {
@@ -82,15 +83,14 @@
 .selected_tag {
   background-color: $coral;
   border: white 1px solid;
-  padding: 0px 4px;
+  padding: 1px 3px;
   opacity: 1;
   border-radius: 5px;
 }
 
 .general_tags {
   color: $dark-gray;
-  padding: 2px 2px 2px 0px;
-  margin-left: 6px;
+  padding: 0px 0px 2px 0px;
   font-size: 0.75em;
 
 }
@@ -98,7 +98,6 @@
 .card-info-bottom {
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 2px;
   position: absolute;
@@ -112,6 +111,7 @@
   opacity: 0.8;
   padding-bottom: 2px;
   margin-right: 9px;
+  margin-bottom: 5px;
   font-size: 11px;
 }
 
@@ -122,17 +122,16 @@
       background-color: #e8e8e8 ;
       padding: 3px;
       border-radius: 50%;
+    }
+    p {
       margin: 0;
     }
 }
 
 .general-tags-info {
   display: flex;
-  vertical-align: bottom;
-  position: absolute;
-  bottom: 15px;
-  margin-left: 10px;
   opacity: 0.8;
+  margin-top: 4px;
 }
 
 .image-card {
