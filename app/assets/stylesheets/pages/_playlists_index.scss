@@ -1,36 +1,61 @@
-.playlist-list-card {
-  display: flex;
-  background-color: white;
-  text-decoration: none;
-  padding: 10px;
-  margin: 15px;
-  justify-content: space-between;
-  color: $dark-gray;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  align-items: center;
-  height: 75px;
 
-  &:hover {
-    transition: box-shadow 0.5s;
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
-    text-decoration: none;
-    color: $dark-gray;
+.playlist-link-styles {
+  .playlist-title {
+    color: $medium-gray;
+    font-size:14px;
+    padding: 0 0;
+    margin: 0 0;
+    font-weight: bold;
+  }
+  .playlist-username {
+    color: $light-gray;
+    font-size:10px;
+    padding: 0 0;
+    margin: 0 0;
+  }
+
+  .playlist-info {
+    color: $light-gray;
+    font-size:10px;
+    padding: 0 0;
+    margin: 0 0;
   }
 }
 
-.playlist-title {
-  font-size: 0.5em;
-  padding-left: 15px;
+.playlist-list-card {
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px $light-gray;
+}
+.playlist-images {
+  display:flex;
+  div {
+    display:flex;
+    flex-direction: column;
+  }
+  .playlist-img {
+    border-radius: 5px;
+    padding: 1px;
+  }
 }
 
-
-.playlist-info p{
-  font-size: 0.8em;
-  display: flex;
+.playlist-details {
+  padding: 5px 20px;
+  display:flex;
   flex-direction: column;
-  margin: 0 !important;
   justify-content: space-between;
+}
+
+.playlist-avatar {
+  margin: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
 }
 
 
