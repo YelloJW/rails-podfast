@@ -1,5 +1,4 @@
-- og: "Podfast"
-- og: "Podfast - Happy Podcasting!"
-- og: "Helping people on the go find and choose podcast episodes quickly, by combining flexible search criteria (based on mood) with episode ratings and recommendations information."
-- og: "www.podfast.life"
-- og: "Podfast.png"
+meta_product_name: "Podfast"
+meta_title: "Podfast - Happy Podcasting!"
+meta_description: "Helping people on the go find and choose podcast episodes quickly, by combining flexible search criteria (based on mood) with episode ratings and recommendations information."
+meta_image: "Podfast.png" # should exist in `app/assets/images/`
