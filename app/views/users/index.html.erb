@@ -1,51 +1,26 @@
 <div class="container">
-  <h4 class="tag-title">Following</h4>
-  <% current_user.follows_by_type('User').each do |follow| %>
-    <% user = User.find(follow.followable_id)  %>
-    <div class="user-list">
-      <div class="user-card d-flex">
-        <div class="user-profile">
-          <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
-        </div>
-        <p><%= user.username %></p>
-      </div>
-      <%= link_to "/follows/#{user.id}", method: :delete do  %>
-        <small><i id="<%= user.id %>" class="un-follow follow-icon fas fa-minus"></i></small>
-      <% end %>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Search</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Following</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Followers</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <%= render 'following' %>
     </div>
-  <% end %>
-
-  <br>
-
-  <h4 class="tag-title">Search for a user...</h4>
-  <div>
-    <form action="<% users_path %>" method="get">
-    <input class="user-search search-bar-bar" name="username" type="text" placeholder="Username">
-    <input type="submit" style="display:none" name="submit" class="button-podfast">
-    </form>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <%= render 'followers' %>
+    </div>
+    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <%= render 'search' %>
+    </div>
   </div>
-
-  <% if @users %>
-    <ul class="unordered-user-list">
-      <% @users.each do |user| %>
-        <% if user != current_user && !current_user.following?(user) %>
-          <li>
-            <div class="user-list">
-              <div class="user-card d-flex">
-                <div class="user-profile">
-                  <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
-                </div>
-                <%= user.username  %>
-              </div>
-              <%= link_to "/follows/#{user.id}" do  %>
-                <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
 </div>
 
 
