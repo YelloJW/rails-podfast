@@ -18,6 +18,7 @@
   width: 175px;
   transition: width 1s;
   border-radius: 10px;
+  filter: grayscale(10%);
 }
 #carousel div.hideLeft {
   left: 0%;
