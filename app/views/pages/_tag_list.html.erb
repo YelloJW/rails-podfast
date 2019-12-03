@@ -1,6 +1,5 @@
-
 <label class="control-label check_boxes optional"><h2 id="categories-title">Top categories</h2></label>
-<i id="show-more-default-tags" class="fas fa-sort-down"></i>
+<i id="show-more-default-tags" class="fas fa-sort-down toggle-down category-down" onclick="toggle()"></i>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
     <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle', 'History'].include? tag.tag %>
@@ -65,7 +64,7 @@
 
 
 <label class="control-label check_boxes optional"><h2 id="mood-title">Popular moods</h2></label>
- <i id="show-more-general-tags" class="fas fa-sort-down"></i>
+ <i id="show-more-general-tags" class="fas fa-sort-down mood-down toggle-down" onclick="toggleMood()"></i>
  <div class="tag-choices ">
   <% @other_tags.each do |tag| %>
     <% if ['Fun', 'Factual', 'Upbeat', 'Quirky', 'Moving', 'Inspiring'].include? tag.tag %>
@@ -112,4 +111,37 @@
         e.classList.toggle("hidden")
       });
     });
+</script>
+
+
+<script>
+var upClass = 'toggle-up';
+var downClass = 'toggle-down';
+
+function toggle() {
+  var carrot = document.querySelector('.category-down');
+
+  if (~carrot.className.indexOf(downClass)) {
+    carrot.className = carrot.className.replace(downClass, upClass);
+  } else {
+        carrot.className = carrot.className.replace(upClass, downClass);
+  }
+
+}
+</script>
+
+<script>
+var upClass = 'toggle-up';
+var downClass = 'toggle-down';
+
+function toggleMood() {
+  var carrot1 = document.querySelector('.mood-down');
+
+  if (~carrot1.className.indexOf(downClass)) {
+    carrot1.className = carrot1.className.replace(downClass, upClass);
+  } else {
+        carrot1.className = carrot1.className.replace(upClass, downClass);
+  }
+
+}
 </script>

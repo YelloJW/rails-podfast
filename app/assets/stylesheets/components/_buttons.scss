@@ -83,3 +83,20 @@ button.swal2-confirm.swal2-styled{
   z-index: 2;
   border-radius: 5px 5px 0 0;
 }
+
+.fa-sort-down {
+  transition: all 100ms 0.25s;
+}
+
+.fa-sort-down {
+  transition: all 100ms 0.25s;
+}
+
+.toggle-down {
+  transform: scaleY(1);
+
+}
+
+.toggle-up {
+  transform: scaleY(-1) translateY(-8px);
+}
