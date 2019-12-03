@@ -44,7 +44,6 @@
 }
 
 .tag-choice {
-  display: flex;
   align-items: center;
   justify-content: center;
   background: white;
@@ -54,15 +53,28 @@
   opacity: 1;
   flex: 0 0 48%;
   box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  i {
+    color: $coral;
+    opacity: 0.3;
+  }
   &:hover {
     opacity: 1;
     color: $dark-gray;
     cursor: pointer;
   }
   &.active {
-  background: #F49D37;
+  background: $coral;
   color: white;
   opacity: 1;
+  i {
+    color: black;
+  }
+  }
+  p {
+    margin: 0;
+  }
+  i {
+    margin-top: 8px;
   }
 }
 
@@ -84,14 +96,14 @@
 
 #show-more-default-tags {
   margin-top: 20px;
-  color:orange;
+  color:$coral;
   opacity: 0.6;
   font-size: 20px;
 }
 
 #show-more-general-tags {
   margin-top: 20px;
-  color:orange;
+  color:$coral;
   opacity: 0.6;
   font-size: 20px;
 }

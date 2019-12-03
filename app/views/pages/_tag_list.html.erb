@@ -1,24 +1,71 @@
 
-<label class="control-label check_boxes optional"><h4 id="categories-title" class="tag-title">Top categories</h4></label>
-<i id="show-more-default-tags" class="float-right fas fa-ellipsis-h"></i>
+<label class="control-label check_boxes optional"><h1 id="categories-title" class="tag-title">Top categories</h1></label>
+<i id="show-more-default-tags" class="fas fa-sort-down"></i>
 <div class="tag-choices">
   <% @default_tags.each do |tag| %>
     <% if ['Sport', 'Comedy', 'Science', 'Politics', 'Lifestyle', 'History'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
       <label class="tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
-        <%= tag.tag %>
+      <% case tag.tag %>
+        <% when 'Sport'%>
+          <i class="tag-icons fas fa-football-ball"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Comedy'%>
+          <i class="tag-icons fas fa-theater-masks"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Science'%>
+          <i class="tag-icons fas fa-atom"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Politics'%>
+          <i class="tag-icons fas fa-vote-yea"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Lifestyle'%>
+          <i class="tag-icons fas fa-heart"></i>
+          <p><%= tag.tag %></p>
+        <% when 'History'%>
+          <i class="tag-icons fas fa-landmark"></i>
+          <p><%= tag.tag %></p>
+      <% end %>
       </label>
     <% else %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="default_tags[tag_ids][]" id="default_tags_tag_ids_<%= tag.id %>">
       <label id="hideable-default" class="hidden tag-choice" for="default_tags_tag_ids_<%= tag.id %>">
-        <%= tag.tag %>
+      <% case tag.tag %>
+        <% when 'Crime'%>
+          <i class="tag-icons fas fa-mask"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Business'%>
+          <i class="tag-icons fas fa-briefcase"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Technology'%>
+          <i class="tag-icons fas fa-laptop"></i>
+          <p><%= tag.tag %></p>
+        <% when 'News'%>
+          <i class="tag-icons fas fa-newspaper"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Education'%>
+          <i class="tag-icons fas fa-graduation-cap"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Music'%>
+          <i class="tag-icons fas fa-music"></i>
+          <p><%= tag.tag %></p>
+        <% when 'Culture'%>
+          <i class="tag-icons fas fa-music"></i>
+          <p><%= tag.tag %></p>
+          <% when 'Arts'%>
+          <i class="tag-icons fas fa-palette"></i>
+          <p><%= tag.tag %></p>
+      <% end %>
       </label>
+
     <% end %>
   <% end %>
+  <br>
 </div>
 
+
 <label class="control-label check_boxes optional"><h4 id="mood-title" class="tag-title">Popular moods</h4></label>
- <i id="show-more-general-tags" class="float-right fas fa-ellipsis-h"></i>
+ <i id="show-more-general-tags" class="fas fa-sort-down"></i>
  <div class="tag-choices">
   <% @other_tags.each do |tag| %>
     <% if ['Entertaining', 'Factual', 'Lighthearted', 'Quirky', 'Heartwarming', 'Inspiring'].include? tag.tag %>
