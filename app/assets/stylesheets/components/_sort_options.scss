@@ -1,8 +1,8 @@
 .sort-options-container {
-  padding: 5px;
+  // padding: 5px;
   display: flex;
+  padding-top: 5px;
   border-radius: 5px;
-  background: white;
   justify-content: space-between;
   i {
     padding: 0 5px;
@@ -19,14 +19,15 @@
 
 .sort-options {
   text-align: center;
-  margin: 4px;
-  flex-grow: 1;
+  margin-left: 4px;
+  // flex-grow: 1;
   letter-spacing: 1px;
   border-radius: 5px;
-  background: $green;
-  color: white;
+  background: $light-gray;
+  color: black;
   opacity: 0.4;
-  padding: 5px;
+  padding: 5px 10px;
+  width: 100px;
   text-decoration:none;
   &:hover {
     text-decoration:none;
@@ -38,5 +39,7 @@
 
 .sort-active {
   opacity: 1;
+  background: $green;
+  color: white;
 }
 

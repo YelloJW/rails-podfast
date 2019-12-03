@@ -39,8 +39,8 @@ end
 
 # create general tags
 puts 'creating array of general tags'
-general_tags = ['Light- hearted', 'Inspiring', 'Fun', 'Factual', 'Motivating', 'Quirky', 'Clever', 'Heart- warming', 'Scary', 'Mind bending', 'Relatable', 'Interesting', 'Factual' ]
-general_tags_for_demo = ['Fun', 'Factual', 'Light- hearted', 'Quirky', 'Heart- warming', 'Inspiring']
+general_tags = ['Upbeat', 'Inspiring', 'Fun', 'Factual', 'Motivating', 'Quirky', 'Clever', 'Moving', 'Scary', 'Mind bending', 'Relatable', 'Interesting', 'Factual' ]
+general_tags_for_demo = ['Fun', 'Factual', 'Upbeat', 'Quirky', 'Moving', 'Inspiring']
 
 puts 'creating general tags'
 index = 0
