@@ -68,7 +68,7 @@
  <i id="show-more-general-tags" class="fas fa-sort-down"></i>
  <div class="tag-choices ">
   <% @other_tags.each do |tag| %>
-    <% if ['Fun', 'Factual', 'Light- hearted', 'Quirky', 'Heart- warming', 'Inspiring'].include? tag.tag %>
+    <% if ['Fun', 'Factual', 'Upbeat', 'Quirky', 'Moving', 'Inspiring'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
       <label class="tag-choice three-col" for="general_tags_tag_ids_<%= tag.id %>">
         <p><%= tag.tag %></p>
