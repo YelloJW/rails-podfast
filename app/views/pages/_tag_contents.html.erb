@@ -1,0 +1,24 @@
+
+<% case tag.tag %>
+  <% when 'Sport'%>
+    <% return %>
+    <div>
+      <i class="tag-icons fas fa-football-ball"></i>
+      <p><%= tag.tag %></p>
+    </div>
+  <% when 'Comedy'%>
+    <i class="tag-icons fas fa-theater-masks"></i>
+    <p><%= tag.tag %></p>
+  <% when 'Science'%>
+    <i class="tag-icons fas fa-atom"></i>
+    <p><%= tag.tag %></p>
+  <% when 'Politics'%>
+    <i class="tag-icons fas fa-vote-yea"></i>
+    <p><%= tag.tag %></p>
+  <% when 'Lifestyle'%>
+    <i class="tag-icons fas fa-heart"></i>
+    <p><%= tag.tag %></p>
+  <% when 'History'%>
+    <i class="tag-icons fas fa-landmark"></i>
+    <p><%= tag.tag %></p>
+<% end %>

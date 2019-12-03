@@ -66,17 +66,17 @@
 
 <label class="control-label check_boxes optional"><h4 id="mood-title" class="tag-title">Popular moods</h4></label>
  <i id="show-more-general-tags" class="fas fa-sort-down"></i>
- <div class="tag-choices">
+ <div class="tag-choices ">
   <% @other_tags.each do |tag| %>
-    <% if ['Entertaining', 'Factual', 'Lighthearted', 'Quirky', 'Heartwarming', 'Inspiring'].include? tag.tag %>
+    <% if ['Fun', 'Factual', 'Light- hearted', 'Quirky', 'Heart- warming', 'Inspiring'].include? tag.tag %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
-      <label class="tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
-        <%= tag.tag %>
+      <label class="tag-choice three-col" for="general_tags_tag_ids_<%= tag.id %>">
+        <p><%= tag.tag %></p>
       </label>
     <% else %>
       <input type="checkbox" style="display:none" value="<%= tag.id %>" name="general_tags[tag_ids][]" id="general_tags_tag_ids_<%= tag.id %>">
-      <label id="hideable-general" class="hidden tag-choice" for="general_tags_tag_ids_<%= tag.id %>">
-        <%= tag.tag %>
+      <label id="hideable-general" class="hidden tag-choice three-col" for="general_tags_tag_ids_<%= tag.id %>">
+        <p><%= tag.tag %></p>
       </label>
     <% end %>
   <% end %>

@@ -44,6 +44,8 @@
 }
 
 .tag-choice {
+  font-size: 14px;
+  margin: 5px;
   align-items: center;
   justify-content: center;
   background: white;
@@ -51,7 +53,7 @@
   letter-spacing: 1.2px;
   border-radius: 5px;
   opacity: 1;
-  flex: 0 0 48%;
+  flex: 0 0 30%;
   box-shadow: 0 0 1px rgba(0,0,0,0.1);
   i {
     color: $coral;
@@ -67,7 +69,7 @@
   color: white;
   opacity: 1;
   i {
-    color: black;
+    color: white;
   }
   }
   p {
@@ -75,6 +77,12 @@
   }
   i {
     margin-top: 8px;
+  }
+}
+
+.three-col {
+  p {
+    padding: 20px 0;
   }
 }
 
