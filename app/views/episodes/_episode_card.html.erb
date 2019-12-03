@@ -34,10 +34,10 @@
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 55 %>
-          <h5><%= episode[:episode].title %></h5>
+        <% if episode[:episode].title.length <= 45 %>
+          <h3><%= episode[:episode].title %></h3>
         <% else %>
-          <h5><%= episode[:episode].title.first(55) %>...</h5>
+          <h3><%= episode[:episode].title.first(45) %>...</h3>
         <% end %>
         <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
       </div>
