@@ -15,7 +15,7 @@
         <% followable = User.find(follow_relation[:followable_id]) %>
         <% if followable.voted_up_on? episode %>
           <div class="episode-card-in-grid">
-            <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+            <img src="<%= episode.img_url %>" alt="">
           </div>
           <% break %>
         <% end %>
