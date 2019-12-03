@@ -17,14 +17,20 @@
 }
 
 .show-avatars {
+    display: flex;
+  align-items: center;
+
   color: #6A6A6A;
 }
 
 // This is the padding between the the upvotes, listens and followers as well as the padding between the icons and the numbers
 .stat-icons {
   padding-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   i {
-    padding-right: 2.5px;
+  padding-right: 2.5px;
   }
 }
 

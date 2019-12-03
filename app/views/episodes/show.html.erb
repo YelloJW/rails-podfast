@@ -7,11 +7,15 @@
       <%= render 'share_modal' %>
       <% if user_signed_in? %>
         <!-- <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button> -->
-        <%= render 'playlists/add_to_playlist' %>
+        <div class="stat-icon">
+          <%= render 'playlists/add_to_playlist' %>
+        </div>
       <% else %>
-        <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form' } do |f| %>
+        <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form stat-icons' } do |f| %>
           <%= f.button :button, type: :submit, class:'primary-color' do %>
-            <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>
+            <div class="stat-icon">
+              <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>
+            </div>
           <% end %>
         <% end %>
       <% end %>
