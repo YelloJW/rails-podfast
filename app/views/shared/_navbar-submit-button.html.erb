@@ -1,0 +1,42 @@
+<div class="navbar-podfast-searchpage">
+  <div class="col-xs-3 w-100 nav-home">
+    <%= active_link_to root_path, active: :exact do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+  </div>
+  <div class="col-xs-3 w-100 nav-search">
+    <%= active_link_to search_path, active: :exact do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+  </div>
+  <div class="col-xs-3 w-100 nav-list">
+    <% if user_signed_in? %>
+      <%= active_link_to playlists_path, active: :exact do %>
+        <i class="far fa-list-alt"></i>
+      <% end %>
+    <% else %>
+      <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'playlist-homepage-form' } do |f| %>
+        <%= f.button :button, type: :submit, class: "my-bookmark" do %>
+          <i class="far fa-list-alt green"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-3 w-100 nav-friends">
+    <% if user_signed_in? %>
+      <%= active_link_to users_path, active: :exact do %>
+        <i class="fas fa-users"></i>
+      <% end %>
+    <% else %>
+     <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form mr-2 d-flex', id:'follows-icon' } do |f| %>
+        <%= f.button :button, type: :submit, class: "my-bookmark" do %>
+          <i class="fas fa-users green"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'sweetalert2' %>
+<% end %>
