@@ -1,11 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
         <div>
-
         </div>
-
-
         <div class="button-list nav-dropdown">
-        <i class="fas fa-stream" style="color: #288278;"id="navbarDropdown" data-toggle="dropdown" ></i>
+        <i class="fas fa-stream" style="color: #288278;"id="icon1" onclick="change('icon1')" data-toggle="dropdown" ></i>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <a class="dropdown-item" href="/playlists">Playlists</a>
@@ -18,5 +15,14 @@
           <% end %>
         </div>
   </div>
-
 </div>
+
+<script>
+  function change (iconID){
+  if(document.getElementById(iconID).className=="fas fa-stream"){
+    document.getElementById(iconID).className = "fas fa-times";
+  }else{
+    document.getElementById(iconID).className = "fas fa-stream";
+  }
+}
+</script>

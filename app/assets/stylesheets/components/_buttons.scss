@@ -85,18 +85,25 @@ button.swal2-confirm.swal2-styled{
 }
 
 .fa-sort-down {
-  transition: all 100ms 0.25s;
+  transition: all 3ms;
 }
 
 .fa-sort-down {
-  transition: all 100ms 0.25s;
+  transition: all 3ms;
 }
 
 .toggle-down {
   transform: scaleY(1);
-
 }
 
 .toggle-up {
   transform: scaleY(-1) translateY(-8px);
+}
+
+.toggle-list {
+
+}
+
+.toggle-cross {
+
 }
