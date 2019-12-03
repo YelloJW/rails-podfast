@@ -1,26 +1,39 @@
 
 <div class="container">
 
-  <div class="playlist-title">
-    <i class="highlighted highlighted-orange">Saved pods</i>
-    <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button>
-  </div>
+
+    <h1 class="pl-1 my-3">Podlists</h1>
+   <!--  <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button> -->
+
 
   <%= render 'create_new_playlist_modal' %>
 
+
+  <div class="link_to_decoration"></div>
   <% @playlists.each do |playlist|%>
-    <%= link_to playlist_path(playlist), class: "playlist-list-card" do  %>
-      <div class="playlist-title">
-        <h4><%= playlist.name %></h4>
-      </div>
-      <div class="playlist-info">
-        <p><%= playlist.episodes.count %> episodes</p>
-          <% sum = 0 %>
-          <% playlist.episodes.each do |episode| %>
-            <% sum += episode.length %>
-          <% end %>
-        <p> <%= sum %> minutes </p>
-      </div>
+    <%= link_to playlist_path(playlist), class:"playlist-link-styles" do  %>
+        <div class="playlist-list-card">
+            <% episodes = playlist.episodes.sample(3) %>
+            <div class="playlist-images">
+              <img class="playlist-img" src="<%= episodes[0].img_url %>" style="height:90px; width:90px;" lt="">
+              <div>
+                <img class="playlist-img" src="<%= episodes[1].img_url %>" style="height:45px; width:45px;" lt="">
+                <img class="playlist-img" src="<%= episodes[2].img_url %>" style="height:45px; width:45px;" lt="">
+              </div>
+            </div>
+            <div class="playlist-details">
+              <div>
+                <p class="playlist-title"><%= playlist.name.capitalize %></p>
+                <p class="playlist-username">By <%= playlist.user.username %></p>
+              </div>
+              <div class="d-block">
+                <p class="playlist-info"><%= playlist.episodes.count %> episodes</p>
+                <p class="playlist-info"><%= playlist.followers_count %> following</p>
+              </div>
+            </div>
+
+        </div>
     <% end %>
   <% end %>
+  <div>
 </div>
