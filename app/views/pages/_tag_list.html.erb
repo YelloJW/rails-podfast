@@ -115,33 +115,49 @@
 
 
 <script>
-var upClass = 'toggle-up';
-var downClass = 'toggle-down';
+  var upClass = 'toggle-up';
+  var downClass = 'toggle-down';
 
-function toggle() {
-  var carrot = document.querySelector('.category-down');
+  function toggle() {
+    var carrot = document.querySelector('.category-down');
 
-  if (~carrot.className.indexOf(downClass)) {
-    carrot.className = carrot.className.replace(downClass, upClass);
-  } else {
-        carrot.className = carrot.className.replace(upClass, downClass);
+    if (~carrot.className.indexOf(downClass)) {
+      carrot.className = carrot.className.replace(downClass, upClass);
+    } else {
+          carrot.className = carrot.className.replace(upClass, downClass);
+    }
+
   }
-
-}
 </script>
 
 <script>
-var upClass = 'toggle-up';
-var downClass = 'toggle-down';
+  var upClass = 'toggle-up';
+  var downClass = 'toggle-down';
+
+  function toggleMood() {
+    var carrot1 = document.querySelector('.mood-down');
+
+    if (~carrot1.className.indexOf(downClass)) {
+      carrot1.className = carrot1.className.replace(downClass, upClass);
+    } else {
+          carrot1.className = carrot1.className.replace(upClass, downClass);
+    }
+
+  }
+</script>
+
+<!-- <script>
+var listClass = 'toggle-list';
+var crossClass = 'toggle-cross';
 
 function toggleMood() {
-  var carrot1 = document.querySelector('.mood-down');
+  var icon = document.querySelector('.dropdown-replace');
 
-  if (~carrot1.className.indexOf(downClass)) {
-    carrot1.className = carrot1.className.replace(downClass, upClass);
+  if (~icon.className.indexOf(crossClass)) {
+    icon.className = icon.className.replace(crossClass, listClass);
   } else {
-        carrot1.className = carrot1.className.replace(upClass, downClass);
+        icon.className = icon.className.replace(listClass, crossClass);
   }
 
 }
-</script>
+</script> -->
