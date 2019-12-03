@@ -18,7 +18,7 @@
           <% end %>
         </div>
         <div class="icons-info">
-          <div class="icons-stats-info">
+          <div class="icons-stats-info first-stat">
             <i class="far fa-thumbs-up"></i>
             <p>&nbsp<%= episode[:episode].upvotes %></p>
           </div>
@@ -34,15 +34,15 @@
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 45 %>
+        <% if episode[:episode].title.length <= 55 %>
           <h3><%= episode[:episode].title %></h3>
         <% else %>
-          <h3><%= episode[:episode].title.first(45) %>...</h3>
+          <h3><%= episode[:episode].title.first(55) %>...</h3>
         <% end %>
         <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
       </div>
       <div class="general-tags-info">
-        <% episode[:episode].tags.uniq.take(4).each do |tag| %>
+        <% episode[:episode].tags.uniq.take(3).each do |tag| %>
         <!-- If the tag is general and selected -->
           <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
             <p class="general_tags tags ">#<u><%= tag.tag %></u></p>

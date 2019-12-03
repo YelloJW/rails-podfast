@@ -2,8 +2,8 @@
 
   <!-- links to re-order search results -->
   <div class="sort-options-container">
-     <i class="fas fa-sort-amount-up"></i>
-     <a class="sort-options <%= "sort-active" if !params[:sort] or params[:sort] == "relevant" %>" href="<%= request.fullpath + '&sort=relevant' %>">relevant</a>
+     <!-- <i class="fas fa-sort-amount-up"></i> -->
+     <a class="sort-options <%= "sort-active" if !params[:sort] or params[:sort] == "relevant" %>" href="<%= request.fullpath + '&sort=relevant' %>">relevance</a>
      <a class="sort-options <%= "sort-active" if params.dig(:sort) == "listens" %>" href="<%= request.fullpath + '&sort=listens' %>">listens</a>
      <a class="sort-options <%= "sort-active" if params.dig(:sort) == "upvotes" %>" href="<%= request.fullpath + '&sort=upvotes' %>">upvotes</a>
   </div>
