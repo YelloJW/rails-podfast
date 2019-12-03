@@ -1,25 +1,26 @@
 .description-card {
+  margin-top: 10px;
   overflow: hidden;
   padding: 16px;
   background: white;
   color: #F49D37;
   border-radius: 9px;
   align-items: center;
-}
-
-.description-card h2 {
-  font-size: 16px;
+  h1 {
+  font-size: 14px;
+  font-family: $body-font;
+  letter-spacing:0.5px;
   font-weight: bold;
-  margin: 0;
-}
-
-.description-card p {
-  font-size: 12px;
+  margin-bottom: 10px;
+  }
+  p {
+  font-size: 13px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   color: #6A6A6A;
+  }
 }
 
 .icons_card {
