@@ -154,6 +154,13 @@
   border-radius: 0 0 5px 5px;
   border: none;
   box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  opacity: 0;
+  display: block !important;
+  transition: 350ms;
+  transform: translateX(160px);
+  visibility: hidden;
+  z-index: 19;
+
     .dropdown-item {
       letter-spacing:1.25px;
       color:white;
@@ -164,6 +171,12 @@
       height: 41px;
       line-height: 28px;
     }
+
+    &.show {
+      opacity: 0.95;
+      transform: translateX(0);
+      visibility: visible;
+    }
 }
 
 .last-child {
@@ -173,5 +186,9 @@
 .green {
   color: #288278 !important;
   font-size: 18px;
+}
+
+.nav-dropdown {
+
 }
 
