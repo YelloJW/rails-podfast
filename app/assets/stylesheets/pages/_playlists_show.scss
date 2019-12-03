@@ -1,25 +1,35 @@
 .playlist-episode-card {
   display: flex;
+  border-radius: 8px;
   background-color: white;
-  padding: 10px 5px;
-  margin: 15px;
+  text-decoration: none;
+  padding: 5px 5px;
   color: $dark-gray;
-    ol {
-      margin-bottom: 0;
-      padding-left: 30px;
-    }
+  margin-left:3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px $light-gray;
+  width: 90%;
 }
 
-.playlist-title {
-  display: flex;
-  margin-right: 4px;
-  justify-content: space-between;
-}
-
-.hightlighted-div {
-  margin-left: 15px;
-}
- .p-margin {
-  margin-right: 5px;
+.playlist-episode-title {
   padding-left: 10px;
- }
+  font-size: 14px;
+  color: $medium-gray;
+  font-weight: bold;
+  margin: 0 0;
+}
+
+.playlist-episode-summary {
+  font-size: 10px;
+  color: $light-gray;
+  margin: 0 0;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.playlist-episode-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+}

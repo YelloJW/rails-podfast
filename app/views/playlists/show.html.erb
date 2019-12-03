@@ -1,13 +1,13 @@
 <div class="container">
-  <div class="hightlighted-div">
-    <i class="highlighted highlighted-orange">Episodes</i>
-  </div>
+  <h1 class="pl-1 my-3">Podcasts</h1>
 
   <% @playlist.episodes.each_with_index do |episode, i|  %>
     <%= link_to episode_path(episode), class: "playlist-episode-card" do   %>
-          <p class="p-margin"><%= i + 1 %>.</p>
-          <p><%= episode.title  %></p>
-
+      <img class ="playlist-episode-img" src="<%= episode.img_url %>" alt="">
+      <div class="playlist-episode-info">
+        <p class ="playlist-episode-title"><%= episode.title.first(30)  %></p>
+        <p class ="playlist-episode-summary"><%= episode.summary.first(45)%></p>
+      </div>
     <% end %>
   <% end %>
 </div>
