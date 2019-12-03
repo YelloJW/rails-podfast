@@ -35,11 +35,11 @@
       </div>
       <div class="card-details">
         <% if episode[:episode].title.length <= 55 %>
-          <h3><%= episode[:episode].title %></h3>
+          <p><%= episode[:episode].title %></p>
         <% else %>
-          <h3><%= episode[:episode].title.first(55) %>...</h3>
+          <p><%= episode[:episode].title.first(55) %>...</p>
         <% end %>
-        <p class="p-summary"><%= episode[:episode].summary.first(90) %>...</p>
+        <p class="p-summary"><%= episode[:episode].summary.first(65) %>...</p>
       </div>
       <div class="general-tags-info">
         <% episode[:episode].tags.uniq.take(3).each do |tag| %>
