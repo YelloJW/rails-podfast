@@ -2,7 +2,9 @@
 <div class="episode-card-grid">
   <% Episode.all.sample(9).each do |episode| %>
     <div class="episode-card-in-grid">
+      <%= link_to episode_path(episode) do  %>
       <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+      <% end %>
     </div>
   <% end %>
 </div>
@@ -15,7 +17,9 @@
         <% followable = User.find(follow_relation[:followable_id]) %>
         <% if followable.voted_up_on? episode %>
           <div class="episode-card-in-grid">
-            <img src="<%= episode.img_url %>" alt="">
+            <%= link_to episode_path(episode) do  %>
+            <img src="<%= episode.img_url %>" style="width:100px" alt="">
+            <% end %>
           </div>
           <% break %>
         <% end %>
