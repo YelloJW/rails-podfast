@@ -75,6 +75,7 @@
   }
   p {
     margin: 0;
+    font-weight: bold;
   }
   i {
     margin-top: 8px;
@@ -82,10 +83,8 @@
 }
 
 .three-col {
-  p {
-    padding: 20px 0;
-  }
-}
+  display:flex;
+ }
 
 .remove-padding {
   padding: 0px !important;
