@@ -72,7 +72,7 @@
     <% @episode.comments.each do |comment| %>
       <hr>
       <div class="comment-title-and-icons">
-        <p><strong><%= comment.title.capitalize %></strong></p>
+        <p><strong><%= comment.user.username %></strong></p>
         <div>
           <% if comment.user == current_user  %>
             <%= link_to comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} do %>
