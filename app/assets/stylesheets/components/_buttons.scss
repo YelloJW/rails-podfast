@@ -109,10 +109,15 @@ button.swal2-confirm.swal2-styled{
 }
 
 .btn-random-episode {
+  text-align: center;
+  text-weight: bold;
   background-color: $coral;
   color: white;
   border-radius: 20px;
   margin: 0 auto;
   width: 150px;
   padding: 5px;
+  &:hover {
+    text-decoration: none;
+  }
 }
