@@ -15,7 +15,8 @@
         <a class="dropdown-item list-padding" href="#">Settings</a>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item last-child" %>
       <% else %>
-        <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>
+        <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item"%>
+        <%= link_to "Log in", new_user_session_path, class: "dropdown-item list-padding"%>
         <a class="dropdown-item last-child" href="#">Settings</a>
       <% end %>
     </div>
