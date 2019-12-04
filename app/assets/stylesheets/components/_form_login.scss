@@ -12,10 +12,16 @@
   }
   .btn {
     width: 100%;
-    margin-bottom: 20px
+    margin-bottom: 20px;
   }
 }
 
 .devise-link {
   color: #4B4B4B !important;
+  display: block;
+  margin: 15px 0 0 0;
+}
+
+.login {
+  padding: 30px;
 }
