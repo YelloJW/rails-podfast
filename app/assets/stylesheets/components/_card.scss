@@ -150,11 +150,15 @@
 }
 
 .first-stat {
-  margin-right: 3px;
+  margin-right: 0px;
 }
 
 .last-stat {
-  margin-left: 3px;
+  margin-left: 0px;
+  padding: 2px;
+  i {
+    padding-right: 5px;
+  }
 }
 
 
