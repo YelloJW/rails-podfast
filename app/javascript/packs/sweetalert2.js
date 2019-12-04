@@ -36,9 +36,27 @@ if (button) {
   });
 }
 
+const addButton = document.getElementById('add-to-playlist-form');
+if (addButton) {
+  addButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: '',
+      text: 'Please login to use this feature',
+      icon: 'warning',
+      confirmButtonText: 'Login',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        event.target.closest('form').submit();
+      }
+    })
+  });
+}
+
 const bookmark = document.getElementById('playlist-homepage-form');
 if (bookmark) {
-  bookmark.addEventListener('click', (event) => {
+  bookmark.addEventListener('submit', (event) => {
     event.preventDefault();
     Swal.fire({
       title: '',

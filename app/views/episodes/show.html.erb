@@ -11,7 +11,7 @@
         <!-- <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button> -->
         <div class="stat-icon"><%= render 'playlists/add_to_playlist' %></div>
       <% else %>
-        <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form stat-icons' } do |f| %>
+        <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form stat-icons', id:'add-to-playlist-form' } do |f| %>
           <%= f.button :button, type: :submit, class:'primary-color' do %>
             <div class="stat-icon">
               <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>

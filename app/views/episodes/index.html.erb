@@ -24,5 +24,7 @@
   <%= render 'episode_card' %>
 
 </div>
-<%= render 'shared/navbar-podfast' %>
 
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'sweetalert2' %>
+<% end %>
