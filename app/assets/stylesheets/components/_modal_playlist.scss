@@ -33,13 +33,14 @@
 
 
 .close-div {
-  display: flex;
   justify-content: space-between;
   font-size: 1em;
   p {
-    margin-bottom: 4px;
-    color: $dark-gray;
-
+  }
+  i {
+    font-size: 16px;
+    color: $light-gray;
+    padding-bottom: 10px;
   }
 }
 
@@ -70,12 +71,13 @@
 // }
 
 
-
 .button-podfast-custom {
+  font-size: 15px;
+  font-weight: bold;
   border-radius: 3px;
   padding: 0px;
   color: $dark-gray;
-  font-weight: bold;
+  // font-weight: bold;
   // background-color: $coral;
 }
 
@@ -92,10 +94,12 @@
 }
 
 .btn-create-playlist {
-  border: 1px solid $coral;
+  background: $medium-gray;
+  color: white;
+  opacity: 0.8;
   border-radius: 5px;
   margin-left: 10px;
-  padding: 0px 20px;
+  padding: 0px 15px;
 }
 
 .modal-playlist-name {
@@ -109,8 +113,9 @@
 }
 
 .div-create-new-playlist {
-  border-bottom: 1px solid $light-gray;
-  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 10%;
   p {
     font-size: 1em;
     letter-spacing: 1px;
@@ -118,6 +123,10 @@
 }
 
 .green-header {
+  color: $coral;
+  font-weight: bold;
+  border-bottom: 1px solid #F1F1F1;
+  padding-bottom: 10px;
   font-size: 1em;
   letter-spacing: 1px;
 }
