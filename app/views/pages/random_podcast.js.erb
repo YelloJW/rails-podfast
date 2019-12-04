@@ -1,0 +1,6 @@
+button = document.querySelector("#random-button");
+// // const mysteryDiv = document.querySelector('#mystery-pod')
+// button.addEventListener('click', (event) => {
+button.outerHTML = `<%= link_to "Pick again", random_podcast_path, remote: true, class: "btn-random-episode", id: "random-button" %>`
+document.querySelector('.random-episode').innerHTML = '<%= j render "pages/random_episode" %>'
+// });
