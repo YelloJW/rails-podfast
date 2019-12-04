@@ -10,6 +10,9 @@
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px $light-gray;
   width: 90%;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .playlist-episode-title {
