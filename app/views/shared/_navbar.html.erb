@@ -1,22 +1,26 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
-        <div>
-        </div>
-        <div class="button-list nav-dropdown">
-        <i class="fas fa-stream" style="color: #288278;"id="icon1" onclick="change('icon1')" data-toggle="dropdown" ></i>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <% if user_signed_in? %>
-            <a class="dropdown-item" href="/playlists">Playlists</a>
-            <a class="dropdown-item list-padding" href="/users">Followers</a>
-            <a class="dropdown-item list-padding" href="#">Settings</a>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item last-child" %>
-          <% else %>
-            <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>
-            <a class="dropdown-item last-child" href="#">Settings</a>
-          <% end %>
-        </div>
+  <div>
+    <% if controller_name == "episodes" && action_name == "show"  %>
+      <%= link_to episodes_path(keyword: session[:keyword], default_tags: session[:default_tags], general_tags: session[:general_tags]) do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="button-list nav-dropdown">
+    <i class="fas fa-stream" style="color: #288278;"id="icon1" onclick="change('icon1')" data-toggle="dropdown" ></i>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <% if user_signed_in? %>
+        <a class="dropdown-item" href="/playlists">Playlists</a>
+        <a class="dropdown-item list-padding" href="/users">Followers</a>
+        <a class="dropdown-item list-padding" href="#">Settings</a>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item last-child" %>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path, class: "dropdown-item"%>
+        <a class="dropdown-item last-child" href="#">Settings</a>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <script>
   function change (iconID){
   if(document.getElementById(iconID).className=="fas fa-stream"){
@@ -26,3 +30,6 @@
   }
 }
 </script>
+
+
+
