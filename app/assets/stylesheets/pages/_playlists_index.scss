@@ -1,3 +1,19 @@
+// a .playlist-list-card:focus {
+//   transform: scale(0.95);
+// }
+// a .playlist-list-card:focus-within {
+//   transform: scale(0.95);
+// }
+// a .playlist-list-card:active {
+//   transform: scale(0.95);
+// }
+a .playlist-list-card:hover {
+  transform: scale(0.95);
+}
+// a .playlist-list-card:visited {
+//   transform: scale(0.95);
+// }
+
 
 .playlist-link-styles {
   .playlist-title {
@@ -26,7 +42,9 @@
   }
 }
 
+
 .playlist-list-card {
+  transition: all 0.3s ease;
   background: white;
   border-radius: 8px;
   padding: 5px;
