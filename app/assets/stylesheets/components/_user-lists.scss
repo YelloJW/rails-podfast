@@ -52,12 +52,28 @@
 
 
 .podfast-tab {
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: $dark-gray;
   font-family: $body-font;
 }
 
 .episode-liked-by-user {
   color: $coral;
+
+}
+
+
+.recent-searches {
+  margin-top: 10px;
+  p {
+    font-size: 0.9em;
+  }
+}
+
+
+.holding-message {
+  margin-top: 20px;
+  font-size: 0.9em;
+  opacity: 0.8;
 
 }
