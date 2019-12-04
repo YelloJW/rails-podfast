@@ -1,14 +1,15 @@
 <h1 class="flanked-title"><span>New Releases</span></h1>
 
-<div class="card-grid">
-  <div class="episode-card-grid">
-    <% Episode.all.first(9).each do |episode| %>
-      <div class="episode-card-in-grid">
-        <img src="<%= episode.img_url %>" style="width:85px;"alt="">
-      </div>
 
-    <% end %>
-  </div>
+<div class="episode-card-grid">
+  <% Episode.all.first(9).each do |episode| %>
+    <div class="episode-card-in-grid">
+      <%= link_to episode_path(episode) do  %>
+      <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
 
 
