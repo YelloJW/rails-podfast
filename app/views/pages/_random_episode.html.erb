@@ -1,5 +1,6 @@
 <div id="random-pod">
   <% episode = Episode.all.sample %>
+  <%= link_to episode_path(episode), class:"random-episode-card-wrapper" do %>
   <div class="random-episode-card">
     <img src="<%= episode.img_url %>">
     <div class="random-episode-card-content">
@@ -7,4 +8,5 @@
       <p><%= episode.summary.first(60) %>...</p>
     </div>
   </div>
+  <% end %>
 </div>
