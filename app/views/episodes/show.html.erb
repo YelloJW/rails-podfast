@@ -3,6 +3,7 @@
   <%= render "shared/spotifywidget", episode: @episode %>
 
   <div class="episode-info">
+    <div class="d-flex justify-content-between">
     <div class="episode-info-card">
       <%= render 'share_modal' %>
       <% if user_signed_in? %>
@@ -31,9 +32,13 @@
               <% end %>
             <% end %>
             <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
+            <div data-toggle="collapse" data-target="#collapse_avatars" aria-expanded="false" aria-controls="collapse_avatars">
             <%= render 'followable_likes', {episode: @episode} %>
+            </div>
           </div>
         </div>
+
+
     <% else %>
       <div class="episode-info-card">
         <div class="show-button">
@@ -46,7 +51,11 @@
         </div>
       </div>
     <% end %>
+   </div>
+    <%= render 'followable_avatars', {episode: @episode}%>
   </div>
+
+
 
   <div class="description-card">
     <h1><b><%= @episode.title %></b></h1>
@@ -88,6 +97,7 @@
   showCommentForm.addEventListener("click", () => {
       commentForm.classList.toggle("hidden")
     });
+
 </script>
 
 <%= content_for(:after_js) do %>

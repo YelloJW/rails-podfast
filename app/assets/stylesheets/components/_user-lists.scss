@@ -19,7 +19,7 @@
 .user-profile {
   height: 40px;
   width: 40px;
-  border: 1px solid gray;
+  border: 1px solid white;
   border-radius:50%;
   margin-right: 20px;
 }
@@ -51,3 +51,22 @@
 .episode-liked-by-user {
   color: $coral;
 }
+
+.followable-avatars {
+  border-radius: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+  overflow-x: auto;
+  .user-profile-show {
+  height: 40px;
+  width: 40px;
+  border: 1px solid white;
+  border-radius:50%;
+  margin-right: 0px;
+  float:right;
+  }
+}
+
