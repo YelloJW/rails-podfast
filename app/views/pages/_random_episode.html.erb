@@ -1,9 +1,9 @@
 <div id="random-pod">
   <% episode = Episode.all.sample %>
   <div class="random-episode-card">
-    <img src="<%= episode.img_url %>" style="width:100px">
+    <img src="<%= episode.img_url %>">
     <div class="random-episode-card-content">
-      <h2><%= episode.title.first(43) %>...</h2>
+      <h2><%= episode.title.first(45) %>...</h2>
       <p><%= episode.summary.first(60) %>...</p>
     </div>
   </div>

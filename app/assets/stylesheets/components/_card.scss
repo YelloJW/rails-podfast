@@ -169,17 +169,22 @@
 .random-episode-card {
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   border-radius: 10px;
   background-color: white;
   img {
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 10px 0px 0px 10px;
+    height: 100px;
+    width: 100px;
   }
 }
 
 .random-episode-card-content {
   display: flex;
   flex-direction: column;
+  width: 70%;
   margin-left: 10px;
   margin-right: 10px;
   h2 {
@@ -189,6 +194,7 @@
   }
   p {
     font-size: 0.8em;
+    margin-bottom:0;
   }
 }
 
