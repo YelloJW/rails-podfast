@@ -112,15 +112,16 @@
   padding-bottom: 2px;
   margin-right: 9px;
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .icons-stats-info {
   display: flex;
   align-items: center;
+  padding-right: 3px;
     i {
       background-color: #e8e8e8 ;
-      padding: 3px;
+      padding: 5px;
       border-radius: 50%;
     }
     p {
