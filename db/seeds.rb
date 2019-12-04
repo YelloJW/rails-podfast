@@ -3,8 +3,8 @@
 # #
 require 'faker'
 # Destroy all seeds
-User.destroy_all
 Episode.destroy_all
+User.destroy_all
 Tag.destroy_all
 EpisodeTag.destroy_all
 Playlist.destroy_all
@@ -204,13 +204,13 @@ Playlist.create(name: "bathtime fun", user_id: User.all.first.id)
 Playlist.create(name: "commute", user_id: User.all.first.id)
 Playlist.create(name: "current affairs", user_id: User.all.first.id)
 Playlist.create(name: "funnies", user_id: User.all.first.id)
-Playlist.create(name: "insomnia", user_id: User.all.first.id)
+Playlist.create(name: "summer 2012", user_id: User.all.first.id)
 
 
 puts 'create playlist episodes'
 
 Playlist.first(5).each do |playlist|
-  Episode.all.sample(rand(4..8)).each do |episode|
+  Episode.all.sample(rand(3..7)).each do |episode|
     PlaylistEpisode.create!(playlist: playlist, episode: episode)
   end
 end

@@ -10,16 +10,20 @@
         <div class="card-tags">
           <% episode[:episode].tags.uniq.take(2).each do |tag| %>
         <!-- If the tag is default and it was selected -->
-            <% if ( tag.default && ( @default_tags&.include? tag.id.to_s ) ) %>
-              <p class="default_tags tags selected_tag"><strong><%= tag.tag %></strong></p>
-            <% else %>
-              <p class="default_tags tags"><%= tag.tag %></p>
+            <% if tag.default && (@default_tags&.include? tag.id.to_s) %>
+              <p class="default_tags selected_tag"><%= tag.tag %></p>
+            <% elsif tag.default %>
+              <p class="default_tags"><%= tag.tag %></p>
             <% end %>
           <% end %>
         </div>
         <div class="icons-info">
           <div class="icons-stats-info first-stat">
+            <% if user_signed_in? && current_user.voted_up_on?(episode[:episode]) %>
+            <i class="episode-liked-by-user fas fa-thumbs-up"></i>
+            <% else %>
             <i class="far fa-thumbs-up"></i>
+            <% end %>
             <p>&nbsp<%= episode[:episode].upvotes %></p>
           </div>
           <div class="icons-stats-info">
@@ -34,23 +38,23 @@
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 60 %>
+        <% if episode[:episode].title.length <= 55 %>
           <p><%= episode[:episode].title %></p>
         <% else %>
-          <p><%= episode[:episode].title.first(60) %>...</p>
+          <p><%= episode[:episode].title.first(55) %>...</p>
         <% end %>
-        <p class="p-summary"><%= episode[:episode].summary.first(65) %>...</p>
-      </div>
-      <div class="small general-tags-info">
-        <% episode[:episode].tags.uniq.take(3).each do |tag| %>
-        <!-- If the tag is general and selected -->
-          <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
-            <p class="general_tags tags ">#<u><%= tag.tag %></u></p>
+        <p class="p-summary"><%= episode[:episode].summary.first(55) %>...</p>
+        <div class="small general-tags-info">
+          <% episode[:episode].tags.uniq.take(3).each do |tag| %>
+          <!-- If the tag is general and selected -->
+            <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
+              <p class="general_tags">#<u><%= tag.tag %></u></p>
+            <% end %>
+            <% if !tag.default && ( !@general_tags&.include? tag.id.to_s )  %>
+              <p class="general_tags">#<%= tag.tag %></p>
+            <% end %>
           <% end %>
-          <% if !tag.default && ( !@general_tags&.include? tag.id.to_s )  %>
-            <p class="general_tags tags">#<%= tag.tag %></p>
-          <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   <% end %>

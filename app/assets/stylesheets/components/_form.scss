@@ -44,12 +44,13 @@
 }
 
 .tag-choice {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: lighter;
   margin: 5px;
   align-items: center;
   justify-content: center;
   background: white;
-  height: 10vh;
+  height: 11vh;
   letter-spacing: 1.2px;
   border-radius: 5px;
   opacity: 1;
@@ -75,17 +76,16 @@
   }
   p {
     margin: 0;
+    font-weight: bold;
   }
   i {
-    margin-top: 8px;
+    margin-top: 1.7vh;
   }
 }
 
 .three-col {
-  p {
-    padding: 20px 0;
-  }
-}
+  display:flex;
+ }
 
 .remove-padding {
   padding: 0px !important;

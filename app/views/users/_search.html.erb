@@ -1,30 +1,87 @@
-
-  <div>
-    <form action="<% users_path %>" method="get">
+<div>
+  <form action="<% users_path %>" method="get">
     <input class="user-search search-bar-bar" name="username" type="text" placeholder="Username">
     <input type="submit" style="display:none" name="submit" class="button-podfast">
-    </form>
+  </form>
+</div>
+
+<% if @users %>
+  <div class="search-results">
+    <% @users.each do |user| %>
+      <% if user != current_user && !current_user.following?(user) %>
+        <div class="user-list" data-id="<%= user.id %>">
+          <div class="user-card d-flex">
+            <div class="user-profile">
+              <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
+            </div>
+            <%= user.username  %>
+          </div>
+          <%= link_to user_follows_path(user), remote: true, method: :post do  %>
+            <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="recent-searches">
+  <p>Recently searched for</p>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://www.gannett-cdn.com/presto/2019/08/13/USAT/bf2c7a4a-9f92-48bb-95fb-a76d734f6304-How_Prince_Andrew_knows_disgraced_financ-5d52014f16e22d0001f10b1a_1_Aug_13_2019_24_55_55_poster.jpg" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>Prince Andrew</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
+  </div>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://ca.slack-edge.com/T02NE0241-U7CNVQPLN-f0070260350e-192" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>Alex Haumer</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
+  </div>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://specials-images.forbesimg.com/imageserve/5ceec355142c500008f42068/1920x0.jpg?cropX1=32&cropX2=1982&cropY1=257&cropY2=2207" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>Bad gal riri</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
   </div>
 
-  <% if @users %>
-    <ul class="unordered-user-list">
-      <% @users.each do |user| %>
-        <% if user != current_user && !current_user.following?(user) %>
-          <li data-id="<%= user.id %>">
-            <div class="user-list">
-              <div class="user-card d-flex">
-                <div class="user-profile">
-                  <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
-                </div>
-                <%= user.username  %>
-              </div>
-              <%= link_to "/follows/#{user.id}", remote: true do  %>
-                <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://www.biography.com/.image/t_share/MTE1ODA0OTcxMzcxNTYyNTA5/jk-rowling-40998-1-402.jpg" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>J K Rowling</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
+  </div>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://ca.slack-edge.com/T02NE0241-UFD4SUGBX-d445617aff5e-512" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>Ben Pham</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
+  </div>
+  <div class="user-list">
+    <div class="user-card d-flex">
+      <div class="user-profile">
+        <img src="https://ca.slack-edge.com/T02NE0241-U7CTQLAP9-c94ea538021f-512" style="height:100%; border-radius: 50%" alt="">
+      </div>
+      <p>Lenny Percival</p>
+    </div>
+    <small><i class="follow follow-icon fas fa-plus"></i></small>
+  </div>
 </div>
+
+

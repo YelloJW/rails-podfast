@@ -1,8 +1,10 @@
-console.log("HELLO")
-console.log("<%= @user.id %>")
+tapPane = document.querySelector(".tab-pane");
+card = document.querySelector("[data-id='<%= @user.id %>']");
+document.getElementById('<%= @user.id %>').classList.remove('fa-plus');
+document.getElementById('<%= @user.id %>').classList.add('fa-minus');
+card.querySelector('a').outerHTML = `<a data-remote="true" rel="nofollow" data-method="delete" href="/users/<%= @user.id %>/follows/<%= @follow.id %>">
+      <small><i id="<%= @user.id %>" class="un-follow follow-icon fas fa-minus"></i></small>
+</a>`;
 
-const tapPane = document.querySelector(".tab-pane")
-const card = document.querySelector("[data-id='<%= @user.id %>']")
-
-tapPane.insertAdjacentHTML("beforeend", card.innerHTML)
+tapPane.insertAdjacentHTML("beforeend", card.outerHTML);
 card.remove();
