@@ -10,16 +10,20 @@
         <div class="card-tags">
           <% episode[:episode].tags.uniq.take(2).each do |tag| %>
         <!-- If the tag is default and it was selected -->
-            <% if ( tag.default && ( @default_tags&.include? tag.id.to_s ) ) %>
-              <p class="default_tags selected_tag"><strong><%= tag.tag %></strong></p>
-            <% else %>
+            <% if tag.default && (@default_tags&.include? tag.id.to_s) %>
+              <p class="default_tags selected_tag"><%= tag.tag %></p>
+            <% elsif tag.default %>
               <p class="default_tags"><%= tag.tag %></p>
             <% end %>
           <% end %>
         </div>
         <div class="icons-info">
           <div class="icons-stats-info first-stat">
+            <% if user_signed_in? && current_user.voted_up_on?(episode[:episode]) %>
+            <i class="episode-liked-by-user fas fa-thumbs-up"></i>
+            <% else %>
             <i class="far fa-thumbs-up"></i>
+            <% end %>
             <p>&nbsp<%= episode[:episode].upvotes %></p>
           </div>
           <div class="icons-stats-info">
