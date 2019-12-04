@@ -38,9 +38,11 @@ class EpisodesController < ApplicationController
   end
 
   def keyword_search
-    if params[:keyword] != ""
+    if params[:keyword].present?
+      session[:keyword] = params[:keyword]
       Episode.search_by_title_and_summary(params[:keyword])
     else
+      session[:keyword] = nil
       Episode.all
     end
   end
@@ -67,16 +69,21 @@ class EpisodesController < ApplicationController
 
   def rank_by_default_tags(episodes_ranked)
     if params.key? :default_tags
+      session[:default_tags] = params[:default_tags]
       @default_tags = params[:default_tags][:tag_ids]
       @episodes_ranked = set_default_tag_rank(episodes_ranked, @default_tags)
+    else
+      session[:default_tags] = nil
     end
   end
 
   def rank_by_general_tags(episodes_ranked)
     if params.key? :general_tags
+      session[:general_tags] = params[:general_tags]
       @general_tags = params[:general_tags][:tag_ids]
       @episodes_ranked = set_general_tag_rank(episodes_ranked, @general_tags)
+    else
+      session[:general_tags] = nil
     end
   end
-
 end
