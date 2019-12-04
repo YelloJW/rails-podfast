@@ -24,7 +24,11 @@
         <div class="episode-info-card">
           <div class="show-avatars">
             <%= link_to like_episode_path(@episode), class: "like stat-icons", method: :put do %>
-              <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
+              <% if current_user.voted_up_on?(@episode) %>
+                <i class="episode-liked-by-user fas fa-thumbs-up"></i></i><%= @episode.votes_for.size + @episode.upvotes %>
+                <% else %>
+                <i class="far fa-thumbs-up"></i></i><%= @episode.votes_for.size + @episode.upvotes %>
+              <% end %>
             <% end %>
             <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
             <%= render 'followable_likes', {episode: @episode} %>
