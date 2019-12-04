@@ -31,14 +31,21 @@
 // Get the <span> element that closes the modal
   const span = document.getElementsByClassName("close")[0];
 
+
 // When the user clicks on the button, open the modal
   playlistAddIcon.onclick = function() {
-    modalPlaylist.style.display = "block";
+    document.getElementById("background-overlay").style.display = 'block';
+    modalPlaylist.style.opacity = 1;
+    modalPlaylist.style.transform = "translateY(0)";
+    modalPlaylist.style.visibility = "visible";
   }
 
 // When the user clicks on <span> (x), close the modalPlaylist
   span.onclick = function() {
-    modalPlaylist.style.display = "none";
+    modalPlaylist.style.opacity = 0;
+    modalPlaylist.style.transform = "translateY(390px)";
+    modalPlaylist.style.visibility = "hidden";
+    document.getElementById("background-overlay").style.display = 'none';
   }
 
 // When the user clicks anywhere outside of the modalPlaylist, close it
