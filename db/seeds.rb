@@ -3,7 +3,6 @@
 # #
 require 'faker'
 # Destroy all seeds
-User.destroy_all
 Episode.destroy_all
 Tag.destroy_all
 EpisodeTag.destroy_all
