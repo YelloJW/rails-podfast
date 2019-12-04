@@ -19,7 +19,9 @@
 
 // When the user clicks on the button, open the modal
   shareIcon.onclick = function() {
-    modal.style.display = "block";
+    modal.style.opacity = 1;
+    modal.style.transform = "translateY(0)";
+    modal.style.visibility = "visible";
   }
 
 // When the user clicks on <span> (x), close the modal
@@ -30,7 +32,9 @@
 // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+      modal.style.opacity = 0;
+      modal.style.transform = "translateY(30px)";
+      modal.style.visibility = "hidden";
     }
   }
 </script>
