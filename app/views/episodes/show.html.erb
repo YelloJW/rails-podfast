@@ -8,9 +8,7 @@
       <%= render 'share_modal' %>
       <% if user_signed_in? %>
         <!-- <button type="button" class="create-new-playlist" data-toggle="modal" data-target=".bd-example-modal-sm">+</button> -->
-        <div class="stat-icon">
-          <%= render 'playlists/add_to_playlist' %>
-        </div>
+        <div class="stat-icon"><%= render 'playlists/add_to_playlist' %></div>
       <% else %>
         <%= simple_form_for :login, url: new_user_session_path, html: { class: 'playlist-form stat-icons' } do |f| %>
           <%= f.button :button, type: :submit, class:'primary-color' do %>
