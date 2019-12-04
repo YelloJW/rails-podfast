@@ -6,20 +6,22 @@
 .multi-range {
    position: relative;
    height: 50px;
+   margin-bottom:20px;
    input[type=range] {
       position: absolute;
-
+      border-radius: 20px;
+      width:100% ;
       &:nth-child(1) {
          &::-webkit-slider-thumb::before {
-            background-color: purple;
+            background: white;
          }
       }
 
       &:nth-child(2) {
          background: none;
-
          &::-webkit-slider-thumb::before {
-             background-color: white;
+             background: none;
+
          }
       }
    }
@@ -36,7 +38,7 @@ input[type=range] {
    border: 5px;
    border-radius: 1px;
    outline: none;
-   background: linear-gradient($light-gray, $light-gray) no-repeat center;
+   background: linear-gradient(#DBDBDB, #DBDBDB) no-repeat center;
    /* Use a linear gradient to generate only the 2px height background */
    background-size: 100% 2px;
    pointer-events: none;
@@ -46,33 +48,79 @@ input[type=range] {
       outline: none;
    }
 
-   &::-webkit-slider-thumb {
-      height: 25px;
-      width: 25px;
-      border-radius: 13px;
-      background: url(headphones.png) $coral;
-      box-shadow: 0px 0px 5px $light-gray;
-      border: 0.5px solid $light-gray;
-      opacity: 0.8;
-      position: relative;
-      margin: 5px 0;
-      /* Add some margin to ensure box shadow is shown */
-      cursor: pointer;
-      appearance: none;
-      pointer-events: all;
-      // box-shadow: 0 1px 4px 0.5px orange;
-      &::before {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 13px;
-            left: 100%;
-            width: 2000px;
-            height: 2px;
-      }
-      &:active,
-      &:focus {
-      opacity: 0.7;
+   &:nth-child(1) {
+     &::-webkit-slider-thumb {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-image: url('https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/867552/settings_images/jySwH69BQEO8jc5eKHpB_Circle_Logo_Podcast_HOME_PAGE_.png');
+        // background-image: url('http://cdn.onlinewebfonts.com/svg/img_162181.png');
+        // background-image: url('https://cdn4.iconfinder.com/data/icons/coral-business/24/time-512.png');
+        background-repeat: no-repeat;
+        background-color: white;
+        background-position: center;
+        background-size: 40px 40px;
+        opacity: 0.8;
+        box-shadow: 0px 0px 5px $light-gray;
+        border: 1px solid $coral;
+        position: relative;
+        margin: 5px 0;
+        /* Add some margin to ensure box shadow is shown */
+        cursor: pointer;
+        appearance: none;
+        pointer-events: all;
+        // box-shadow: 0 1px 4px 0.5px orange;
+        &::before {
+              content: ' ';
+              display: block;
+              position: absolute;
+              top: 13px;
+              left: 100%;
+              width: 2000px;
+              height: 2px;
+        }
+        &:active,
+        &:focus {
+        opacity: 0.7;
+     }
+     }
    }
+
+   &:nth-child(2) {
+     &::-webkit-slider-thumb {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-image: url('https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/867552/settings_images/jySwH69BQEO8jc5eKHpB_Circle_Logo_Podcast_HOME_PAGE_.png');
+        // background-image: url('https://static.thenounproject.com/png/2246-200.png');
+        // background-image: url('https://cdn4.iconfinder.com/data/icons/coral-business/24/time-512.png');
+        background-color: white;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40px 40px;
+        opacity: 0.8;
+        box-shadow: 0px 0px 5px $light-gray;
+        border: 1px solid $coral;
+        position: relative;
+        margin: 5px 0;
+        /* Add some margin to ensure box shadow is shown */
+        cursor: pointer;
+        appearance: none;
+        pointer-events: all;
+        // box-shadow: 0 1px 4px 0.5px orange;
+        &::before {
+              content: ' ';
+              display: block;
+              position: absolute;
+              top: 13px;
+              left: 100%;
+              width: 2000px;
+              height: 2px;
+        }
+        &:active,
+        &:focus {
+        opacity: 0.7;
+     }
+     }
    }
 }
