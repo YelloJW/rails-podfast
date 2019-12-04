@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :playlists, only: [:new, :create]
+    resources :follows, only: [:create, :destroy]
   end
 
 
@@ -21,8 +22,8 @@ Rails.application.routes.draw do
   resources :comments, except: [:create,:new, :show]
   get "/search", to: 'pages#search'
 
-  get "/follows/:id", to: 'follows#create'
-  delete "/follows/:id", to: 'follows#destroy'
+  # post "/follows/:id", to: 'follows#create', as: :follows
+  # delete "/follows/:id", to: 'follows#destroy', as: :follows
 
   get "/search", to: 'pages#search'
   root to: 'pages#home'

@@ -1,30 +1,26 @@
-
-  <div>
-    <form action="<% users_path %>" method="get">
+<div>
+  <form action="<% users_path %>" method="get">
     <input class="user-search search-bar-bar" name="username" type="text" placeholder="Username">
     <input type="submit" style="display:none" name="submit" class="button-podfast">
-    </form>
-  </div>
-
-  <% if @users %>
-    <ul class="unordered-user-list">
-      <% @users.each do |user| %>
-        <% if user != current_user && !current_user.following?(user) %>
-          <li data-id="<%= user.id %>">
-            <div class="user-list">
-              <div class="user-card d-flex">
-                <div class="user-profile">
-                  <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
-                </div>
-                <%= user.username  %>
-              </div>
-              <%= link_to "/follows/#{user.id}", remote: true do  %>
-                <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
+  </form>
 </div>
+
+<% if @users %>
+  <div class="search-results">
+    <% @users.each do |user| %>
+      <% if user != current_user && !current_user.following?(user) %>
+        <div class="user-list" data-id="<%= user.id %>">
+          <div class="user-card d-flex">
+            <div class="user-profile">
+              <img src="<%= user.profile_img  %>" style="height:100%; border-radius: 50%" alt="">
+            </div>
+            <%= user.username  %>
+          </div>
+          <%= link_to user_follows_path(user), remote: true, method: :post do  %>
+            <small><i id="<%= user.id %>" class="follow follow-icon fas fa-plus"></i></small>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
