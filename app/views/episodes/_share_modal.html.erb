@@ -19,6 +19,7 @@
 
 // When the user clicks on the button, open the modal
   shareIcon.onclick = function() {
+    document.getElementById("background-overlay").style.display = 'block';
     modal.style.opacity = 1;
     modal.style.transform = "translateY(0)";
     modal.style.visibility = "visible";
@@ -32,8 +33,9 @@
 // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
+      document.getElementById("background-overlay").style.display = 'none';
       modal.style.opacity = 0;
-      modal.style.transform = "translateY(30px)";
+      modal.style.transform = "translateY(111px)";
       modal.style.visibility = "hidden";
     }
   }

@@ -12,7 +12,7 @@ PlaylistEpisode.destroy_all
 
 # create default tags for non sport and comedy seeds
 puts 'creating array of default tags'
-default_tags = ['Comedy', 'Sport', 'Lifestyle', 'Technology', 'Science', 'Politics', 'History', 'Business', 'Culture', 'News', 'Education', 'Crime', 'Arts', 'Music' ]
+default_tags = ['Comedy', 'Sport', 'Lifestyle', 'Technology', 'Science', 'Politics', 'History', 'Business', 'Culture', 'News', 'Crime', 'Arts' ]
 default_tag_img = ["https://png.pngtree.com/element_pic/00/16/08/2057b74ff0ceec8.jpg",
                    "https://cdn2.vectorstock.com/i/1000x1000/48/81/comedy-concept-word-art-vector-21504881.jpg",
                    "https://cdn4.vectorstock.com/i/1000x1000/99/83/word-design-for-science-vector-19019983.jpg",
