@@ -1,6 +1,6 @@
 
 .modal-share {
-  display: none;
+
   opacity: 0; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -14,7 +14,7 @@
   // background-color: rgb(0,0,0); /* Fallback color */
   // background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   transform: translateY(111px);
-  transition: 0.5s;
+  transition: 0.4s;
   visibility: hidden;
 }
 
@@ -27,7 +27,7 @@
   background-color: #fefefe;
   padding: 20px;
   border: none;
-  border-radius: 3px 3px 0 0;
+  border-radius: 5px 5px 0 0;
   margin-bottom: 40px;
   width: 100%; /* Could be more or less, depending on screen size */
 }
