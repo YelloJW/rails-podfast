@@ -1,24 +1,23 @@
 <i id="add-to-playlist-icon" class="fas fa-list-ul"></i>
 <div id="playlist-modal" class="modal-playlist modal-close">
   <div class="modal-content playlist-modal">
+    <div class="close-div">
+      <i class="fas fa-times close"></i><p class="green-header">Add to podlist</p>
+    </div>
+    <% @playlists.each do |playlist| %>
+    <div class="modal-playlist-name">
+       <img src="https://files.slack.com/files-pri/T02NE0241-FR9L5PTLY/pfastlogcoralcircleonly.png" style="margin-top: 3px; margin-right: 10px; width:20px; height:20px;" alt="">
+       <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
+        <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
+        <%= f.input :name, :as => :hidden, :input_html => { :value => playlist.name } %>
+        <%= f.button :submit, "#{playlist.name.capitalize}", class: "button-podfast-custom" %>
+      <% end %>
+      <p class="playlist-episode-count"> <small><%= playlist.episodes.count %> episodes </small></p>
+    </div>
+    <% end %>
     <div class="div-create-new-playlist">
-      <div class="close-div">
-        <p class="green-header">Create new podlist</p>
-        <i class="fas fa-times close"></i>
-      </div>
       <%= render 'playlists/new', class: "create-new-playlist" %>
     </div>
-      <p class="green-header">Add to existing podlist</p>
-      <% @playlists.each do |playlist| %>
-      <div class="modal-playlist-name">
-        <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
-          <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
-          <%= f.input :name, :as => :hidden, :input_html => { :value => playlist.name } %>
-          <%= f.button :submit, "#{playlist.name}", class: "button-podfast-custom" %>
-        <% end %>
-        <p class="playlist-episode-count"> <%= playlist.episodes.count %> episodes</p>
-      </div>
-      <% end %>
   </div>
 </div>
 

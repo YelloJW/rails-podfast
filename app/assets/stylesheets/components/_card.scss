@@ -166,9 +166,21 @@
 }
 
 
+.random-episode-card-wrapper {
+
+    color: $medium-gray;
+    &:focus {
+      text-decoration: none;
+      color: $medium-gray;
+    }
+}
+
+.random-episode {
+  padding-bottom: 10px;
+}
+
 .random-episode-card {
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
   display: flex;

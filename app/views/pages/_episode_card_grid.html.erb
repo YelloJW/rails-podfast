@@ -2,10 +2,10 @@
 
 
 <div class="episode-card-grid">
-  <% Episode.all.first(9).each do |episode| %>
+  <% Episode.all.first(6).each do |episode| %>
     <div class="episode-card-in-grid">
       <%= link_to episode_path(episode) do  %>
-      <img src="<%= episode.img_url %>" style="width:100px;"alt="">
+      <img src="<%= episode.img_url %>" style="width:100px;" alt="">
       <% end %>
     </div>
   <% end %>

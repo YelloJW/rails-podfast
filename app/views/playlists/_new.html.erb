@@ -3,7 +3,7 @@
   <%= simple_form_for @playlist, url: user_playlists_path(current_user), method: :post do |f| %>
     <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
     <div class="modal-create-playlist-form">
-      <%= f.text_field :name, class: "create-new-playlist-form"%>
+      <%= f.text_field :name, placeholder: 'or create new', class: "pl-2 create-new-playlist-form"%>
       <%= f.button :submit, 'Create', class: "btn-create-playlist" %>
     </div>
   <% end %>
