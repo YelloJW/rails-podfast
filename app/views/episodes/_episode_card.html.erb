@@ -24,7 +24,7 @@
             <% else %>
             <i class="far fa-thumbs-up"></i>
             <% end %>
-            <p>&nbsp<%= episode[:episode].upvotes %></p>
+            <p>&nbsp<%= episode[:episode].upvotes + episode[:episode].votes_for.size %></p>
           </div>
           <div class="icons-stats-info">
             <i class="fas fa-headphones"></i>
