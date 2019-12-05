@@ -24,6 +24,15 @@
   justify-content: space-between;
   flex-wrap: wrap;
   text-align: center;
+    label{
+      transition: transform 0.5s;
+    }
+      label:focus {
+        transform: scale(0.97);
+      }
+      label:active {
+      transform: scale(0.97);
+    }
 }
 
 .primary-color {
