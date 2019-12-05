@@ -67,7 +67,7 @@ sport_img_url_array = ["https://uploads.guim.co.uk/2018/08/06/football-weekly-30
                        "https://pbcdn1.podbean.com/imglogo/dir-logo/478868/478868.jpg",
                        "https://pbcdn1.podbean.com/imglogo/dir-logo/478868/478868.jpg",
                        "https://thumborcdn.acast.com/46gcVg9exHSnTdmTYla0qTxVcKM=/3000x3000/https://mediacdn.acast.com/assets/a3289f5e-b832-4883-8634-f8e1b63d2506/cover-image-k262ujt2-crest_1500x1500.png",
-                       "https://thumborcdn.acast.com/46gcVg9exHSnTdmTYla0qTxVcKM=/3000x3000/https://mediacdn.acast.com/assets/a3289f5e-b832-4883-8634-f8e1b63d2506/cover-image-k262ujt2-crest_1500x1500.png",
+                       "https://www.eastlondonadvertiser.co.uk/polopoly_fs/1.5861032.1548409492!/image/image.jpg_gen/derivatives/landscape_1024/image.jpg",
                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGOE5jg72TStx6gV3RUFJFw0qK6da19WFatRcXq4eQDeS1xpo6&s",
                        "https://thumborcdn.acast.com/Nv3PWGebkJL2UURVpW51oKEgI4o=/3000x3000/https://mediacdn.acast.com/assets/3b2129bd-f56c-457f-861c-8faa9d716941/cover-image-k3ed8299-319_1400.jpg",
                        "https://ichef.bbci.co.uk/images/ic/1200x675/p073xbn5.jpg",
@@ -118,7 +118,7 @@ Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[4], title: 
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[5], title: "No Art Just Artists, Fake Quotes", summary: "The 3ShotsOfTequila Podcast - Episode 171 - Topics: No Art Just Artists, Fake Quotes, Motivational Speakers, Everybody Flirts, VR + MoreFOLLOW US ON INSTAGRAM TO KEEP UP-TO-DATE WITH ALL THINGS 3HOTS...Instagram: @3ShotsOfTequila_HOSTS:Marvin AbbeyTwitter: @MarvAbbey Instagram: @MarvinAbbeyEmail: MarvinAbbey@icloud.comKeith DubeTwitter: @MrExposedInstagram: @MrExpsdEmail: hello@keithdube.coTazer BlackTwitter: @TazerBlackInstagram: @TazerBlackEmail: TazerX@mail.comSPECIAL GUEST:Gracious KayWant us to read out your dilemma?Have a question for the team?Wanna get in touch with us?Email: 3ShotsOfTequila@mail.com", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[5])
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[6], title: "The Now Show", summary: "Download the best satirical comedy from Radio 4, every Friday.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[6])
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[7], title: "What Really Happened At Zane's Birthday Party", summary: "Zane went missing at his own birthday and was later found with a lot of rumors to clear up! Who needs a shot of espresso when you have and episode this good?", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[7])
-Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[8], title: "Do Fish Drink Water?", summary: "For the first, and probably last time, Emma tries to answer a yes or no question - do fish drink water? After that, she gets into Thanksgiving dinners and how to prevent your family from arguing at the dinner table.", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[8])
+Episode.create(listens: 1785, img_url: comedy_img_url_array[8], title: "Do Fish Drink Water?", summary: "For the first, and probably last time, Emma tries to answer a yes or no question - do fish drink water? After that, she gets into Thanksgiving dinners and how to prevent your family from arguing at the dinner table.", length: rand(1..180), upvotes: 877, url: comedy_url_array[8])
 Episode.create(listens: rand(1..2000), img_url: comedy_img_url_array[9], title: "Jan Pieterszoon Coen", summary: "Comedians Dave Anthony and Gareth Reynolds examine Jan Pieterszoon Coen of the Dutch East India Company. Recorded live in Amsterdam.Tour DatesSourcesRedbubble Merch", length: rand(1..180), upvotes: rand(1..1000), url: comedy_url_array[9])
 
 
@@ -139,7 +139,7 @@ comedy_sport_episode.save
 
 comedy_news_url = "https://open.spotify.com/episode/06dIg8hQ1xNLpr7v6jmGl9"
 comedy_news_img_url = "https://i1.sndcdn.com/avatars-000222604011-mdg3ab-t500x500.jpg"
-comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "NYC Stories, New Tesla, Tazer Does It Again, 20 Mill Cheek Challenge - 172", summary: "The 3 Shots Of Tequila Podcast is a fun and light heartedpodcast about any and everything, underneath the sun. From sex and relationships to religion and current affairs.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "NYC Stories, New Tesla, Tazer Does It Again, 20 Mill Cheek Challenge - 172", summary: "The 3 Shots Of Tequila Podcast is a fun and light heartedpodcast about any and everything, underneath the sun. From sex and relationships to religion and current affairs.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..500))
 comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
 comedy_news_episode.save
 
@@ -148,13 +148,13 @@ comedy_news_episode.save
 
 comedy_tech_url = "https://open.spotify.com/episode/2tzLl6YeGh4xXrqQGq1dKk"
 comedy_tech_img_url = "https://cdn.vox-cdn.com/uploads/chorus_asset/file/16235288/recode_pivot_podcast_kara_swisher.png"
-comedy_tech_episode = Episode.new(listens: rand(1..2000), img_url: comedy_tech_img_url, title: "London gives Uber the boot, the billionaire's 2020 strategy, and streaming wars continue.", summary: "Kara and Scott talk about Uber getting kicked out of its biggest EU market, London. They parse out the ad, media and digital strategy of Michael Bloomberg in his quest for the White House.", url: comedy_tech_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_tech_episode = Episode.new(listens: rand(1..2000), img_url: comedy_tech_img_url, title: "London gives Uber the boot, the billionaire's 2020 strategy, and streaming wars continue.", summary: "Kara and Scott talk about Uber getting kicked out of its biggest EU market, London. They parse out the ad, media and digital strategy of Michael Bloomberg in his quest for the White House.", url: comedy_tech_url, length: rand(1..180), upvotes: rand(1..500))
 comedy_tech_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Technology")
 comedy_tech_episode.save
 
 comedy_politics_url = "https://open.spotify.com/episode/3sRXLqMwSubHk1bM6E2TFL"
 comedy_politics_img_url = "https://megaphone-prod.s3.amazonaws.com/podcasts/34814bf8-e860-11e8-8bb2-6f3e1a98c859/image/uploads_2F1553887433220-tm6mswb02ve-81b991f0edef1e2d49524f20aaa20a8f_2FTDS_EARS_EDITION_COVER_ART_2019.jpg"
-comedy_politics_episode = Episode.new(listens: rand(1..2000), img_url: comedy_politics_img_url, title: "NATO Leaders Laugh at Trump Behind His Back | Brittany Howard", summary: "Underwater speakers help revitalize dying coral reefs, video captures NATO leaders gossiping about President Trump, and Brittany Howard discusses her debut solo album.", url: comedy_politics_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_politics_episode = Episode.new(listens: rand(1..2000), img_url: comedy_politics_img_url, title: "NATO Leaders Laugh at Trump Behind His Back | Brittany Howard", summary: "Underwater speakers help revitalize dying coral reefs, video captures NATO leaders gossiping about President Trump, and Brittany Howard discusses her debut solo album.", url: comedy_politics_url, length: rand(1..180), upvotes: rand(1..500))
 comedy_politics_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Politics")
 comedy_politics_episode.save
 
@@ -164,6 +164,13 @@ comedy_culture_episode = Episode.new(listens: rand(1..2000), img_url: comedy_cul
 comedy_culture_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Culture")
 comedy_culture_episode.save
 
+# creating unemployed developer seed
+
+unemployed_url = "https://open.spotify.com/episode/6HshUNAT9fXv8f1QsoD6Fl"
+unemployed_img_url = "data:image/jpeg;base64,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"
+unemployed_episode = Episode.new(listens: 1999, img_url: unemployed_img_url, title: "How do you prepare for an interview?", summary: "We want to share our experiences as unemployed developers and what we been through as we continue to look to start our career.", url: unemployed_url, length: rand(1..180), upvotes: 955)
+unemployed_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Lifestyle")
+unemployed_episode.save
 
 # url_array = ['https://open.spotify.com/episode/5UQLUDVEz8PRN1aJlspoQH', 'https://open.spotify.com/episode/79g7Vn8Gi9MABPTH1txISF']
 # url_array.each do |url|
@@ -196,7 +203,7 @@ end
 puts 'create user seeds'
 
 
-user = User.create!(username:"Podfast", email:"podfast@podfast.com", password:'123456', password_confirmation:'123456')
+user = User.create!(username:"Joe", email:"joe@gmail.com", password:'123456', password_confirmation:'123456')
 
 usernames = ["The Law Maker",
              "Kelly Not Clarkson",
@@ -204,6 +211,10 @@ usernames = ["The Law Maker",
              "The Muscle",
              "Pokemaster",
              "Master Backend-er",
+             "Teach me how to Dougie",
+             "Lil Fullstack",
+             "Fanning iPhone 5/SE",
+             "Bit Ifey"
             ]
 
 profile_img_url = ["https://avatars2.githubusercontent.com/u/55364154?v=4",
@@ -212,25 +223,28 @@ profile_img_url = ["https://avatars2.githubusercontent.com/u/55364154?v=4",
              "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/fmtocdvrjoo78fd97oia.jpg",
              "https://avatars1.githubusercontent.com/u/54071094?v=4",
              "https://avatars1.githubusercontent.com/u/36269225?v=4",
+             "https://ca.slack-edge.com/T02NE0241-UP684E30W-c6a5fbf16490-512",
+             "https://ca.slack-edge.com/T02NE0241-UP5SXKTTR-e3895cbebddb-512",
+             "https://ca.slack-edge.com/T02NE0241-U8S82NPEC-58777da6b785-192",
+             "https://ca.slack-edge.com/T02NE0241-UD478BM6G-467bafc59648-512"
             ]
 index=0
-6.times do
+10.times do
 user = User.create!(profile_img: profile_img_url[index], username:"#{usernames[index]} - 319", email:"test#{index}@gmail.com", password:'123456', password_confirmation:'123456')
 index += 1
 end
 
 puts 'creating playlist seeds'
 
-Playlist.create(name: "bathtime fun", user_id: User.all.first.id)
+Playlist.create(name: "funemployed", user_id: User.all.first.id)
 Playlist.create(name: "commute", user_id: User.all.first.id)
 Playlist.create(name: "current affairs", user_id: User.all.first.id)
-Playlist.create(name: "funnies", user_id: User.all.first.id)
 Playlist.create(name: "summer 2012", user_id: User.all.first.id)
 
 
 puts 'create playlist episodes'
 
-Playlist.first(5).each do |playlist|
+Playlist.first(4).each do |playlist|
   Episode.all.sample(rand(3..7)).each do |episode|
     PlaylistEpisode.create!(playlist: playlist, episode: episode)
   end
