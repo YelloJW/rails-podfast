@@ -150,7 +150,7 @@ comedy_news_url = "https://open.spotify.com/episode/2tzLl6YeGh4xXrqQGq1dKk"
 comedy_news_img_url = "https://cdn.vox-cdn.com/uploads/chorus_asset/file/16235288/recode_pivot_podcast_kara_swisher.png"
 comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "London gives Uber the boot, the billionaire's 2020 strategy, and streaming wars continue.", summary: "Kara and Scott talk about Uber getting kicked out of its biggest EU market, London. They parse out the ad, media and digital strategy of Michael Bloomberg in his quest for the White House.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
 comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
-comedy_news_episode.savecomedy_news_url = "https://open.spotify.com/episode/2tzLl6YeGh4xXrqQGq1dKk"
+comedy_news_episode.save
 
 comedy_news_url = "https://open.spotify.com/episode/3sRXLqMwSubHk1bM6E2TFL"
 comedy_news_img_url = "https://megaphone-prod.s3.amazonaws.com/podcasts/34814bf8-e860-11e8-8bb2-6f3e1a98c859/image/uploads_2F1553887433220-tm6mswb02ve-81b991f0edef1e2d49524f20aaa20a8f_2FTDS_EARS_EDITION_COVER_ART_2019.jpg"
