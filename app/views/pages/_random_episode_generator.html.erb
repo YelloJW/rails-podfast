@@ -3,17 +3,23 @@
 <div class="random-generator-container">
 
 
-<%= link_to "Create", random_podcast_path, remote: true, class: "btn-random-episode", id: "random-button" %>
 
 <!-- <button type="button" id="random-button" class="btn-random-episode">Choose</button> -->
 
 <div class="random-episode">
+  <% episode = Episode.all.sample %>
+  <%= link_to episode_path(episode), class:"random-episode-card-wrapper" do %>
+  <div class="mb-2 random-episode-card">
+    <img src="<%= episode.img_url %>">
+    <div class="random-episode-card-content">
+      <h2><%= episode.title.first(45) %>...</h2>
+      <p><%= episode.summary.first(60) %>...</p>
+    </div>
+  </div>
+  <% end %>
 </div>
-<!-- <div id="mystery-pod" style="height:90px" class="">
 
-</div> -->
-
-</div>
+<%= link_to "Pick again", random_podcast_path, remote: true, class: "btn-random-episode", id: "random-button" %>
 
 
 

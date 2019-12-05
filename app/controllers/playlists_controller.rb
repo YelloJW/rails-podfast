@@ -36,9 +36,9 @@ class PlaylistsController < ApplicationController
     @episode = @playlist_episode.episode
     if !@playlist.episodes.include? @episode
       @playlist_episode.save
-      flash[:notice] = "Episode added to your #{@playlist.name} bookmarks"
+      flash[:notice] = "Episode added to your #{@playlist.name.capitalize} podlist!"
     else
-      flash[:notice] = 'Already bookmarked!'
+      flash[:notice] = 'Epsiode already in podlist!'
     end
     redirect_to episode_path(@episode)
   end

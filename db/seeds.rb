@@ -164,6 +164,7 @@ comedy_culture_episode = Episode.new(listens: rand(1..2000), img_url: comedy_cul
 comedy_culture_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "Culture")
 comedy_culture_episode.save
 
+
 # url_array = ['https://open.spotify.com/episode/5UQLUDVEz8PRN1aJlspoQH', 'https://open.spotify.com/episode/79g7Vn8Gi9MABPTH1txISF']
 # url_array.each do |url|
 #   Episode.create(title: Faker::Book.title, summary: Faker::Lorem.paragraph, length: rand(1..180), upvotes: rand(1..1000), url: url)
