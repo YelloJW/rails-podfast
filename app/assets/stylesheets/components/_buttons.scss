@@ -120,5 +120,10 @@ button.swal2-confirm.swal2-styled{
   padding: 5px;
   &:hover {
     text-decoration: none;
+    color: white;
+  }
+  &:active {
+    text-decoration: none;
+    color: white;
   }
 }
