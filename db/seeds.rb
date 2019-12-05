@@ -144,6 +144,26 @@ comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
 comedy_news_episode.save
 
 
+# creating additional category seeds for demo
+
+comedy_news_url = "https://open.spotify.com/episode/2tzLl6YeGh4xXrqQGq1dKk"
+comedy_news_img_url = "https://cdn.vox-cdn.com/uploads/chorus_asset/file/16235288/recode_pivot_podcast_kara_swisher.png"
+comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "London gives Uber the boot, the billionaire's 2020 strategy, and streaming wars continue.", summary: "Kara and Scott talk about Uber getting kicked out of its biggest EU market, London. They parse out the ad, media and digital strategy of Michael Bloomberg in his quest for the White House.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
+comedy_news_episode.savecomedy_news_url = "https://open.spotify.com/episode/2tzLl6YeGh4xXrqQGq1dKk"
+
+comedy_news_url = "https://open.spotify.com/episode/3sRXLqMwSubHk1bM6E2TFL"
+comedy_news_img_url = "https://megaphone-prod.s3.amazonaws.com/podcasts/34814bf8-e860-11e8-8bb2-6f3e1a98c859/image/uploads_2F1553887433220-tm6mswb02ve-81b991f0edef1e2d49524f20aaa20a8f_2FTDS_EARS_EDITION_COVER_ART_2019.jpg"
+comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "NATO Leaders Laugh at Trump Behind His Back | Brittany Howard", summary: "Underwater speakers help revitalize dying coral reefs, video captures NATO leaders gossiping about President Trump, and Brittany Howard discusses her debut solo album.", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
+comedy_news_episode.save
+
+comedy_news_url = "https://open.spotify.com/episode/7LpCTpUSvHBAgU6kTRJeGm"
+comedy_news_img_url = "https://pbcdn1.podbean.com/imglogo/image-logo/3751525/channel_logo.jpg"
+comedy_news_episode = Episode.new(listens: rand(1..2000), img_url: comedy_news_img_url, title: "Episode 58 - Week of November 25 - December 1", summary: "Full disclosure: there was a an original plan when we sat down that got scrapped after this episode. We were going to run a midroll ad and give you guys a bonus throwback as an add-on to this one episode week. However, after a discussion, and realizing it's December and we're all very busy, we decided against it. Just too much work. So we apologize for the pump fake towards the end. That being said, there was only one episode this week with US Thanksgiving. So it's not the longest episode. But we dug deep and had a pretty good discussion! We all agree, even Kamar, that Tulsi should have a good shot. But you'll have to listen to find out what we think will happen...", url: comedy_news_url, length: rand(1..180), upvotes: rand(1..1000))
+comedy_news_episode.tags << Tag.where(tag: "Comedy") << Tag.where(tag: "News")
+comedy_news_episode.save
+
 # url_array = ['https://open.spotify.com/episode/5UQLUDVEz8PRN1aJlspoQH', 'https://open.spotify.com/episode/79g7Vn8Gi9MABPTH1txISF']
 # url_array.each do |url|
 #   Episode.create(title: Faker::Book.title, summary: Faker::Lorem.paragraph, length: rand(1..180), upvotes: rand(1..1000), url: url)
