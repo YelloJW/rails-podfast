@@ -181,6 +181,11 @@
 
 .last-child {
   border:none !important;
+  padding: 8px 24px 0px 24px !important;
+}
+
+.first-child {
+  padding: 0 24px 8px 24px !important;
 }
 
 .green {

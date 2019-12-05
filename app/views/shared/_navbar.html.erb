@@ -10,13 +10,13 @@
     <i class="fas fa-stream" style="color: #288278;"id="icon1" onclick="change('icon1')" data-toggle="dropdown" ></i>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
       <% if user_signed_in? %>
-        <a class="dropdown-item" href="/playlists">Podlists</a>
+        <a class="dropdown-item first-child" href="/playlists">Podlists</a>
         <a class="dropdown-item list-padding" href="/users">Followers</a>
         <a class="dropdown-item list-padding" href="#">Settings</a>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item last-child" %>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item"%>
-        <%= link_to "Log in", new_user_session_path, class: "dropdown-item list-padding"%>
+        <%= link_to "Log in", new_user_session_path, class: "dropdown-item first-child"%>
+        <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item list-padding"%>
         <a class="dropdown-item last-child" href="#">Settings</a>
       <% end %>
     </div>
