@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :search]
+  skip_before_action :authenticate_user!, only: [:home, :search, :random_podcast]
 
   def home
     # Commented out until we work out how to implement Spotify / Podcasts API
