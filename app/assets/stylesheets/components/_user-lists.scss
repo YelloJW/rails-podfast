@@ -8,9 +8,11 @@
   width:100%;
   text-align: center;
   border-radius:30px;
+  align-items: center;
   p {
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 0px;
   }
   i {
     color: $coral;
@@ -29,6 +31,7 @@
 .user-card {
   text-align: center;
   font-size: 0.9em;
+  align-items: center;
 }
 
 .user-search {
