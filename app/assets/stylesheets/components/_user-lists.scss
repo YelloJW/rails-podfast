@@ -55,7 +55,8 @@
 .podfast-tab {
   font-size: 0.9em;
   color: $dark-gray;
-  font-family: $body-font;
+  font-family: $headers-font;
+  letter-spacing: 0.25px;
 }
 
 .episode-liked-by-user {
