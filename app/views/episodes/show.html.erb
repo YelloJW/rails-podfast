@@ -23,10 +23,12 @@
     <% if user_signed_in? %>
         <div class="episode-info-card">
           <div class="show-avatars">
-            <%= link_to like_episode_path(@episode), class: "like stat-icons", id: "like-button", method: :put do %>
-              <% if current_user.voted_up_on?(@episode) %>
+            <% if current_user.voted_up_on?(@episode) %>
+              <%= link_to unlike_episode_path(@episode), class: "like stat-icons", id: "like-button", method: :put do %>
                 <i class="episode-liked-by-user fas fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
-              <% else %>
+              <% end %>
+            <% else %>
+              <%= link_to like_episode_path(@episode), class: "like stat-icons", id: "like-button", method: :put do %>
                 <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
               <% end %>
             <% end %>
