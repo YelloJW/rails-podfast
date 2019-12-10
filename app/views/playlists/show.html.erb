@@ -2,6 +2,7 @@
   <h1 class="pl-1 my-3">Podcasts (<%= @playlist.episodes.count %>)</h1>
 
   <% @playlist.episodes.each_with_index do |episode, i|  %>
+    <div class="d-flex align-items-center">
     <%= link_to episode_path(episode), class: "playlist-episode-card" do   %>
       <img class ="playlist-episode-img" src="<%= episode.img_url %>" alt="">
       <div class="playlist-episode-info">
@@ -9,5 +10,10 @@
         <p class ="playlist-episode-summary"><%= episode.summary.first(45)%></p>
       </div>
     <% end %>
+    <% playlist_episode = @playlist.playlist_episodes.find_by(episode_id: episode.id) %>
+    <%= link_to episode_playlist_episode_path(@playlist, playlist_episode), method: :delete, data: {confirm: "Are you sure you want to remove this episode from #{@playlist.name}"}, class:"small pl-2" do %>
+      <i class="comment-icons fas fa-minus-circle"></i>
+    <% end %>
+    </div>
   <% end %>
 </div>
