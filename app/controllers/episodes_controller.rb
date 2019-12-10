@@ -27,7 +27,7 @@ class EpisodesController < ApplicationController
 
   def downvote
     @episode = Episode.find(params[:id])
-    @episode.upvote_from current_user
+    @episode.votes_for.find_by(voter_id: current_user.id).destroy
     redirect_back(fallback_location: root_path)
   end
 
