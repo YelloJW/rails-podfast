@@ -23,11 +23,12 @@ Rails.application.routes.draw do
 
   resources :comments, except: [:create,:new, :show]
   get "/search", to: 'pages#search'
+  get "/listen_search", to: 'pages#listen_search'
+  get "/listen_search/:id", to: 'pages#listen_search_episode'
 
   # post "/follows/:id", to: 'follows#create', as: :follows
   # delete "/follows/:id", to: 'follows#destroy', as: :follows
 
-  get "/search", to: 'pages#search'
   root to: 'pages#home'
 
   get "/random_podcast", to: "pages#random_podcast"

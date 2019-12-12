@@ -23,7 +23,7 @@ gem 'faker'
 gem 'active_link_to'
 gem 'social-share-button'
 gem "acts_as_follower", github: 'tcocca/acts_as_follower', branch: 'master'
-
+gem "unirest", '~>1.1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
