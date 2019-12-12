@@ -1,60 +1,26 @@
-<% @episodes_ranked.each do |episode| %>
-  <%= link_to episode_path(episode[:episode]), class: "episode-card" do %>
+<% @podcasts.each do |podcast| %>
+  <%= link_to episode_path(podcast["id"]), class: "episode-card" do %>
     <div class="image-card">
       <div class="image-absolute">
-        <img src="<%= episode[:episode].img_url%>" style="object-fit: cover;">
+        <img src="<%= podcast["thumbnail"]%>" style="object-fit: cover;">
       </div>
     </div>
     <div class="card-info">
       <div class="card-info-bottom">
         <div class="card-tags">
-          <% episode[:episode].tags.uniq.take(2).each do |tag| %>
-        <!-- If the tag is default and it was selected -->
-            <% if tag.default && (@default_tags&.include? tag.id.to_s) %>
-              <p class="default_tags selected_tag"><%= tag.tag %></p>
-            <% elsif tag.default %>
-              <p class="default_tags"><%= tag.tag %></p>
-            <% end %>
+          <% podcast["genre_ids"].take(3).each do |id|  %>
+            <p class="default_tags"><%= @genres_hash[id].first(10) %></p>
+            <!--  <p class="default_tags selected_tag"><%= @genres_hash[id] %>,</p> -->
           <% end %>
-        </div>
-        <div class="icons-info">
-          <div class="icons-stats-info first-stat">
-            <% if user_signed_in? && current_user.voted_up_on?(episode[:episode]) %>
-            <i class="episode-liked-by-user fas fa-thumbs-up"></i>
-            <% else %>
-            <i class="far fa-thumbs-up"></i>
-            <% end %>
-            <p>&nbsp<%= episode[:episode].upvotes + episode[:episode].votes_for.size %></p>
-          </div>
-          <div class="icons-stats-info">
-            <i class="fas fa-headphones"></i>
-            <p>&nbsp<%= episode[:episode].listens %></p>
-          </div>
-          <div class="icons-stats-info last-stat">
-            <% if user_signed_in? %>
-              <%= render 'followable_likes', {episode: episode[:episode]} %>
-            <% end %>
-          </div>
         </div>
       </div>
       <div class="card-details">
-        <% if episode[:episode].title.length <= 55 %>
-          <p><%= episode[:episode].title %></p>
+        <% if podcast["title_original"].length <= 55 %>
+          <p><%= podcast["title_original"] %></p>
         <% else %>
-          <p><%= episode[:episode].title.first(55) %>...</p>
+          <p><%= podcast["title_original"].first(55) %>...</p>
         <% end %>
-        <p class="p-summary"><%= episode[:episode].summary.first(55) %>...</p>
-        <div class="small general-tags-info">
-          <% episode[:episode].tags.uniq.take(3).each do |tag| %>
-          <!-- If the tag is general and selected -->
-            <% if (!tag.default && ( @general_tags&.include? tag.id.to_s ) ) %>
-              <p class="general_tags">#<u><%= tag.tag %></u></p>
-            <% end %>
-            <% if !tag.default && ( !@general_tags&.include? tag.id.to_s )  %>
-              <p class="general_tags">#<%= tag.tag %></p>
-            <% end %>
-          <% end %>
-        </div>
+        <p class="p-summary"><%= podcast["description_original"].first(55) %>...</p>
       </div>
     </div>
   <% end %>

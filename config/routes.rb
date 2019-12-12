@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy]
   end
 
-
   resources :episodes, only: [:index, :show] do
     # resources :playlists, only: [:new, :create]
     resources :playlist_episodes, only: [:new, :create, :destroy]
@@ -24,7 +23,6 @@ Rails.application.routes.draw do
   resources :comments, except: [:create,:new, :show]
   get "/search", to: 'pages#search'
   get "/listen_search", to: 'pages#listen_search'
-  get "/listen_search/:id", to: 'pages#listen_search_episode'
 
   # post "/follows/:id", to: 'follows#create', as: :follows
   # delete "/follows/:id", to: 'follows#destroy', as: :follows

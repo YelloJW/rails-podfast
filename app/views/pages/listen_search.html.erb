@@ -1,23 +1,9 @@
 <div class="conatiner">
-  <form action="/listen_search", method="get" id="search-form">
-  <%= render 'shared/search_bar' %>
+  <form action="/episodes", method="get" id="search-form">
+  <%= render 'shared/search_bar'%>
   <input type="submit" style="display:none">
   </form>
 
-<% @result.each do |podcast| %>
-  <div class="listen-notes-episode-card">
-    <img src="<%= podcast["thumbnail"] %>" style="height:100px; width:100px;" alt="">
-    <div class="listen-notes-episode-card-details">
-      <h1><%= podcast["publisher_original"] %></h1>
-      <h2><%= podcast["title_original"] %></h2>
-      <p><%= distance_of_time_in_words(podcast["audio_length_sec"])%></p>
-      <% podcast["genre_ids"].each do |id|  %>
-        <span><%= @genres_hash[id] %>,</span>
-      <% end %>
-      <%= link_to "episode_details", "listen_search_path(#{podcast["id"]}" %>
-    </div>
-  </div>
-<% end %>
 
 </div>
 

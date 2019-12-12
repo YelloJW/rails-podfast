@@ -23,6 +23,23 @@
   <!-- episodes list -->
   <%= render 'episode_card' %>
 
+
+<% @podcasts.each do |podcast| %>
+  <div class="listen-notes-episode-card">
+    <div class="listen-notes-episode-card-details">
+    <img src="<%= podcast["thumbnail"] %>" style="height:100px; width:100px;" alt="">
+      <h1><%= podcast["publisher_original"] %></h1>
+      <h2><%= podcast["title_original"] %></h2>
+      <p><%= Time.at(podcast["pub_date_ms"]/1000) %></p>
+      <p><%= distance_of_time_in_words(podcast["audio_length_sec"])%></p>
+      <% podcast["genre_ids"].each do |id|  %>
+        <span><%= @genres_hash[id] %>,</span>
+      <% end %>
+    </div>
+    <iframe src="https://www.listennotes.com/embedded/e/<%= podcast["id"] %>/" style ="border:none; border-radius:10px; height:120px;min-width: 100%" frameborder = "0" scrolling = "no"> </iframe>
+  </div>
+<% end %>
+
 </div>
 
 <%= content_for(:after_js) do %>

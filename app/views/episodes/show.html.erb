@@ -1,7 +1,7 @@
 <div id="background-overlay" class="hidden"></div>
 <div class="container">
 
-  <%= render "shared/spotifywidget", episode: @episode %>
+  <%= render "shared/listennotes_widget", episode: @episode %>
 
   <div class="episode-info">
     <div class="d-flex justify-content-between">
@@ -20,86 +20,13 @@
         <% end %>
       <% end %>
     </div>
-    <% if user_signed_in? %>
-        <div class="episode-info-card">
-          <div class="show-avatars">
-            <% if current_user.voted_up_on?(@episode) %>
-              <%= link_to unlike_episode_path(@episode), class: "like stat-icons", id: "like-button", method: :put do %>
-                <i class="episode-liked-by-user fas fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
-              <% end %>
-            <% else %>
-              <%= link_to like_episode_path(@episode), class: "like stat-icons", id: "like-button", method: :put do %>
-                <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
-              <% end %>
-            <% end %>
-            <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
-            <div data-toggle="collapse" data-target="#collapse_avatars" aria-expanded="false" aria-controls="collapse_avatars">
-            <%= render 'followable_likes', {episode: @episode} %>
-            </div>
-          </div>
-        </div>
-
-
-    <% else %>
-      <div class="episode-info-card">
-        <div class="show-button">
-          <%= simple_form_for :login, url: new_user_session_path, html: { class: 'like-form stat-icons', id:'like-form' } do |f| %>
-            <%= f.button :button, type: :submit, class:'primary-color' do %>
-              <i class="far fa-thumbs-up"></i><%= @episode.votes_for.size + @episode.upvotes %>
-            <% end %>
-          <% end %>
-          <span class="stat-icons"><i class="fas fa-headphones"></i><%= @episode.listens %></span>
-        </div>
-      </div>
-    <% end %>
-   </div>
-    <%= render 'followable_avatars', {episode: @episode}%>
-  </div>
-
-
-
-  <div class="description-card">
-    <h1><b><%= @episode.title %></b></h1>
-    <p><%= @episode.summary %></p>
   </div>
 
   <div class="description-card">
-    <div class="comment-title-and-icons">
-      <h1><b>Comments</b></h1>
-      <small><i id="show-comment-form" class="new-comment comment-icons fas fa-plus"></i></small>
-    </div>
-    <div id="comment-form" class="hidden">
-      <%= render 'new_comment', {episode:@episode, comment: Comment.new()} %>
-    </div>
-    <% @episode.comments.each do |comment| %>
-      <hr>
-      <div class="comment-title-and-icons">
-        <p><strong><%= comment.user.username %></strong></p>
-        <div>
-          <% if comment.user == current_user  %>
-            <%= link_to comment_path(comment), method: :delete, data: {confirm: "Are you sure?"} do %>
-              <small><i class="comment-icons far fa-trash-alt"></i></small>
-            <% end %>
-            <%= link_to edit_comment_path(comment) do %>
-              <small><i class="comment-icons fas fa-edit"></i></small>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <p><%= comment.content.capitalize %></p>
-    <% end %>
+    <h1><b><%= @episode["title"] %></b></h1>
+    <p><%= @episode["description"] %></p>
   </div>
-</div>
 
-
-<script>
-  const showCommentForm = document.querySelector("#show-comment-form")
-  const commentForm = document.querySelector("#comment-form")
-  showCommentForm.addEventListener("click", () => {
-      commentForm.classList.toggle("hidden")
-    });
-
-</script>
 
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'sweetalert2' %>

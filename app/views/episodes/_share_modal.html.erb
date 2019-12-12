@@ -3,7 +3,7 @@
   <div class="modal-content">
     <!-- <span class="close">X</span> -->
     <p class="share-heading">Share</p>
-    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook email), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode.id}", :image => "#{@episode.img_url}", desc: "#{@episode.summary}") %>
+    <%= social_share_button_tag('Share to', :allow_sites => %w(whatsapp_app twitter facebook email), :url => "https://podfast-joeolley.herokuapp.com/episodes/#{@episode["id"]}", :image => "#{@episode["thumbnail"]}", desc: "#{@episode["original_description"]}") %>
   </div>
 </div>
 

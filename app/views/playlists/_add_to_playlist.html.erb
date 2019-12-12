@@ -8,7 +8,7 @@
     <div class="modal-playlist-name">
        <img src="https://files.slack.com/files-pri/T02NE0241-FR9L5PTLY/pfastlogcoralcircleonly.png" style="margin-top: 3px; margin-right: 10px; width:20px; height:20px;" alt="">
        <%= simple_form_for playlist, url: playlist_path, method: :patch do |f| %>
-        <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode.id } %>
+        <%= f.input :episode, :as => :hidden, :input_html => { :value => @episode["id"] } %>
         <%= f.input :name, :as => :hidden, :input_html => { :value => playlist.name } %>
         <%= f.button :submit, "#{playlist.name.capitalize}", class: "button-podfast-custom" %>
       <% end %>
